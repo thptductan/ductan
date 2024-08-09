@@ -3,37 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trường THPT Đức Tân</title>
+    <title>Trang Web Trường Học</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="content-wrapper">
+        <!-- Phần đầu -->
         <header>
             <h1>SỞ GIÁO DỤC VÀ ĐÀO TẠO BÌNH THUẬN</h1>
-            <h1>TRƯỜNG TRUNG HỌC PHỔ THÔNG ĐỨC TÂN</h1>
+            <p>TRƯỜNG TRUNG HỌC PHỔ THÔNG ĐỨC TÂN</p>
             <p>Địa chỉ: Khu phố 2, thị trấn Tân Minh, Hàm Tân, Bình Thuận.</p>
             <nav>
-                <a href="#home">Trang chủ</a>
-                <a href="#gioithieu">Giới thiệu</a>
-                <a href="#hoatdong">Hoạt động</a>
-                <a href="#hocsinh">Học sinh và Cựu học sinh</a>
-                <a href="#lienhe">Liên hệ</a>
+                <a href="#" class="nav-item" id="home">Trang chủ</a>
+                <a href="#" class="nav-item" id="intro">Giới thiệu</a>
+                <a href="#" class="nav-item" id="activities">Hoạt động</a>
+                <a href="#" class="nav-item" id="students">Học sinh và Cựu học sinh</a>
+                <a href="#" class="nav-item" id="contact">Liên hệ</a>
             </nav>
         </header>
-        <main id="home">
-            <section class="hoatdong">
-                <h2>Hoạt động 1</h2>
-                <p>Thông tin chi tiết về hoạt động 1...</p>
-            </section>
-            <section class="lienket">
-                <h2>LIÊN KẾT</h2>
-                <ul>
-                    <li><a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn">Sổ tay điện tử cải cách hành chính tỉnh Bình Thuận</a></li>
-                    <li><a href="https://sgddt.binhthuan.gov.vn">Sở Giáo dục và Đào tạo Bình Thuận</a></li>
-                    <li><a href="https://moet.gov.vn">Bộ Giáo dục và Đào tạo</a></li>
-                </ul>
-            </section>
+
+        <!-- Phần thân -->
+        <main class="main-content" id="main-content">
+            <!-- Nội dung được thay đổi khi nhấn vào các mục -->
         </main>
     </div>
+
+    <script>
+        document.getElementById('home').addEventListener('click', function() {
+            document.getElementById('main-content').innerHTML = `
+                <div class="section" id="home-content">
+                    <div class="section-left">
+                        <!-- Hiển thị bài viết đầu tiên trong mục Hoạt động -->
+                    </div>
+                    <div class="section-right">
+                        <div class="section-right-header">LIÊN KẾT</div>
+                        <div class="section-right-content">
+                            <a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn">Sổ tay điện tử cải cách hành chính tỉnh Bình Thuận</a>
+                            <a href="https://sgddt.binhthuan.gov.vn">Sở Giáo dục và Đào tạo Bình Thuận</a>
+                            <a href="https://moet.gov.vn">Bộ Giáo dục và Đào tạo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid">
+                    <!-- Hiển thị bài viết thứ 2 đến bài viết thứ 9 của mục Hoạt động -->
+                </div>
+            `;
+        });
+
+        document.getElementById('intro').addEventListener('click', function() {
+            document.getElementById('main-content').innerHTML = `
+                <div class="section" id="intro-content">
+                    <!-- Hiển thị nội dung cho mục Giới thiệu và các mục con -->
+                </div>
+            `;
+        });
+
+        document.getElementById('activities').addEventListener('click', function() {
+            document.getElementById('main-content').innerHTML = `
+                <div class="section" id="activities-content">
+                    <!-- Hiển thị nội dung cho mục Hoạt động -->
+                </div>
+            `;
+        });
+
+        document.getElementById('students').addEventListener('click', function() {
+            document.getElementById('main-content').innerHTML = `
+                <div class="section" id="students-content">
+                    <!-- Hiển thị nội dung cho mục Học sinh và Cựu học sinh -->
+                </div>
+            `;
+        });
+
+        document.getElementById('contact').addEventListener('click', function() {
+            document.getElementById('main-content').innerHTML = `
+                <div class="section" id="contact-content">
+                    <!-- Hiển thị nội dung cho mục Liên hệ -->
+                </div>
+            `;
+        });
+    </script>
 </body>
 </html>
