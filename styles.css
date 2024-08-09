@@ -1,53 +1,61 @@
+/* Đặt kích thước chữ và màu sắc cho hai dòng đầu trong phần đầu */
+header h1 {
+    color: #0000FF; /* Màu xanh dương */
+    font-size: 13.33px; /* Khoảng 2/3 kích thước hiện tại (20px) */
+    margin: 5px 0;
+}
+
+header p {
+    color: #0000FF; /* Màu xanh dương */
+    font-size: 8px; /* Khoảng 2/3 kích thước hiện tại (12px) */
+    margin: 5px 0;
+}
+
+/* Thiết lập chung cho body */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
     background-color: #f0f0f0;
-    font-size: 2vw; /* Đổi từ px sang vw để chữ tỷ lệ với màn hình */
+    font-size: 16px; /* Kích thước chữ cơ bản */
 }
 
-.content-wrapper {
-    max-width: 66.67%;
-    margin: 0 auto;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 20px;
-}
-
+/* Điều chỉnh kích thước chữ cho phần đầu và nội dung của nó */
 header {
     background-color: #4CAF50;
     text-align: center;
-    padding: 2vw 0; /* Điều chỉnh padding */
+    padding: 20px 0; /* Điều chỉnh padding */
     color: white;
 }
 
-header h1 {
-    font-size: 4vw; /* Đổi từ px sang vw */
-    color: red;
-    margin: 0.5vw 0;
+header h1, header p {
+    font-size: 16px; /* Cài đặt kích thước chữ cho phần đầu */
 }
 
-header p {
-    font-size: 2.5vw; /* Đổi từ px sang vw */
-    color: purple;
-    margin: 0.5vw 0;
+/* Quy tắc cho thanh điều hướng */
+nav {
+    display: flex;
+    justify-content: space-between; /* Căn giữa các mục */
+    flex-wrap: wrap; /* Cho phép điều chỉnh các mục khi màn hình nhỏ hơn */
+    margin-top: 20px;
 }
-/* Quy tắc chung cho các thiết bị lớn hơn */
+
 nav a {
-    padding: 1vw 2vw;
-    border-radius: 1vw;
+    padding: 10px 20px;
+    border-radius: 10px;
     color: white;
     font-size: 16px; /* Kích thước chữ cho các thiết bị lớn */
     text-decoration: none;
     white-space: nowrap; /* Đảm bảo text không bị xuống dòng */
+    display: inline-block; /* Đảm bảo các mục nằm trên cùng một hàng */
 }
 
 /* Quy tắc riêng cho các thiết bị di động */
 @media (max-width: 768px) {
     nav a {
         font-size: 14px; /* Giảm kích thước chữ trên các thiết bị nhỏ */
-        padding: 1rem 2rem; /* Điều chỉnh khoảng cách bên trong cho phù hợp */
+        padding: 8px 16px; /* Điều chỉnh khoảng cách bên trong cho phù hợp */
     }
 }
 
@@ -55,19 +63,21 @@ nav a {
 @media (max-width: 480px) {
     nav a {
         font-size: 12px; /* Kích thước chữ nhỏ hơn cho các màn hình nhỏ hơn */
-        padding: 0.8rem 1.5rem; /* Điều chỉnh padding cho vừa vặn */
+        padding: 6px 12px; /* Điều chỉnh padding cho vừa vặn */
     }
 }
+
+/* Quy tắc cho phần nội dung */
 .hoatdong {
     width: 66.67%;
     float: left;
-    padding: 1.5vw;
+    padding: 15px;
 }
 
 .lienket {
     width: 33.33%;
     float: right;
-    padding: 1.5vw;
+    padding: 15px;
     background-color: #fff;
     border: 1px solid #ccc;
 }
@@ -78,7 +88,7 @@ nav a {
 }
 
 .lienket li {
-    margin-bottom: 1vw;
+    margin-bottom: 10px;
 }
 
 .lienket a {
