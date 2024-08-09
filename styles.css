@@ -52,3 +52,34 @@ nav a:nth-child(2) { background-color: darkblue; }
 nav a:nth-child(3) { background-color: red; }
 nav a:nth-child(4) { background-color: pink; }
 nav a:nth-child(5) { background-color: purple; }
+.hoatdong {
+    width: 66.67%;
+    float: left;
+    padding: 15px;
+}
+
+.lienket {
+    width: 33.33%;
+    float: right;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.lienket ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lienket li {
+    margin-bottom: 10px;
+}
+
+.lienket a {
+    color: blue;
+    text-decoration: none;
+}
+
+.lienket a:hover {
+    text-decoration: underline;
+}
