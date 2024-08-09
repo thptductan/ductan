@@ -1,82 +1,65 @@
-/* Tổng thể */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
     background-color: #f0f0f0;
-    font-size: 1vw; /* Sử dụng vw để kích thước chữ tỷ lệ theo chiều ngang trình duyệt */
+    font-size: 2vw; /* Đổi từ px sang vw để chữ tỷ lệ với màn hình */
 }
 
 .content-wrapper {
-    width: 66.67vw; /* 2/3 chiều rộng của trình duyệt */
+    max-width: 66.67%;
     margin: 0 auto;
-    background-color: white; /* Nền màu của vùng nội dung */
+    background-color: white;
     border: 1px solid #ccc;
-    padding: 2vw; /* Tăng kích thước padding theo tỷ lệ */
-    box-sizing: border-box;
+    padding: 20px;
 }
 
-/* Phần đầu */
 header {
-    background-color: #4CAF50; /* Nền màu xanh lá */
+    background-color: #4CAF50;
     text-align: center;
-    padding: 2vw 0; /* Đảm bảo padding cũng tỷ lệ theo chiều rộng */
+    padding: 2vw 0; /* Điều chỉnh padding */
     color: white;
 }
 
 header h1 {
-    font-size: 2vw; /* Tỷ lệ chữ theo chiều rộng */
+    font-size: 4vw; /* Đổi từ px sang vw */
     color: red;
-    margin: 1vw 0;
+    margin: 0.5vw 0;
 }
 
 header p {
-    font-size: 1.2vw; /* Tỷ lệ chữ theo chiều rộng */
+    font-size: 2.5vw; /* Đổi từ px sang vw */
     color: purple;
-    margin: 1vw 0;
+    margin: 0.5vw 0;
 }
 
-/* Điều hướng */
 nav {
     display: flex;
     justify-content: space-around;
     margin-top: 2vw;
-    flex-wrap: wrap;
 }
 
 nav a {
     padding: 1vw 2vw;
     border-radius: 1vw;
     color: white;
-    font-size: 1.6vw;
+    font-size: 3vw;
     text-decoration: none;
-    text-align: center;
-    flex: 1 1 auto;
-    margin: 1vw;
 }
 
-nav a:nth-child(1) { background-color: blue; }
-nav a:nth-child(2) { background-color: darkblue; }
-nav a:nth-child(3) { background-color: red; }
-nav a:nth-child(4) { background-color: pink; }
-nav a:nth-child(5) { background-color: purple; }
-
-/* Vùng nội dung */
 .hoatdong {
-    width: 66.67%; /* Chiếm 2/3 chiều rộng của content-wrapper */
+    width: 66.67%;
     float: left;
-    padding: 2vw;
-    box-sizing: border-box;
+    padding: 1.5vw;
 }
 
 .lienket {
-    width: 33.33%; /* Chiếm 1/3 chiều rộng của content-wrapper */
+    width: 33.33%;
     float: right;
-    padding: 2vw;
+    padding: 1.5vw;
     background-color: #fff;
     border: 1px solid #ccc;
-    box-sizing: border-box;
 }
 
 .lienket ul {
@@ -85,39 +68,14 @@ nav a:nth-child(5) { background-color: purple; }
 }
 
 .lienket li {
-    margin-bottom: 1.5vw;
+    margin-bottom: 1vw;
 }
 
 .lienket a {
     color: blue;
     text-decoration: none;
-    font-size: 1.4vw;
 }
 
 .lienket a:hover {
     text-decoration: underline;
-}
-
-/* Tối ưu hóa hiển thị trên điện thoại */
-@media (max-width: 768px) {
-    .content-wrapper {
-        width: 90vw; /* Giảm chiều rộng để phù hợp với màn hình nhỏ */
-        padding: 4vw;
-    }
-
-    nav {
-        flex-direction: column;
-        align-items: stretch; /* Đặt các mục điều hướng đầy đủ chiều rộng */
-    }
-
-    nav a {
-        flex: none; /* Đảm bảo các mục điều hướng không giãn đều */
-        margin: 1.5vw 0; /* Giãn cách giữa các mục */
-    }
-
-    .hoatdong, .lienket {
-        width: 100%; /* Chiếm toàn bộ chiều rộng trên màn hình nhỏ */
-        float: none;
-        padding: 4vw;
-    }
 }
