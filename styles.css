@@ -33,25 +33,31 @@ header p {
     color: purple;
     margin: 0.5vw 0;
 }
-nav {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2vw;
-    flex-wrap: nowrap; /* Đảm bảo không xuống dòng */
-    overflow-x: auto; /* Cho phép cuộn ngang nếu cần */
-    white-space: nowrap; /* Đảm bảo các mục không xuống dòng */
-}
-
+/* Quy tắc chung cho các thiết bị lớn hơn */
 nav a {
     padding: 1vw 2vw;
     border-radius: 1vw;
     color: white;
-    font-size: 3vw; /* Thay đổi kích thước font cho phù hợp trên điện thoại */
+    font-size: 16px; /* Kích thước chữ cho các thiết bị lớn */
     text-decoration: none;
     white-space: nowrap; /* Đảm bảo text không bị xuống dòng */
-    flex: 0 0 auto; /* Đảm bảo các mục giữ nguyên kích thước và không co lại */
 }
 
+/* Quy tắc riêng cho các thiết bị di động */
+@media (max-width: 768px) {
+    nav a {
+        font-size: 14px; /* Giảm kích thước chữ trên các thiết bị nhỏ */
+        padding: 1rem 2rem; /* Điều chỉnh khoảng cách bên trong cho phù hợp */
+    }
+}
+
+/* Quy tắc cho các thiết bị rất nhỏ */
+@media (max-width: 480px) {
+    nav a {
+        font-size: 12px; /* Kích thước chữ nhỏ hơn cho các màn hình nhỏ hơn */
+        padding: 0.8rem 1.5rem; /* Điều chỉnh padding cho vừa vặn */
+    }
+}
 .hoatdong {
     width: 66.67%;
     float: left;
