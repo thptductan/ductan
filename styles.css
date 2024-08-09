@@ -1,3 +1,4 @@
+/* Dán đoạn mã này vào tệp styles.css */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -42,7 +43,7 @@ main .container {
 .container {
     max-width: 1000px; /* Thay đổi giá trị này tùy theo ý muốn */
     margin: 0 auto;    /* Căn giữa trang */
-    padding: 0 20px;   /* Khoảng cách hai bên */
+    padding: 0 20px;   /* Khoảng cách hai bên nếu cần */
 }
 
 .intro {
