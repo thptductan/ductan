@@ -38,11 +38,13 @@ main .container {
     margin: 0 auto;
     padding: 20px 0;
 }
+
 .container {
     max-width: 1000px; /* Thay đổi giá trị này tùy theo ý muốn */
     margin: 0 auto;    /* Căn giữa trang */
     padding: 0 20px;   /* Khoảng cách hai bên */
 }
+
 .intro {
     text-align: center;
     margin-bottom: 20px;
