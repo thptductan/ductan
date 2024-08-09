@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background-image: url('Nền 1.npg');
+    background-image: url('Nền 1.png');
     background-size: cover; /* Để hình ảnh phủ toàn bộ nền */
     background-position: center; /* Để căn chỉnh hình ảnh ở giữa */
     background-repeat: no-repeat; /* Để không lặp lại hình ảnh nền */
