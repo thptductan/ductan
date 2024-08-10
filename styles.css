@@ -1,3 +1,8 @@
+body {
+    overflow-x: hidden; /* Ngăn không cho cuộn ngang */
+    margin: 0; /* Đảm bảo không có khoảng cách xung quanh trang */
+    padding: 0; /* Đảm bảo không có khoảng cách xung quanh trang */
+}
 /* CSS chung cho phần thân */
 .main-content {
     background-image: url('DT1.png') !important; /* Đặt hình nền */
