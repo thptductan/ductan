@@ -61,6 +61,7 @@ body {
     width: calc(100% / 3); /* Chiều rộng chiếm 1/3 màn hình */
     top: 20%; /* Đặt vị trí xuống mức 20% của chiều cao màn hình di động */
     text-align: center;
+    transform: translateX(-50%); /* Căn giữa chiều ngang của 1/3 VBV */
 }
 
 .tieu-de {
@@ -71,6 +72,7 @@ body {
     border-top-right-radius: 10px; /* Bo tròn góc trên phải */
     border-bottom-left-radius: 0; /* Không bo tròn góc dưới */
     border-bottom-right-radius: 0; /* Không bo tròn góc dưới */
+    font-size: 80%; /* Kích thước chữ giảm xuống 80% của hiện tại */
 }
 
 .noi-dung {
@@ -86,7 +88,7 @@ body {
 .noi-dung a {
     color: blue;
     text-decoration: underline; /* Gạch chân nội dung */
-    font-size: 50%; /* Kích thước chữ bằng kích thước của liên kết */
+    font-size: 80%; /* Kích thước chữ bằng kích thước của Chuyên đề */
 }
 
 /* CSS cho màn hình máy tính để bàn */
@@ -114,7 +116,7 @@ body {
         top: 50%; /* Đặt vị trí xuống mức 50% của chiều cao màn hình */
         width: 33.33%; /* Đặt chiều ngang chiếm 1/3 VBV */
         left: calc(100% / 3); /* Căn giữa vào 1/3 bên phải của VBV */
-        font-size: 100%; /* Kích thước chữ gấp đôi so với hiện tại */
+        font-size: 200%; /* Kích thước chữ gấp đôi so với hiện tại */
     }
 }
 
@@ -140,9 +142,19 @@ body {
         color: blue; /* Màu xanh dương */
     }
 
+    .website-links a {
+        text-decoration: none; /* Bỏ gạch chân */
+    }
+
+    .website-links .link::after {
+        text-decoration: underline; /* Gạch chân nội dung trong cặp [] */
+    }
+
     .chuyen-muc {
         top: 20%; /* Đặt vị trí xuống mức 20% của chiều cao màn hình */
         left: calc(100% / 3); /* Căn giữa vào 1/3 bên phải của VBV */
-        width: calc(100% / 3); /* Đặt chiều ngang chiếm 1/3 VBV */
+        width: calc(100% / 3); /* Đặt chiều ngang chiếm 1/3 màn hình */
+        transform: translateX(-50%); /* Căn giữa chiều ngang của 1/3 VBV */
+        font-size: 80%; /* Kích thước chữ giảm xuống 80% của hiện tại */
     }
 }
