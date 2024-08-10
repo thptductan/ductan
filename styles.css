@@ -61,8 +61,8 @@ body {
 }
 /* CSS cho phần thân */
 .main-content {
-    width: 100%; /* Đảm bảo phần thân chiếm toàn bộ chiều ngang của khung chứa nó */
-    max-width: 66.66%; /* Đảm bảo chiều ngang không vượt quá chiều ngang của phần đầu */
+    width: 100vw; /* Đảm bảo phần thân chiếm toàn bộ chiều ngang của khung chứa nó */
+    max-width: 66.66vw; /* Đảm bảo chiều ngang không vượt quá chiều ngang của phần đầu */
     margin: 0 auto; /* Căn giữa phần thân */
     background-image: url('Nen1.png'); /* Đặt hình nền */
     background-size: cover; /* Đảm bảo hình nền bao phủ toàn bộ phần thân */
@@ -82,7 +82,7 @@ body {
 /* Quy định cho màn hình điện thoại */
 @media (max-width: 768px) {
     .main-content {
-        width: 100%; /* Chiếm toàn bộ chiều ngang màn hình trên điện thoại */
+        width: 100vw; /* Chiếm toàn bộ chiều ngang màn hình trên điện thoại */
         max-width: none; /* Bỏ giới hạn chiều ngang */
         aspect-ratio: auto; /* Tỷ lệ khung hình tự động */
     }
