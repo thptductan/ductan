@@ -1,12 +1,13 @@
 /* CSS chung cho phần thân */
 .main-content {
-    background-image: url('./Hình ảnh.png'); /* Đặt hình nền */
-    background-size: contain; /* Đảm bảo hình nền hiển thị toàn bộ mà không bị cắt */
+    background-image: url('Hình ảnh.png') !important; /* Đặt hình nền */
+    background-size: cover; /* Bao phủ toàn bộ phần thân, có thể gây cắt */
     background-position: center; /* Căn giữa hình nền */
     background-repeat: no-repeat; /* Không lặp lại hình nền */
     margin: 0 auto; /* Căn giữa phần thân */
     display: block; /* Hiển thị phần thân */
     overflow: hidden; /* Đảm bảo không có cuộn ngang */
+    background-color: rgba(255, 255, 255, 0.1); /* Màu nền tạm thời */
 }
 
 /* CSS cho màn hình máy tính để bàn */
