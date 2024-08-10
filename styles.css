@@ -23,13 +23,7 @@ header {
 }
 
 header h1 {
-    font-size: 2vw; /* Đổi kích thước chữ cho dòng tiêu đề chính */
-    color: blue; /* Đổi màu chữ thành xanh dương */
-    margin: 0.5rem 0; /* Điều chỉnh lề để phù hợp */
-}
-
-header h2 {
-    font-size: 2vw; /* Đổi kích thước chữ cho dòng tiêu đề phụ */
+    font-size: 2.5vw; /* Đổi kích thước chữ cho dòng tiêu đề chính */
     color: blue; /* Đổi màu chữ thành xanh dương */
     margin: 0.5rem 0; /* Điều chỉnh lề để phù hợp */
 }
