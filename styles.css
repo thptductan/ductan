@@ -1,7 +1,14 @@
+/* CSS chung cho body để khóa cuộn ngang */
+body {
+    overflow-x: hidden; /* Khóa cuộn ngang */
+    margin: 0;
+    padding: 0;
+}
+
 /* CSS chung cho phần thân */
 .main-content {
     background-image: url('DT1.png') !important; /* Đặt hình nền */
-    background-size: cover; /* Bao phủ toàn bộ phần thân, có thể gây cắt */
+    background-size: cover; /* Bao phủ toàn bộ phần thân */
     background-position: center; /* Căn giữa hình nền */
     background-repeat: no-repeat; /* Không lặp lại hình nền */
     margin: 0 auto; /* Căn giữa phần thân */
@@ -13,7 +20,7 @@
 /* CSS cho các hình ảnh đè lên */
 .overlay-images {
     position: absolute; /* Định vị tuyệt đối để đè lên hình nền */
-    top: 12%; /* Đặt ở 12% chiều cao tính từ lề trên của DT1.png */
+    top: 14%; /* Đặt ở 20% chiều cao tính từ lề trên của DT1.png */
     left: 50%; /* Căn giữa theo chiều ngang */
     transform: translateX(-50%); /* Đẩy ngược về 50% chiều ngang để căn giữa */
     display: flex; /* Đặt các hình ảnh thành hàng ngang */
@@ -22,7 +29,7 @@
 }
 
 .overlay-images img {
-    width: 20%; /* Đảm bảo các hình ảnh có cùng kích thước và vừa với hàng ngang */
+    width: 18%; /* Đảm bảo các hình ảnh có cùng kích thước và vừa với hàng ngang */
     border-radius: 10px; /* Bo tròn các góc của hình ảnh */
 }
 
@@ -34,7 +41,6 @@
     }
 
     .overlay-images {
-        top: 12%; /* Vị trí theo chiều dọc cho màn hình máy tính để bàn */
         width: 80%; /* Chiều ngang của dãy hình ảnh trên màn hình máy tính */
     }
 
@@ -51,7 +57,6 @@
     }
 
     .overlay-images {
-        top: 12%; /* Vị trí theo chiều dọc cho màn hình di động */
         width: 90%; /* Chiều ngang của dãy hình ảnh trên màn hình di động */
     }
 
