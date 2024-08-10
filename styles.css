@@ -34,3 +34,26 @@ body {
     flex: 1;
     max-width: 16%; /* Đảm bảo mỗi ảnh chiếm khoảng 16% chiều rộng để có khoảng trống ở giữa và hai bên */
 }
+/* Quy định cụ thể cho màn hình điện thoại */
+@media (max-width: 768px) {
+    .header-wrapper {
+        width: 100%; /* Chiếm toàn bộ chiều ngang màn hình trên điện thoại */
+        overflow: hidden; /* Đảm bảo không có cuộn ngang */
+    }
+
+    .header-image {
+        width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều ngang của màn hình */
+        height: auto;
+    }
+
+    .overlay-images {
+        top: 75%; /* Vị trí theo chiều cao của DauTrang.png trên điện thoại */
+        width: 100%; /* Chiều rộng của dãy ảnh trên điện thoại */
+        justify-content: space-between; /* Chia đều khoảng cách giữa các ảnh */
+    }
+
+    .overlay-images img {
+        max-width: 18%; /* Điều chỉnh kích thước của ảnh phủ trên điện thoại để chúng đều nhau */
+        border-radius: 15px; /* Bo tròn góc của các ảnh */
+    }
+}
