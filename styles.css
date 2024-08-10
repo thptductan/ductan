@@ -1,7 +1,7 @@
 /* CSS chung cho phần thân */
 .main-content {
-    background-image: url('Nen.png'); /* Đặt hình nền */
-    background-size: cover; /* Đảm bảo hình nền bao phủ toàn bộ phần thân */
+    background-image: url('./Hình ảnh.png'); /* Đặt hình nền */
+    background-size: contain; /* Đảm bảo hình nền hiển thị toàn bộ mà không bị cắt */
     background-position: center; /* Căn giữa hình nền */
     background-repeat: no-repeat; /* Không lặp lại hình nền */
     margin: 0 auto; /* Căn giữa phần thân */
@@ -13,7 +13,7 @@
 @media (min-width: 769px) {
     .main-content {
         width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang của trình duyệt */
-        height: calc(66.66vw * 85 / 162); /* Tỷ lệ chiều cao dựa trên tỷ lệ hình ảnh */
+        height: calc(66.66vw * 85 / 162); /* Tỷ lệ chiều cao dựa trên tỷ lệ chính xác của hình ảnh */
     }
 }
 
@@ -21,6 +21,6 @@
 @media (max-width: 768px) {
     .main-content {
         width: 100vw; /* Chiều ngang bằng chiều ngang màn hình */
-        height: calc(100vw * 85 / 162); /* Tỷ lệ chiều cao dựa trên tỷ lệ hình ảnh */
+        height: calc(100vw * 85 / 162); /* Tỷ lệ chiều cao dựa trên tỷ lệ chính xác của hình ảnh */
     }
 }
