@@ -12,9 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Event listener for N1 image click
-    n1Image.addEventListener('click', function () {
-        applyBackground();
-    });
+    if (n1Image) {
+        n1Image.addEventListener('click', function () {
+            applyBackground();
+        });
+    }
 
     // Check if it's the home page and apply background
     if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
