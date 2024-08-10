@@ -1,26 +1,35 @@
 body {
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.header img {
-    width: 66.67vw; /* 2/3 chiều ngang của trình duyệt */
-    height: auto; /* Giữ nguyên tỉ lệ chiều cao */
-    display: block;
-    margin: 0 auto;
+.header-wrapper {
+    position: relative;
+    width: 66.66%; /* Tương đương 2/3 chiều ngang của trình duyệt */
+    margin: auto;
 }
 
-@media only screen and (max-width: 768px) {
-    .header img {
-        width: 100%; /* Chiều ngang full trên thiết bị di động */
-        height: auto; /* Giữ nguyên tỉ lệ chiều cao */
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-    }
+.header-image {
+    width: 100%;
+    height: auto;
+}
 
-    body {
-        padding-top: 50px; /* Điều chỉnh padding để phần thân không bị ảnh che */
-    }
+.overlay-images {
+    position: absolute;
+    top: 90%; /* Đặt các ảnh nhỏ chếch xuống 90% so với chiều cao của DauTrang.png */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10%; /* Đảm bảo ảnh nằm cách đều nhau và cách mép ảnh lớn */
+}
+
+.overlay-image {
+    width: 18%; /* Đảm bảo các ảnh nhỏ cách đều nhau */
+    height: auto;
 }
