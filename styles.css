@@ -30,3 +30,36 @@ body {
         height: calc(100vw * 1864 / 1056); /* Tỷ lệ chiều cao dựa trên tỷ lệ chính xác của hình ảnh */
     }
 }
+
+/* CSS cho các hình ảnh đè lên */
+.overlay-images {
+    position: absolute; /* Định vị tuyệt đối để đè lên hình nền */
+    top: 20%; /* Đặt ở 20% chiều cao tính từ lề trên của DT1.png */
+    left: 50%; /* Căn giữa theo chiều ngang */
+    transform: translateX(-50%); /* Đẩy ngược về 50% chiều ngang để căn giữa */
+    display: flex; /* Đặt các hình ảnh thành hàng ngang */
+    justify-content: space-between; /* Cách đều các hình ảnh */
+    width: 80%; /* Đặt chiều ngang của dãy hình ảnh bằng 80% của DT1.png */
+}
+
+.overlay-images img {
+    width: 18%; /* Đảm bảo các hình ảnh có cùng kích thước và vừa với hàng ngang */
+    border-radius: 10px; /* Bo tròn các góc của hình ảnh */
+}
+
+/* Điều chỉnh cho màn hình nhỏ hơn */
+@media (max-width: 768px) {
+    .overlay-images {
+        top: 20%; /* Giữ vị trí 20% cho màn hình nhỏ hơn */
+        width: 90%; /* Tăng chiều ngang để hình ảnh chiếm nhiều không gian hơn */
+    }
+
+    .overlay-images img {
+        width: 18%; /* Đảm bảo hình ảnh nhỏ gọn hơn trên thiết bị di động */
+    }
+}
+
+/* Căn chỉnh phần thân để đè lên hình nền */
+.main-content {
+    position: relative; /* Đảm bảo các phần tử bên trong được căn chỉnh chính xác */
+}
