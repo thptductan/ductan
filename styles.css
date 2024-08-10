@@ -1,159 +1,49 @@
-/* CSS chung cho body để khóa cuộn ngang */
-body {
-    overflow-x: hidden; /* Khóa cuộn ngang */
+/* Đặt các quy tắc chung cho mọi thiết bị */
+body, html {
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Khóa cuộn ngang */
 }
 
-/* CSS chung cho phần thân */
-.main-content {
-    background-image: url('DT1.png') !important; /* Đặt hình nền */
-    background-size: cover; /* Bao phủ toàn bộ phần thân */
-    background-position: center; /* Căn giữa hình nền */
-    background-repeat: no-repeat; /* Không lặp lại hình nền */
-    margin: 0 auto; /* Căn giữa phần thân */
-    display: block; /* Hiển thị phần thân */
-    overflow: hidden; /* Đảm bảo không có cuộn ngang */
-    position: relative; /* Đảm bảo các phần tử con được đặt đúng vị trí */
-}
-
-/* CSS cho các hình ảnh đè lên */
-.overlay-images {
-    position: absolute; /* Định vị tuyệt đối để đè lên hình nền */
-    top: 12.5%; /* Đặt ở 12.5% chiều cao tính từ lề trên của DT1.png */
-    left: 50%; /* Căn giữa theo chiều ngang */
-    transform: translateX(-50%); /* Đẩy ngược về 50% chiều ngang để căn giữa */
-    display: flex; /* Đặt các hình ảnh thành hàng ngang */
-    justify-content: space-between; /* Cách đều các hình ảnh */
-    width: 80%; /* Đặt chiều ngang của dãy hình ảnh bằng 80% của DT1.png */
-}
-
-.overlay-images img {
-    width: 18%; /* Đảm bảo các hình ảnh có cùng kích thước và vừa với hàng ngang */
-}
-
-/* CSS cho Truy cập website */
-.website-links {
-    position: absolute;
-    top: 18%; /* Đặt vị trí lên mức 18% của chiều cao màn hình di động */
-    left: 5%; /* Căn lề trái */
-    right: 5%; /* Căn lề phải */
-    display: flex;
-    justify-content: space-between;
-}
-
-.website-links .link {
-    font-size: 50%; /* Kích thước chữ của liên kết */
-    color: blue; /* Màu chữ xanh dương */
-    text-decoration: none; /* Bỏ gạch chân cho liên kết */
-}
-
-.website-links .link::after {
-    content: ''; /* Thay đổi định dạng gạch chân */
-    text-decoration: underline; /* Gạch chân phần nội dung trong cặp [] */
-}
-
-/* CSS cho Chuyên mục */
-.chuyen-muc {
-    position: absolute;
-    left: calc(100% / 3); /* Căn giữa vào 1/3 bên phải */
-    width: calc(100% / 3); /* Chiều rộng chiếm 1/3 màn hình */
-    top: 20%; /* Đặt vị trí xuống mức 20% của chiều cao màn hình di động */
+.header {
+    width: 100%;
+    overflow: hidden;
     text-align: center;
-    transform: translateX(-50%); /* Căn giữa chiều ngang của 1/3 VBV */
 }
 
-.tieu-de {
-    background-color: #0000FF; /* Nền xanh lam */
-    color: white;
-    padding: 10px; /* Tăng padding để cân đối kích thước chữ */
-    border-top-left-radius: 10px; /* Bo tròn góc trên trái */
-    border-top-right-radius: 10px; /* Bo tròn góc trên phải */
-    border-bottom-left-radius: 0; /* Không bo tròn góc dưới */
-    border-bottom-right-radius: 0; /* Không bo tròn góc dưới */
-    font-size: 80%; /* Kích thước chữ giảm xuống 80% của hiện tại */
+.top-image {
+    width: 100%;
+    height: auto; /* Tự động điều chỉnh chiều cao để giữ nguyên tỷ lệ */
 }
 
-.noi-dung {
-    border: 2px solid #0000FF; /* Kẻ khung xanh lam */
-    padding: 10px; /* Tăng padding để cân đối kích thước chữ */
-    border-bottom-left-radius: 10px; /* Bo tròn góc dưới trái */
-    border-bottom-right-radius: 10px; /* Bo tròn góc dưới phải */
-    border-top-left-radius: 0; /* Không bo tròn góc trên */
-    border-top-right-radius: 0; /* Không bo tròn góc trên */
-    background-color: white; /* Nền trắng */
-}
-
-.noi-dung a {
+/* Màu chữ */
+.text-blue {
     color: blue;
-    text-decoration: underline; /* Gạch chân nội dung */
-    font-size: 80%; /* Kích thước chữ bằng kích thước của Chuyên đề */
 }
 
-/* CSS cho màn hình máy tính để bàn */
-@media (min-width: 769px) {
-    .main-content {
-        width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang của trình duyệt */
-        height: calc(66.66vw * 1864 / 1056); /* Tỷ lệ chiều cao dựa trên tỷ lệ chính xác của hình ảnh */
-    }
+.text-white {
+    color: white;
+}
 
-    .overlay-images {
-        width: 80%; /* Chiều ngang của dãy hình ảnh trên màn hình máy tính */
-    }
+.text-black {
+    color: black;
+}
 
-    .overlay-images img {
-        width: 18%; /* Kích thước hình ảnh trên màn hình máy tính */
-    }
-
-    /* Điều chỉnh vị trí của các phần tử trên màn hình máy tính */
-    .website-links {
-        top: 45%; /* Đặt vị trí xuống mức 45% của chiều cao màn hình */
-        font-size: 100%; /* Kích thước chữ gấp đôi so với hiện tại */
-    }
-
-    .chuyen-muc {
-        top: 50%; /* Đặt vị trí xuống mức 50% của chiều cao màn hình */
-        width: 33.33%; /* Đặt chiều ngang chiếm 1/3 VBV */
-        left: calc(100% / 3); /* Căn giữa vào 1/3 bên phải của VBV */
-        font-size: 200%; /* Kích thước chữ gấp đôi so với hiện tại */
+/* Quy định cho thiết bị di động */
+@media (max-width: 1023px) {
+    .top-image {
+        width: 100%; /* Chiều ngang bằng chiều ngang thiết bị di động */
     }
 }
 
-/* CSS cho màn hình di động */
-@media (max-width: 768px) {
-    .main-content {
-        width: 100vw; /* Chiều ngang bằng chiều ngang màn hình */
-        height: calc(100vw * 1864 / 1056); /* Tỷ lệ chiều cao dựa trên tỷ lệ chính xác của hình ảnh */
+/* Quy định cho màn hình máy tính */
+@media (min-width: 1024px) {
+    body {
+        width: 66.66%; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
+        margin: 0 auto; /* Căn giữa phần nội dung */
     }
 
-    .overlay-images {
-        width: 90%; /* Chiều ngang của dãy hình ảnh trên màn hình di động */
-    }
-
-    .overlay-images img {
-        width: 18%; /* Kích thước hình ảnh trên màn hình di động */
-    }
-
-    /* Điều chỉnh vị trí của các phần tử trên màn hình di động */
-    .website-links {
-        top: 18%; /* Đặt vị trí lên mức 18% của chiều cao màn hình */
-        font-size: 50%; /* Kích thước chữ bằng kích thước của Sổ tay... */
-        color: blue; /* Màu xanh dương */
-    }
-
-    .website-links a {
-        text-decoration: none; /* Bỏ gạch chân */
-    }
-
-    .website-links .link::after {
-        text-decoration: underline; /* Gạch chân nội dung trong cặp [] */
-    }
-
-    .chuyen-muc {
-        top: 20%; /* Đặt vị trí xuống mức 20% của chiều cao màn hình */
-        left: calc(100% / 3); /* Căn giữa vào 1/3 bên phải của VBV */
-        width: calc(100% / 3); /* Đặt chiều ngang chiếm 1/3 màn hình */
-        transform: translateX(-50%); /* Căn giữa chiều ngang của 1/3 VBV */
-        font-size: 80%; /* Kích thước chữ giảm xuống 80% của hiện tại */
+    .top-image {
+        width: 100%; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
     }
 }
