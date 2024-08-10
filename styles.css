@@ -10,7 +10,7 @@ body {
 
 .header-wrapper {
     position: relative;
-    width: 66.66%; /* Tương đương 2/3 chiều ngang của trình duyệt */
+    width: 66.66%; /* Tương đương 2/3 chiều ngang của trình duyệt trên máy tính */
     margin: auto;
     max-width: 100vw; /* Đảm bảo không vượt quá chiều rộng của trình duyệt */
 }
@@ -18,6 +18,8 @@ body {
 .header-image {
     width: 100%;
     height: auto;
+    max-width: calc(66.66vw * 1.5); /* Tăng tối đa chiều ngang của ảnh lên 150% của 2/3 chiều ngang của trình duyệt */
+    min-width: calc(66.66vw); /* Đảm bảo ảnh không nhỏ hơn 2/3 chiều ngang của trình duyệt */
 }
 
 .overlay-images {
