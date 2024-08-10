@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         mainContent.style.backgroundSize = 'cover';
         mainContent.style.backgroundPosition = 'center';
         mainContent.style.backgroundRepeat = 'no-repeat';
+        mainContent.classList.add('show-main-content'); // Hiện phần thân
     }
 
     // Event listener for N1 image click
