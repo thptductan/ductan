@@ -102,3 +102,33 @@ nav a:nth-child(5) { background-color: purple; }
         padding: 0.4rem 0.75rem; /* Điều chỉnh padding cho vừa vặn */
     }
 }
+/* CSS cho phần thân khi ở mục Trang chủ */
+.hoatdong {
+    width: 66.67%;
+    float: left;
+    padding: 1.25rem; /* Thay đổi từ px sang rem */
+    background-image: url('Nen1.png'); /* Đặt hình nền */
+    background-size: cover; /* Đảm bảo hình nền phủ đầy vùng */
+    background-position: center; /* Căn giữa hình nền */
+}
+
+/* CSS cho phần thân khi ở mục Hoạt động, Học sinh tiêu biểu, Hoạt động của Cựu học sinh */
+.hoatdong {
+    width: 66.67%;
+    float: left;
+    padding: 1.25rem; /* Thay đổi từ px sang rem */
+    background-image: url('Nen2.png'); /* Đặt hình nền */
+    background-size: cover; /* Đảm bảo hình nền phủ đầy vùng */
+    background-position: center; /* Căn giữa hình nền */
+}
+
+.lienket {
+    width: 33.33%;
+    float: right;
+    padding: 1.25rem; /* Thay đổi từ px sang rem */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    background-image: url('Nen2.png'); /* Đặt hình nền nếu cần */
+    background-size: cover; /* Đảm bảo hình nền phủ đầy vùng */
+    background-position: center; /* Căn giữa hình nền */
+}
