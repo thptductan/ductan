@@ -30,7 +30,6 @@ body {
 
 .overlay-images img {
     width: 18%; /* Đảm bảo các hình ảnh có cùng kích thước và vừa với hàng ngang */
-    border-radius: 10px; /* Bo tròn các góc của hình ảnh */
 }
 
 /* CSS cho Truy cập website */
