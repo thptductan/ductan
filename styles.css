@@ -60,11 +60,11 @@ nav {
 nav .nav-item {
     flex: 1; /* Các mục điều hướng chiếm đều không gian ngang */
     text-align: center; /* Căn giữa chữ */
-    padding: 1rem; /* Khoảng cách bên trong */
+    padding: 0.25rem; /* Khoảng cách bên trong */
     color: white; /* Màu chữ */
     text-decoration: none; /* Bỏ gạch chân */
     border-radius: 10px; /* Bo tròn các góc */
-    margin: 0.5rem; /* Khoảng cách giữa các mục điều hướng */
+    margin: 0.25rem; /* Khoảng cách giữa các mục điều hướng */
     transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển màu nền và phóng to khi hover */
 }
 
