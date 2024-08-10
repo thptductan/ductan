@@ -1,6 +1,6 @@
 /* CSS chung cho phần thân */
 .main-content {
-    background-image: url('Hình ảnh.png'); /* Đặt hình nền */
+    background-image: url('Nen.png'); /* Đặt hình nền */
     background-size: cover; /* Đảm bảo hình nền bao phủ toàn bộ phần thân */
     background-position: center; /* Căn giữa hình nền */
     background-repeat: no-repeat; /* Không lặp lại hình nền */
