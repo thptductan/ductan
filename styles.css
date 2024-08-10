@@ -1,3 +1,4 @@
+ã
 body {
     margin: 0;
     padding: 0;
@@ -20,41 +21,16 @@ body {
 
 .overlay-images {
     position: absolute;
-    top: 75%; /* Vị trí theo chiều cao của DauTrang.png */
+    top: 70%; /* Vị trí theo chiều cao của DauTrang.png */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    justify-content: space-around; /* Chia đều khoảng cách giữa các ảnh */
-    width: 80%; /* Chiều rộng của dãy ảnh, đảm bảo cách đều các mép */
+    justify-content: space-between; /* Chia đều khoảng cách giữa các ảnh */
+    width: 90%; /* Chiều rộng của dãy ảnh, đảm bảo cách đều các mép */
 }
 
 .overlay-images img {
     flex: 1;
     max-width: 16%; /* Đảm bảo mỗi ảnh chiếm khoảng 16% chiều rộng để có khoảng trống ở giữa và hai bên */
-}
-.header-images img {
-    position: absolute;
-    top: 70%;
-    transform: translateY(-70%);
     border-radius: 15px; /* Bo tròn góc của các ảnh */
-}
-
-.header-images img:nth-child(1) {
-    left: calc(10% + 2%); /* Cách viền bên trái của DauTrang.png một khoảng */
-}
-
-.header-images img:nth-child(2) {
-    left: calc(30% + 2%); /* Cách ảnh thứ nhất một khoảng đều nhau */
-}
-
-.header-images img:nth-child(3) {
-    left: calc(50% + 2%); /* Cách ảnh thứ hai một khoảng đều nhau */
-}
-
-.header-images img:nth-child(4) {
-    left: calc(70% + 2%); /* Cách ảnh thứ ba một khoảng đều nhau */
-}
-
-.header-images img:nth-child(5) {
-    left: calc(90% + 2%); /* Cách ảnh thứ tư một khoảng đều nhau */
 }
