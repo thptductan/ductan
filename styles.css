@@ -1,139 +1,36 @@
-/* CSS chung cho body để khóa cuộn ngang */
-body {
-    overflow-x: hidden; /* Khóa cuộn ngang */
-    margin: 0;
-    padding: 0;
-}
-
-/* CSS chung cho phần thân */
-.main-content {
-    background-image: url('DT1.png') !important; /* Đặt hình nền */
-    background-size: cover; /* Bao phủ toàn bộ phần thân */
-    background-position: center; /* Căn giữa hình nền */
-    background-repeat: no-repeat; /* Không lặp lại hình nền */
-    margin: 0 auto; /* Căn giữa phần thân */
-    display: block; /* Hiển thị phần thân */
-    overflow: hidden; /* Đảm bảo không có cuộn ngang */
-    position: relative; /* Đảm bảo các phần tử con được đặt đúng vị trí */
-}
-
-/* CSS cho các hình ảnh đè lên */
-.overlay-images {
-    position: absolute; /* Định vị tuyệt đối để đè lên hình nền */
-    top: 12.5%; /* Đặt ở 12.5% chiều cao tính từ lề trên của DT1.png */
-    left: 50%; /* Căn giữa theo chiều ngang */
-    transform: translateX(-50%); /* Đẩy ngược về 50% chiều ngang để căn giữa */
-    display: flex; /* Đặt các hình ảnh thành hàng ngang */
-    justify-content: space-between; /* Cách đều các hình ảnh */
-    width: 80%; /* Đặt chiều ngang của dãy hình ảnh bằng 80% của DT1.png */
-}
-
-.overlay-images img {
-    width: 18%; /* Đảm bảo các hình ảnh có cùng kích thước và vừa với hàng ngang */
-    border-radius: 10px; /* Bo tròn các góc của hình ảnh */
-}
-
-/* CSS cho Truy cập website */
-.website-links {
-    position: absolute;
-    left: 5%; /* Căn lề trái */
-    right: 5%; /* Căn lề phải */
-    display: flex;
-    justify-content: space-between;
-    color: blue; /* Màu xanh dương */
-}
-
-.website-links .underline {
-    text-decoration: underline; /* Gạch chân các liên kết */
-}
-
-.website-links a:not(.underline) {
-    text-decoration: none; /* Bỏ gạch chân cho dòng "Truy cập website" */
-}
-
-/* CSS cho Chuyên mục */
-.chuyen-muc {
-    position: absolute;
-    left: calc(100% / 3); /* Căn giữa vào 1/3 bên phải */
-    width: calc(100% / 3); /* Chiều rộng chiếm 1/3 màn hình */
-    text-align: center;
-}
-
-.tieu-de {
-    background-color: #0000FF; /* Nền xanh lam */
-    color: white;
-    padding: 5px;
-    border-top-left-radius: 10px; /* Bo tròn góc trên trái */
-    border-top-right-radius: 10px; /* Bo tròn góc trên phải */
-    border-bottom-left-radius: 0; /* Không bo tròn góc dưới */
-    border-bottom-right-radius: 0; /* Không bo tròn góc dưới */
-}
-
-.noi-dung {
-    border: 2px solid #0000FF; /* Kẻ khung xanh lam */
-    padding: 5px;
-    border-bottom-left-radius: 10px; /* Bo tròn góc dưới trái */
-    border-bottom-right-radius: 10px; /* Bo tròn góc dưới phải */
-    border-top-left-radius: 0; /* Không bo tròn góc trên */
-    border-top-right-radius: 0; /* Không bo tròn góc trên */
-    background-color: white; /* Nền trắng */
-}
-
-.noi-dung a {
-    color: blue;
-    text-decoration: underline;
-}
-
-/* CSS cho màn hình máy tính để bàn */
-@media (min-width: 769px) {
-    .main-content {
-        width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang của trình duyệt */
-        height: calc(66.66vw * 1864 / 1056); /* Tỷ lệ chiều cao dựa trên tỷ lệ chính xác của hình ảnh */
-    }
-
-    .overlay-images {
-        width: 80%; /* Chiều ngang của dãy hình ảnh trên màn hình máy tính */
-    }
-
-    .overlay-images img {
-        width: 18%; /* Kích thước hình ảnh trên màn hình máy tính */
-    }
-
-    /* Điều chỉnh vị trí của các phần tử trên màn hình máy tính */
-    .website-links {
-        top: 45%; /* Đặt vị trí xuống mức 45% của chiều cao màn hình */
-        font-size: 50%; /* Giảm kích thước chữ xuống 50% */
-    }
-
-    .chuyen-muc {
-        top: 50%; /* Đặt vị trí xuống mức 50% của chiều cao màn hình */
-        font-size: 50%; /* Giảm kích thước chữ xuống 50% */
-    }
-}
-
-/* CSS cho màn hình di động */
-@media (max-width: 768px) {
-    .main-content {
-        width: 100vw; /* Chiều ngang bằng chiều ngang màn hình */
-        height: calc(100vw * 1864 / 1056); /* Tỷ lệ chiều cao dựa trên tỷ lệ chính xác của hình ảnh */
-    }
-
-    .overlay-images {
-        width: 90%; /* Chiều ngang của dãy hình ảnh trên màn hình di động */
-    }
-
-    .overlay-images img {
-        width: 18%; /* Kích thước hình ảnh trên màn hình di động */
-    }
-
-    /* Điều chỉnh vị trí của các phần tử trên màn hình di động */
-    .website-links {
-        top: 19%; /* Đặt vị trí xuống mức 19% của chiều cao màn hình */
-        font-size: 50%; /* Giảm kích thước chữ xuống 50% */
-        color: blue; /* Màu xanh dương */
-    }
-
-    .chuyen-muc {
-        top: 20%; /* Đặt vị trí xuống mức 20% của chiều cao màn hình */
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THPT Đức Tân</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-content">
+        <div class="overlay-images">
+            <img src="D1.png" alt="D1">
+            <img src="D2.png" alt="D2">
+            <img src="D3.png" alt="D3">
+            <img src="D4.png" alt="D4">
+            <img src="D5.png" alt="D5">
+        </div>
+        <!-- Nội dung phần thân -->
+        <h1>C</h1>
+        <p>.</p>
+    </div>
+    <!-- Truy cập website -->
+    <div class="website-links">
+        <a href="https://moet.gov.vn" class="link">Truy cập website: Bộ Giáo dục và Đào tạo</a>
+        <a href="https://sgddt.binhthuan.gov.vn" class="link">Truy cập website: Sở Giáo dục và Đào tạo Bình Thuận</a>
+    </div>
+    
+    <!-- Chuyên mục -->
+    <div class="chuyen-muc">
+        <div class="tieu-de">Chuyên đề:</div>
+        <div class="noi-dung">
+            <a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn">Sổ tay điện tử cải cách hành chính tỉnh Bình Thuận</a>
+        </div>
+    </div>
+</body>
+</html>
