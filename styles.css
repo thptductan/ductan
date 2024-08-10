@@ -1,3 +1,4 @@
+/* Đặt font chữ mặc định cho toàn bộ trang */
 body {
     font-family: 'Times New Roman', serif; /* Sử dụng font Times New Roman */
     margin: 0;
@@ -5,8 +6,10 @@ body {
     color: #333;
     background-color: #f0f0f0;
     font-size: 2vw; /* Đổi từ px sang vw để chữ tỷ lệ với màn hình */
+    overflow-x: hidden; /* Ngăn chặn cuộn ngang không cần thiết */
 }
 
+/* Căn giữa nội dung và đặt chiều rộng 2/3 của màn hình */
 .content-wrapper {
     max-width: 66.67%; /* 2/3 chiều ngang */
     margin: 0 auto;
@@ -15,6 +18,7 @@ body {
     padding: 20px;
 }
 
+/* Đặt định dạng cho phần đầu của trang */
 header {
     background-color: #4CAF50; /* Nền màu xanh lá */
     text-align: center;
@@ -22,19 +26,28 @@ header {
     color: white;
 }
 
+/* Định dạng tiêu đề */
 header h1 {
-    font-size: 2.5vw; /* Đổi kích thước chữ cho dòng tiêu đề chính */
+    font-size: 2vw; /* Đổi kích thước chữ cho dòng tiêu đề chính */
     color: blue; /* Đổi màu chữ thành xanh dương */
     margin: 0.5rem 0; /* Điều chỉnh lề để phù hợp */
 }
 
+/* Định dạng tiêu đề phụ */
+header h2 {
+    font-size: 2vw; /* Đổi kích thước chữ cho dòng tiêu đề phụ */
+    color: blue; /* Đổi màu chữ thành xanh dương */
+    margin: 0.5rem 0; /* Điều chỉnh lề để phù hợp */
+}
+
+/* Định dạng cho đoạn văn */
 header p {
     font-size: 0.7em; /* Đổi kích thước chữ nhỏ hơn 70% so với kích thước hiện tại */
     color: purple; /* Đổi màu chữ nếu cần */
     margin: 0.5rem 0; /* Điều chỉnh lề để phù hợp */
 }
 
-/* Quy tắc chung cho các thiết bị lớn hơn */
+/* Định dạng liên kết trong menu điều hướng */
 nav a {
     padding: 1vw 2vw;
     border-radius: 1vw;
@@ -46,8 +59,12 @@ nav a {
 
 /* Quy tắc riêng cho các thiết bị di động */
 @media (max-width: 768px) {
+    .content-wrapper {
+        max-width: 100%; /* Full màn hình trên thiết bị di động */
+    }
+    
     nav a {
-        font-size: 10px; /* Giảm kích thước chữ trên các thiết bị nhỏ */
+        font-size: 14px; /* Giảm kích thước chữ trên các thiết bị nhỏ */
         padding: 1rem 2rem; /* Điều chỉnh khoảng cách bên trong cho phù hợp */
     }
 }
@@ -55,11 +72,12 @@ nav a {
 /* Quy tắc cho các thiết bị rất nhỏ */
 @media (max-width: 480px) {
     nav a {
-        font-size: 8px; /* Kích thước chữ nhỏ hơn cho các màn hình nhỏ hơn */
+        font-size: 12px; /* Kích thước chữ nhỏ hơn cho các màn hình nhỏ hơn */
         padding: 0.8rem 1.5rem; /* Điều chỉnh padding cho vừa vặn */
     }
 }
 
+/* Định dạng cho các phần bên trái và bên phải trong phần thân */
 .hoatdong {
     width: 66.67%;
     float: left;
@@ -80,6 +98,7 @@ nav a {
     background-position: center; /* Căn giữa hình nền */
 }
 
+/* Định dạng cho danh sách liên kết */
 .lienket ul {
     list-style-type: none;
     padding: 0;
