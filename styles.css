@@ -58,22 +58,9 @@ body {
         border-radius: 15px; /* Bo tròn góc của các ảnh */
     }
 }
-/* Phần thân của trang chủ */
-.body-content {
-    background-image: url('Nen2.png'); /* Hình nền cho phần thân */
-    background-size: cover; /* Đảm bảo hình nền phủ toàn bộ phần thân */
-    background-position: center; /* Căn giữa hình nền */
-    background-repeat: no-repeat; /* Không lặp lại hình nền */
-    min-height: 100vh; /* Chiều cao tối thiểu của phần thân là 100% chiều cao của cửa sổ trình duyệt */
-    width: 100%; /* Chiếm toàn bộ chiều ngang của cửa sổ trình duyệt */
-    padding: 20px; /* Khoảng cách từ viền phần thân đến nội dung bên trong */
-}
-
-/* Hiển thị phần thân chỉ khi trang chủ hoặc khi nhấn vào N1.png */
-.page-home .body-content {
-    display: block; /* Hiển thị phần thân khi là trang chủ */
-}
-
-.page-other .body-content {
-    display: none; /* Ẩn phần thân khi không phải trang chủ */
+/* Phần thân không có hình nền mặc định */
+.main-content {
+    width: 66.66%; /* Chiều ngang bằng với phần đầu */
+    height: auto; /* Chiều cao tự động điều chỉnh */
+    margin-top: 20px; /* Khoảng cách giữa phần đầu và phần thân */
 }
