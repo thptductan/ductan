@@ -62,16 +62,14 @@ body {
 /* CSS cho phần thân */
 .main-content {
     width: 100%; /* Chiều ngang chiếm toàn bộ màn hình */
-    margin: 0; /* Loại bỏ margin để chiếm toàn bộ chiều ngang */
+    margin: 0; /* Loại bỏ margin */
     padding: 0; /* Loại bỏ padding nếu có */
     background-image: url('Nen1.png'); /* Đặt hình nền */
     background-size: cover; /* Đảm bảo hình nền bao phủ toàn bộ phần thân */
-    background-position: center; /* Căn giữa hình nền để không bị cắt */
+    background-position: center; /* Căn giữa hình nền */
     background-repeat: no-repeat; /* Không lặp lại hình nền */
-    height: 100vh; /* Chiều cao toàn bộ màn hình */
+    aspect-ratio: 161 / 278; /* Tỷ lệ khung hình của hình nền (thay đổi tỷ lệ cho phù hợp với hình nền của bạn) */
     display: block; /* Hiển thị phần thân */
-    position: relative; /* Để phần thân dính sát với phần đầu */
-    top: 0; /* Đảm bảo phần thân bắt đầu ngay dưới phần đầu */
     overflow: hidden; /* Đảm bảo không có cuộn ngang */
 }
 
