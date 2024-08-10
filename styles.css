@@ -20,7 +20,7 @@ body {
 /* CSS cho các hình ảnh đè lên */
 .overlay-images {
     position: absolute; /* Định vị tuyệt đối để đè lên hình nền */
-    top: 14%; /* Đặt ở 20% chiều cao tính từ lề trên của DT1.png */
+    top: 12.5%; /* Đặt ở 20% chiều cao tính từ lề trên của DT1.png */
     left: 50%; /* Căn giữa theo chiều ngang */
     transform: translateX(-50%); /* Đẩy ngược về 50% chiều ngang để căn giữa */
     display: flex; /* Đặt các hình ảnh thành hàng ngang */
