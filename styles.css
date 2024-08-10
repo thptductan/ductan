@@ -35,6 +35,7 @@ body {
     flex: 1;
     max-width: 16%; /* Đảm bảo mỗi ảnh chiếm khoảng 16% chiều rộng để có khoảng trống ở giữa và hai bên */
 }
+
 /* Quy định cụ thể cho màn hình điện thoại */
 @media (max-width: 768px) {
     .header-wrapper {
