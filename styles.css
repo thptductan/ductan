@@ -1,4 +1,4 @@
-/* CSS cho body để khóa cuộn ngang */
+/* CSS chung cho body để khóa cuộn ngang */
 body {
     overflow-x: hidden; /* Khóa cuộn ngang */
     margin: 0;
@@ -33,61 +33,50 @@ body {
     border-radius: 10px; /* Bo tròn các góc của hình ảnh */
 }
 
-/* CSS cho Vùng bài viết */
-#article-section {
+/* CSS cho liên kết website */
+.website-links {
     position: absolute;
-    top: 20%; /* Chiều cao tính từ lề trên của DT1.png */
-    left: 5%; /* Chiều ngang tính từ lề trái của DT1.png */
-    width: 90%; /* Chiều ngang của Vùng bài viết */
-    height: 70%; /* Chiều cao của Vùng bài viết */
-    background-color: orange; /* Màu nền của Vùng bài viết */
-    border-radius: 15px; /* Bo tròn góc của Vùng bài viết */
-    color: #0033cc; /* Màu chữ */
-    padding: 20px; /* Khoảng cách từ viền đến nội dung */
-    box-sizing: border-box; /* Bao gồm padding và border vào kích thước tổng thể */
+    top: 18%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
 }
 
-/* CSS cho các liên kết */
-#article-section a {
-    color: #0033cc; /* Màu chữ của liên kết */
-    text-decoration: none; /* Xóa gạch chân */
+.website-links a:first-child {
+    text-align: left; /* Căn lề trái */
+    color: #0000EE; /* Màu xanh dương */
+    text-decoration: underline;
 }
 
-#article-section a:hover {
-    text-decoration: underline; /* Gạch chân khi hover */
+.website-links a:last-child {
+    position: absolute;
+    right: 5%; /* Căn lề phải ở mức 5% so với lề phải */
+    color: #0000EE; /* Màu xanh dương */
+    text-decoration: underline;
 }
 
-/* CSS cho phần bên trái và bên phải */
-#article-left {
-    float: left; /* Đặt bên trái */
-    width: 66.66%; /* Chiếm 2/3 chiều ngang của Vùng bài viết */
-    height: 100%; /* Chiều cao toàn bộ Vùng bài viết */
-    overflow-y: auto; /* Cuộn dọc nếu cần */
+/* CSS cho phần nội dung đặc biệt */
+.featured-content {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    width: 30%;
+    text-align: center;
 }
 
-#article-right {
-    float: right; /* Đặt bên phải */
-    width: 33.33%; /* Chiếm 1/3 chiều ngang của Vùng bài viết */
-    height: 100%; /* Chiều cao toàn bộ Vùng bài viết */
-    overflow-y: auto; /* Cuộn dọc nếu cần */
+.featured-content .title {
+    background-color: #00f; /* Màu xanh lam */
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
 }
 
-/* CSS cho các bài viết */
-.article-item {
-    margin-bottom: 20px; /* Khoảng cách giữa các bài viết */
-}
-
-.article-item img {
-    width: 100%; /* Chiều rộng của hình ảnh */
-    height: auto; /* Chiều cao tự động */
-}
-
-.article-item h3 {
-    margin: 10px 0; /* Khoảng cách trên và dưới tiêu đề */
-}
-
-.article-item p {
-    margin: 0; /* Loại bỏ khoảng cách xung quanh đoạn văn */
+.featured-content .content {
+    border: 2px solid #00f;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #fff;
 }
 
 /* CSS cho màn hình máy tính để bàn */
@@ -104,10 +93,6 @@ body {
     .overlay-images img {
         width: 18%; /* Kích thước hình ảnh trên màn hình máy tính */
     }
-
-    #article-section {
-        width: 90%; /* Chiều ngang của Vùng bài viết trên màn hình máy tính */
-    }
 }
 
 /* CSS cho màn hình di động */
@@ -123,9 +108,5 @@ body {
 
     .overlay-images img {
         width: 18%; /* Kích thước hình ảnh trên màn hình di động */
-    }
-
-    #article-section {
-        width: 100%; /* Chiều ngang của Vùng bài viết trên màn hình di động */
     }
 }
