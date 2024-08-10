@@ -20,7 +20,7 @@ body {
 
 .overlay-images {
     position: absolute;
-    top: 70%; /* Thay đổi từ 90% thành 70% để di chuyển ảnh lên cao hơn */
+    top: 75%; /* Thay đổi từ 90% thành 70% để di chuyển ảnh lên cao hơn */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
