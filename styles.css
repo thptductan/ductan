@@ -1,35 +1,46 @@
-/* Căn chỉnh phần đầu */
-.header {
-    width: 66.67%; /* 2/3 chiều ngang cho máy tính bàn */
-    margin: 0 auto; /* Căn giữa ảnh */
-    position: relative; /* Để cố định ảnh khi lướt trên di động */
+/* Đặt ảnh làm phần đầu trang */
+header {
+    background-image: url('DauTrang.png'); /* Đặt ảnh làm phần đầu trang */
+    background-size: cover; /* Đảm bảo ảnh phủ đầy vùng */
+    background-position: center; /* Căn giữa ảnh */
+    width: 66.67vw; /* Chiều ngang ảnh chiếm 2/3 chiều ngang trình duyệt */
+    height: auto; /* Tự động điều chỉnh chiều cao để giữ tỷ lệ ảnh */
+    position: fixed; /* Đặt ảnh cố định ở đầu trang */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Đảm bảo ảnh nằm dưới các phần tử khác */
 }
 
-/* Ảnh đầu trang */
-.header img {
-    width: 100%; /* Đảm bảo ảnh chiếm 100% chiều rộng của phần đầu */
-    height: auto; /* Giữ tỷ lệ ảnh */
-    display: block; /* Loại bỏ khoảng trắng dưới ảnh */
-}
-
-/* Quy tắc cho máy tính bàn */
+/* Định dạng cho máy tính bàn */
 @media (min-width: 769px) {
-    .header {
-        max-width: 66.67%; /* Đảm bảo ảnh chiếm 2/3 chiều ngang */
+    body {
+        overflow-x: hidden; /* Ngăn chặn cuộn ngang */
+    }
+
+    header {
+        width: 66.67vw; /* Đặt chiều ngang là 2/3 chiều ngang trình duyệt */
+        max-width: 100vw; /* Chiều ngang không vượt quá chiều rộng trình duyệt */
+    }
+
+    body {
+        zoom: 100%; /* Thiết lập tỷ lệ zoom mặc định cho phần thân */
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        body {
+            zoom: 150%; /* Cho phép zoom tối đa lên 150% */
+        }
     }
 }
 
-/* Quy tắc cho điện thoại di động */
+/* Định dạng cho di động */
 @media (max-width: 768px) {
-    .header {
-        width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều ngang của màn hình */
-        position: fixed; /* Cố định ảnh ở đầu trang */
-        top: 0; /* Đặt ảnh ở trên cùng */
-        left: 0;
-        z-index: 1000; /* Đảm bảo ảnh luôn ở trên cùng */
+    header {
+        width: 100vw; /* Chiều ngang ảnh chiếm toàn bộ chiều ngang màn hình di động */
+        height: auto; /* Tự động điều chỉnh chiều cao để giữ tỷ lệ ảnh */
     }
 
-    main {
-        margin-top: 0; /* Đảm bảo phần thân không bị che khuất bởi ảnh đầu */
+    body {
+        zoom: 100%; /* Phần thân zoom bình thường */
     }
 }
