@@ -1,123 +1,76 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', serif; /* Sử dụng font Times New Roman */
     margin: 0;
     padding: 0;
     color: #333;
     background-color: #f0f0f0;
-    font-size: 16px; /* Kích thước font cơ bản */
+    font-size: 2vw; /* Đổi từ px sang vw để chữ tỷ lệ với màn hình */
 }
 
 .content-wrapper {
-    max-width: 66.67%;
+    max-width: 66.67%; /* 2/3 chiều ngang */
     margin: 0 auto;
-    background-color: white;
+    background-color: white; /* Màu nền của vùng nội dung */
     border: 1px solid #ccc;
-    padding: 1.25rem; /* Thay đổi từ px sang rem */
+    padding: 20px;
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Nền màu xanh lá */
     text-align: center;
-    padding: 1.25rem 0; /* Thay đổi từ px sang rem */
+    padding: 2vw 0; /* Điều chỉnh padding */
     color: white;
 }
 
 header h1 {
-    font-size: 2rem; /* Thay đổi từ px sang rem */
+    font-size: 2vw; /* Đổi kích thước chữ cho dòng tiêu đề chính */
     color: blue; /* Đổi màu chữ thành xanh dương */
-    margin: 0.5rem 0; /* Thay đổi từ px sang rem */
+    margin: 0.5rem 0; /* Điều chỉnh lề để phù hợp */
+}
+
+header h2 {
+    font-size: 2vw; /* Đổi kích thước chữ cho dòng tiêu đề phụ */
+    color: blue; /* Đổi màu chữ thành xanh dương */
+    margin: 0.5rem 0; /* Điều chỉnh lề để phù hợp */
 }
 
 header p {
-    font-size: 1.5rem; /* Thay đổi từ px sang rem */
-    color: blue; /* Đổi màu chữ thành xanh dương */
-    margin: 0.5rem 0; /* Thay đổi từ px sang rem */
+    font-size: 0.7em; /* Đổi kích thước chữ nhỏ hơn 70% so với kích thước hiện tại */
+    color: purple; /* Đổi màu chữ nếu cần */
+    margin: 0.5rem 0; /* Điều chỉnh lề để phù hợp */
 }
 
-nav {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1rem; /* Thay đổi từ px sang rem */
-}
-
+/* Quy tắc chung cho các thiết bị lớn hơn */
 nav a {
-    padding: 0.5rem 1rem; /* Thay đổi từ px sang rem */
-    border-radius: 0.5rem; /* Thay đổi từ px sang rem */
+    padding: 1vw 2vw;
+    border-radius: 1vw;
     color: white;
-    font-size: 1rem; /* Kích thước chữ cơ bản */
+    font-size: 16px; /* Kích thước chữ cho các thiết bị lớn */
     text-decoration: none;
     white-space: nowrap; /* Đảm bảo text không bị xuống dòng */
 }
 
-nav a:nth-child(1) { background-color: blue; }
-nav a:nth-child(2) { background-color: darkblue; }
-nav a:nth-child(3) { background-color: red; }
-nav a:nth-child(4) { background-color: pink; }
-nav a:nth-child(5) { background-color: purple; }
-
-.hoatdong {
-    width: 66.67%;
-    float: left;
-    padding: 1.25rem; /* Thay đổi từ px sang rem */
-}
-
-.lienket {
-    width: 33.33%;
-    float: right;
-    padding: 1.25rem; /* Thay đổi từ px sang rem */
-    background-color: #fff;
-    border: 1px solid #ccc;
-}
-
-.lienket ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.lienket li {
-    margin-bottom: 0.5rem; /* Thay đổi từ px sang rem */
-}
-
-.lienket a {
-    color: blue;
-    text-decoration: none;
-}
-
-.lienket a:hover {
-    text-decoration: underline;
-}
-
-/* Quy tắc cho các thiết bị nhỏ */
+/* Quy tắc riêng cho các thiết bị di động */
 @media (max-width: 768px) {
     nav a {
-        font-size: 0.875rem; /* Giảm kích thước chữ trên các thiết bị nhỏ */
-        padding: 0.5rem 1rem; /* Điều chỉnh padding cho phù hợp */
+        font-size: 14px; /* Giảm kích thước chữ trên các thiết bị nhỏ */
+        padding: 1rem 2rem; /* Điều chỉnh khoảng cách bên trong cho phù hợp */
     }
 }
 
 /* Quy tắc cho các thiết bị rất nhỏ */
 @media (max-width: 480px) {
     nav a {
-        font-size: 0.75rem; /* Kích thước chữ nhỏ hơn cho các màn hình nhỏ hơn */
-        padding: 0.4rem 0.75rem; /* Điều chỉnh padding cho vừa vặn */
+        font-size: 12px; /* Kích thước chữ nhỏ hơn cho các màn hình nhỏ hơn */
+        padding: 0.8rem 1.5rem; /* Điều chỉnh padding cho vừa vặn */
     }
 }
-/* CSS cho phần thân khi ở mục Trang chủ */
+
 .hoatdong {
     width: 66.67%;
     float: left;
     padding: 1.25rem; /* Thay đổi từ px sang rem */
     background-image: url('Nen1.png'); /* Đặt hình nền */
-    background-size: cover; /* Đảm bảo hình nền phủ đầy vùng */
-    background-position: center; /* Căn giữa hình nền */
-}
-
-/* CSS cho phần thân khi ở mục Hoạt động, Học sinh tiêu biểu, Hoạt động của Cựu học sinh */
-.hoatdong {
-    width: 66.67%;
-    float: left;
-    padding: 1.25rem; /* Thay đổi từ px sang rem */
-    background-image: url('Nen2.png'); /* Đặt hình nền */
     background-size: cover; /* Đảm bảo hình nền phủ đầy vùng */
     background-position: center; /* Căn giữa hình nền */
 }
@@ -131,4 +84,22 @@ nav a:nth-child(5) { background-color: purple; }
     background-image: url('Nen2.png'); /* Đặt hình nền nếu cần */
     background-size: cover; /* Đảm bảo hình nền phủ đầy vùng */
     background-position: center; /* Căn giữa hình nền */
+}
+
+.lienket ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lienket li {
+    margin-bottom: 1vw;
+}
+
+.lienket a {
+    color: blue;
+    text-decoration: none;
+}
+
+.lienket a:hover {
+    text-decoration: underline;
 }
