@@ -49,8 +49,9 @@ body, html {
 /* Quy định cho màn hình máy tính */
 @media (min-width: 1024px) {
     body {
-        width: 66.66%; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
+        max-width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
         margin: 0 auto; /* Căn giữa phần nội dung */
+        position: relative;
     }
 
     .top-image {
