@@ -20,7 +20,7 @@ body {
 
 .overlay-images {
     position: absolute;
-    top: 75%; /* Vị trí theo chiều cao của DauTrang.png */
+    top: 80%; /* Vị trí theo chiều cao của DauTrang.png */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
