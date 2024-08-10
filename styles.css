@@ -27,14 +27,14 @@ header {
 }
 
 /* Định dạng tiêu đề */
-header h1 {
+header h2 {
     font-size: 2vw; /* Đổi kích thước chữ cho dòng tiêu đề chính */
     color: blue; /* Đổi màu chữ thành xanh dương */
     margin: 0.5rem 0; /* Điều chỉnh lề để phù hợp */
 }
 
 /* Định dạng tiêu đề phụ */
-header h2 {
+header h1 {
     font-size: 2vw; /* Đổi kích thước chữ cho dòng tiêu đề phụ */
     color: red; /* Đổi màu chữ thành xanh dương */
     margin: 0.5rem 0; /* Điều chỉnh lề để phù hợp */
@@ -68,7 +68,7 @@ nav a {
     }
     
     nav a {
-        font-size: 12.8px; /* 80% của 16px */
+        font-size: 10px; /* 80% của 16px */
         padding: 1rem 2rem; /* Điều chỉnh khoảng cách bên trong cho phù hợp */
     }
 }
@@ -80,7 +80,7 @@ nav a {
     }
 
     nav a {
-        font-size: 12px; /* Kích thước chữ nhỏ hơn cho các màn hình nhỏ hơn */
+        font-size: 8px; /* Kích thước chữ nhỏ hơn cho các màn hình nhỏ hơn */
         padding: 0.8rem 1.5rem; /* Điều chỉnh padding cho vừa vặn */
     }
 }
