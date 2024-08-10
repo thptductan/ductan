@@ -64,7 +64,7 @@ nav a {
     }
     
     nav a {
-        font-size: 14px; /* Giảm kích thước chữ trên các thiết bị nhỏ */
+        font-size: 10px; /* Giảm kích thước chữ trên các thiết bị nhỏ */
         padding: 1rem 2rem; /* Điều chỉnh khoảng cách bên trong cho phù hợp */
     }
 }
@@ -72,7 +72,7 @@ nav a {
 /* Quy tắc cho các thiết bị rất nhỏ */
 @media (max-width: 480px) {
     nav a {
-        font-size: 12px; /* Kích thước chữ nhỏ hơn cho các màn hình nhỏ hơn */
+        font-size: 8px; /* Kích thước chữ nhỏ hơn cho các màn hình nhỏ hơn */
         padding: 0.8rem 1.5rem; /* Điều chỉnh padding cho vừa vặn */
     }
 }
