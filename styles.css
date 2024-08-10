@@ -66,7 +66,7 @@ body {
     padding: 0; /* Loại bỏ padding nếu có */
     background-image: url('Nen1.png'); /* Đặt hình nền */
     background-size: cover; /* Đảm bảo hình nền bao phủ toàn bộ phần thân */
-    background-position: center top; /* Căn giữa hình nền và căn lên trên để không bị cắt */
+    background-position: center; /* Căn giữa hình nền để nó không bị cắt */
     background-repeat: no-repeat; /* Không lặp lại hình nền */
     height: 100vh; /* Chiều cao toàn bộ màn hình */
     display: block; /* Hiển thị phần thân */
@@ -82,8 +82,8 @@ body {
 /* Quy định cụ thể cho màn hình di động */
 @media (max-width: 768px) {
     .main-content {
-        background-position: center; /* Đảm bảo hình nền căn giữa trên thiết bị di động */
-        background-size: contain; /* Điều chỉnh kích thước hình nền để phù hợp với màn hình mà không bị cắt */
+        background-size: cover; /* Đảm bảo hình nền bao phủ toàn bộ màn hình */
+        background-position: center; /* Căn giữa hình nền để không bị cắt */
         height: auto; /* Cho phép chiều cao tự động để phù hợp với nội dung */
     }
 }
