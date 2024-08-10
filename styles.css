@@ -1,164 +1,35 @@
-/* Đặt font chữ mặc định cho toàn bộ trang */
-body {
-    font-family: 'Times New Roman', serif; /* Sử dụng font Times New Roman */
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #f0f0f0;
-    font-size: 2vw; /* Đổi từ px sang vw để chữ tỷ lệ với màn hình */
-    overflow-x: hidden; /* Ngăn chặn cuộn ngang không cần thiết */
+/* Căn chỉnh phần đầu */
+.header {
+    width: 66.67%; /* 2/3 chiều ngang cho máy tính bàn */
+    margin: 0 auto; /* Căn giữa ảnh */
+    position: relative; /* Để cố định ảnh khi lướt trên di động */
 }
 
-/* Căn giữa nội dung và đặt chiều rộng 2/3 của màn hình */
-.content-wrapper {
-    max-width: 66.67%; /* 2/3 chiều ngang */
-    margin: 0 auto;
-    background-color: white; /* Màu nền của vùng nội dung */
-    border: 1px solid #ccc;
-    padding: 20px;
+/* Ảnh đầu trang */
+.header img {
+    width: 100%; /* Đảm bảo ảnh chiếm 100% chiều rộng của phần đầu */
+    height: auto; /* Giữ tỷ lệ ảnh */
+    display: block; /* Loại bỏ khoảng trắng dưới ảnh */
 }
 
-/* Đặt định dạng cho phần đầu của trang */
-header {
-    background-color: #4CAF50; /* Nền màu xanh lá */
-    text-align: center;
-    padding: 2vw 0; /* Điều chỉnh padding */
-    color: white;
+/* Quy tắc cho máy tính bàn */
+@media (min-width: 769px) {
+    .header {
+        max-width: 66.67%; /* Đảm bảo ảnh chiếm 2/3 chiều ngang */
+    }
 }
 
-/* Định dạng tiêu đề */
-header h2 {
-    font-size: 2vw; /* Đổi kích thước chữ cho dòng tiêu đề chính */
-    color: blue; /* Đổi màu chữ thành xanh dương */
-    margin: 0.5rem 0; /* Điều chỉnh lề để phù hợp */
-}
-
-/* Định dạng tiêu đề phụ */
-header h1 {
-    font-size: 2vw; /* Đổi kích thước chữ cho dòng tiêu đề phụ */
-    color: red; /* Đổi màu chữ thành đỏ */
-    margin: 0.5rem 0; /* Điều chỉnh lề để phù hợp */
-}
-
-/* Định dạng cho đoạn văn */
-header p {
-    font-size: 0.7em; /* Đổi kích thước chữ nhỏ hơn 70% so với kích thước hiện tại */
-    color: purple; /* Đổi màu chữ nếu cần */
-    margin: 0.5rem 0; /* Điều chỉnh lề để phù hợp */
-}
-
-/* Định dạng cho phần điều hướng */
-nav {
-    display: flex;
-    justify-content: space-between; /* Phân phối đều các mục điều hướng theo chiều ngang */
-    flex-wrap: wrap; /* Cho phép các mục chuyển dòng nếu không đủ không gian */
-    padding: 0;
-    margin: 0;
-}
-
-/* CSS cho các mục điều hướng */
-nav .nav-item {
-    flex: 1; /* Các mục điều hướng chiếm đều không gian ngang */
-    text-align: center; /* Căn giữa chữ */
-    padding: 0.25rem; /* Khoảng cách bên trong */
-    color: white; /* Màu chữ */
-    text-decoration: none; /* Bỏ gạch chân */
-    border-radius: 10px; /* Bo tròn các góc */
-    margin: 0.25rem; /* Khoảng cách giữa các mục điều hướng */
-    transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển màu nền và phóng to khi hover */
-}
-
-/* Màu nền của các mục điều hướng */
-nav #home {
-    background-color: blue; /* Nền màu xanh dương */
-}
-
-nav #GioiThieu {
-    background-color: lightblue; /* Nền màu xanh lam */
-}
-
-nav #activities {
-    background-color: red; /* Nền màu đỏ */
-}
-
-nav #students {
-    background-color: pink; /* Nền màu hồng */
-}
-
-nav #contact {
-    background-color: purple; /* Nền màu tím */
-}
-
-/* Định dạng khi di chuột qua các mục điều hướng */
-nav .nav-item:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Tạo hiệu ứng màu nền khi hover */
-    transform: scale(1.05); /* Phóng to nhẹ khi hover */
-}
-
-/* Quy tắc riêng cho các thiết bị di động */
+/* Quy tắc cho điện thoại di động */
 @media (max-width: 768px) {
-    .content-wrapper {
-        max-width: 100%; /* Full màn hình trên thiết bị di động */
+    .header {
+        width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều ngang của màn hình */
+        position: fixed; /* Cố định ảnh ở đầu trang */
+        top: 0; /* Đặt ảnh ở trên cùng */
+        left: 0;
+        z-index: 1000; /* Đảm bảo ảnh luôn ở trên cùng */
     }
 
-    body {
-        font-size: 5vw; /* Tăng kích thước chữ lên 150% so với hiện tại */
+    main {
+        margin-top: 0; /* Đảm bảo phần thân không bị che khuất bởi ảnh đầu */
     }
-    
-    nav a {
-        font-size: 10px; /* 80% của 16px */
-        padding: 1rem 2rem; /* Điều chỉnh khoảng cách bên trong cho phù hợp */
-    }
-}
-
-/* Quy tắc cho các thiết bị rất nhỏ */
-@media (max-width: 480px) {
-    body {
-        font-size: 3vw; /* Tăng kích thước chữ lên 150% so với hiện tại */
-    }
-
-    nav a {
-        font-size: 8px; /* Kích thước chữ nhỏ hơn cho các màn hình nhỏ hơn */
-        padding: 0.8rem 1.5rem; /* Điều chỉnh padding cho vừa vặn */
-    }
-}
-
-/* Định dạng cho các phần bên trái và bên phải trong phần thân */
-.hoatdong {
-    width: 66.67%;
-    float: left;
-    padding: 1.25rem; /* Thay đổi từ px sang rem */
-    background-image: url('Nen1.png'); /* Đặt hình nền */
-    background-size: cover; /* Đảm bảo hình nền phủ đầy vùng */
-    background-position: center; /* Căn giữa hình nền */
-}
-
-.lienket {
-    width: 33.33%;
-    float: right;
-    padding: 1.25rem; /* Thay đổi từ px sang rem */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    background-image: url('Nen2.png'); /* Đặt hình nền nếu cần */
-    background-size: cover; /* Đảm bảo hình nền phủ đầy vùng */
-    background-position: center; /* Căn giữa hình nền */
-}
-
-/* Định dạng cho danh sách liên kết */
-.lienket ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.lienket li {
-    margin-bottom: 1vw;
-}
-
-.lienket a {
-    color: blue;
-    text-decoration: none;
-}
-
-.lienket a:hover {
-    text-decoration: underline;
 }
