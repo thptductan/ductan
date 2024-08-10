@@ -1,46 +1,81 @@
-/* Đặt ảnh làm phần đầu trang */
+/* Cấu hình chung cho tất cả các thiết bị */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', serif;
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+/* Phần đầu của trang web */
 header {
-    background-image: url('DauTrang.png'); /* Đặt ảnh làm phần đầu trang */
-    background-size: cover; /* Đảm bảo ảnh phủ đầy vùng */
-    background-position: center; /* Căn giữa ảnh */
-    width: 66.67vw; /* Chiều ngang ảnh chiếm 2/3 chiều ngang trình duyệt */
-    height: auto; /* Tự động điều chỉnh chiều cao để giữ tỷ lệ ảnh */
-    position: fixed; /* Đặt ảnh cố định ở đầu trang */
-    top: 0;
-    left: 0;
-    z-index: -1; /* Đảm bảo ảnh nằm dưới các phần tử khác */
+    position: relative;
+    background-image: url('DauTrang.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto; /* Đảm bảo ảnh giữ nguyên tỷ lệ */
 }
 
-/* Định dạng cho máy tính bàn */
+/* Cài đặt cho thiết bị vi tính */
 @media (min-width: 769px) {
-    body {
-        overflow-x: hidden; /* Ngăn chặn cuộn ngang */
-    }
-
     header {
-        width: 66.67vw; /* Đặt chiều ngang là 2/3 chiều ngang trình duyệt */
-        max-width: 100vw; /* Chiều ngang không vượt quá chiều rộng trình duyệt */
+        width: 66.67vw; /* Chiều ngang của ảnh = 2/3 chiều ngang của trình duyệt */
+        max-width: 100vw; /* Đảm bảo không vượt quá chiều ngang của trình duyệt */
+        height: auto; /* Đảm bảo ảnh giữ nguyên tỷ lệ */
+        margin: 0 auto; /* Căn giữa */
     }
 
     body {
-        zoom: 100%; /* Thiết lập tỷ lệ zoom mặc định cho phần thân */
-    }
-
-    @media (min-width: 769px) and (max-width: 1024px) {
-        body {
-            zoom: 150%; /* Cho phép zoom tối đa lên 150% */
-        }
+        overflow-x: hidden; /* Ngăn chặn cuộn ngang nếu ảnh vượt quá chiều ngang */
     }
 }
 
-/* Định dạng cho di động */
+/* Cài đặt cho thiết bị di động */
 @media (max-width: 768px) {
     header {
-        width: 100vw; /* Chiều ngang ảnh chiếm toàn bộ chiều ngang màn hình di động */
-        height: auto; /* Tự động điều chỉnh chiều cao để giữ tỷ lệ ảnh */
+        width: 100vw; /* Chiều ngang của ảnh = full chiều ngang của màn hình di động */
+        height: auto; /* Đảm bảo ảnh giữ nguyên tỷ lệ */
+        position: fixed; /* Cố định ở đầu trang */
+        top: 0;
+        left: 0;
+        z-index: 1; /* Đảm bảo ảnh không bị che khuất */
     }
 
     body {
-        zoom: 100%; /* Phần thân zoom bình thường */
+        padding-top: 0; /* Cân nhắc để không có khoảng trống phía trên nội dung do ảnh cố định */
+    }
+
+    .content-wrapper {
+        padding-top: 0; /* Đảm bảo nội dung không bị đẩy lên quá cao */
+    }
+}
+
+/* Đảm bảo nội dung phần thân zoom bình thường */
+.content-wrapper {
+    max-width: 66.67vw; /* 2/3 chiều ngang của trình duyệt */
+    margin: 0 auto;
+    background-color: white; /* Màu nền của vùng nội dung */
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+/* Quy tắc cho các mục trong điều hướng */
+nav a {
+    display: inline-block;
+    padding: 1vw 2vw;
+    border-radius: 1vw;
+    color: white;
+    font-size: 16px; /* Kích thước chữ cho các thiết bị lớn */
+    text-decoration: none;
+    text-align: center;
+    background-color: #4CAF50; /* Màu nền mặc định cho các liên kết */
+}
+
+/* Quy tắc riêng cho các thiết bị di động */
+@media (max-width: 768px) {
+    nav a {
+        font-size: 12px; /* Kích thước chữ nhỏ hơn cho các màn hình nhỏ hơn */
+        padding: 0.8rem 1.5rem; /* Điều chỉnh padding cho vừa vặn */
     }
 }
