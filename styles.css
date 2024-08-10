@@ -62,8 +62,8 @@ body {
 
 /* CSS cho phần thân */
 .main-content {
-    width: 66.66%; /* Chiều ngang tương đương với chiều ngang của phần đầu */
-    margin: auto;
+    width: 100%; /* Đảm bảo chiều ngang chiếm toàn bộ màn hình */
+    margin: 0; /* Loại bỏ margin để chiếm toàn bộ chiều ngang */
     background-image: url('Nen1.png'); /* Đặt hình nền */
     background-size: cover; /* Đảm bảo hình nền bao phủ toàn bộ phần thân */
     background-position: center; /* Căn giữa hình nền */
@@ -75,4 +75,11 @@ body {
 /* CSS khi phần thân hiện ra */
 .show-main-content {
     display: block;
+}
+
+/* Quy định cụ thể cho màn hình di động */
+@media (max-width: 768px) {
+    .main-content {
+        width: 100%; /* Đảm bảo phần thân chiếm toàn bộ chiều ngang màn hình di động */
+    }
 }
