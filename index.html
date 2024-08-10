@@ -24,7 +24,38 @@
 
         <!-- Phần thân -->
         <main class="main-content" id="main-content">
-            <!-- Nội dung được thay đổi khi nhấn vào các mục -->
+            <div class="section" id="home-content">
+                <div class="section-left">
+                    <h2>Hoạt động nổi bật</h2>
+                    <p>Chào mừng bạn đến với trang web của chúng tôi. Đây là nơi bạn có thể tìm thấy những thông tin mới nhất về các hoạt động và sự kiện của trường.</p>
+                    <img src="activity1.jpg" alt="Hoạt động 1">
+                    <p>Chi tiết về hoạt động đầu tiên. Đây là nội dung mô tả hoạt động.</p>
+                    <img src="activity2.jpg" alt="Hoạt động 2">
+                    <p>Chi tiết về hoạt động thứ hai. Đây là nội dung mô tả hoạt động.</p>
+                    <!-- Thêm nhiều nội dung nếu cần -->
+                </div>
+                <div class="section-right">
+                    <div class="section-right-header">LIÊN KẾT</div>
+                    <div class="section-right-content">
+                        <a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn">Sổ tay điện tử cải cách hành chính tỉnh Bình Thuận</a>
+                        <a href="https://sgddt.binhthuan.gov.vn">Sở Giáo dục và Đào tạo Bình Thuận</a>
+                        <a href="https://moet.gov.vn">Bộ Giáo dục và Đào tạo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="grid-item">
+                    <h3>Bài viết 1</h3>
+                    <img src="grid1.jpg" alt="Bài viết 1">
+                    <p>Mô tả bài viết 1.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Bài viết 2</h3>
+                    <img src="grid2.jpg" alt="Bài viết 2">
+                    <p>Mô tả bài viết 2.</p>
+                </div>
+                <!-- Thêm nhiều bài viết nếu cần -->
+            </div>
         </main>
     </div>
 
@@ -33,7 +64,12 @@
             document.getElementById('main-content').innerHTML = `
                 <div class="section" id="home-content">
                     <div class="section-left">
-                        <!-- Hiển thị bài viết đầu tiên trong mục Hoạt động -->
+                        <h2>Hoạt động nổi bật</h2>
+                        <p>Chào mừng bạn đến với trang web của chúng tôi. Đây là nơi bạn có thể tìm thấy những thông tin mới nhất về các hoạt động và sự kiện của trường.</p>
+                        <img src="activity1.jpg" alt="Hoạt động 1">
+                        <p>Chi tiết về hoạt động đầu tiên. Đây là nội dung mô tả hoạt động.</p>
+                        <img src="activity2.jpg" alt="Hoạt động 2">
+                        <p>Chi tiết về hoạt động thứ hai. Đây là nội dung mô tả hoạt động.</p>
                     </div>
                     <div class="section-right">
                         <div class="section-right-header">LIÊN KẾT</div>
@@ -45,7 +81,16 @@
                     </div>
                 </div>
                 <div class="grid">
-                    <!-- Hiển thị bài viết thứ 2 đến bài viết thứ 9 của mục Hoạt động -->
+                    <div class="grid-item">
+                        <h3>Bài viết 1</h3>
+                        <img src="grid1.jpg" alt="Bài viết 1">
+                        <p>Mô tả bài viết 1.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Bài viết 2</h3>
+                        <img src="grid2.jpg" alt="Bài viết 2">
+                        <p>Mô tả bài viết 2.</p>
+                    </div>
                 </div>
             `;
         });
