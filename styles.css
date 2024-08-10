@@ -30,44 +30,49 @@ body {
 
 .overlay-images img {
     width: 18%; /* Đảm bảo các hình ảnh có cùng kích thước và vừa với hàng ngang */
-    border-radius: 10px; /* Bo tròn các góc của hình ảnh */
 }
 
-/* CSS cho liên kết website */
+/* CSS cho Truy cập website */
 .website-links {
     position: absolute;
-    top: 18%; /* Vị trí ở mức 18% so với chiều cao DT1 */
-    width: 100%;
+    top: 30%; /* Điều chỉnh vị trí xuống thấp hơn */
+    left: 5%; /* Căn lề trái */
+    right: 5%; /* Căn lề phải */
     display: flex;
     justify-content: space-between;
-    padding: 0 5%;
 }
 
 .website-links a {
-    color: #0000EE; /* Màu xanh dương */
-    text-decoration: underline; /* Gạch chân chỉ phần nội dung trong [] */
+    text-decoration: underline;
+    color: blue;
 }
 
-/* CSS cho vùng "Chuyên mục" */
+/* CSS cho Chuyên mục */
 .chuyen-muc {
     position: absolute;
-    top: 20%; /* Vị trí ở mức 20% so với chiều cao DT1 */
-    left: 33.33%; /* Căn giữa ở 1/3 bên phải */
-    width: 33.33%; /* Chiều rộng 1/3 phần bên phải */
+    top: 40%; /* Điều chỉnh vị trí xuống thấp hơn */
+    left: calc(100% / 3); /* Căn giữa vào 1/3 bên phải */
+    width: calc(100% / 3); /* Chiều rộng chiếm 1/3 màn hình */
+    text-align: center;
 }
 
-.chuyen-muc .tieu-de {
-    background-color: #1E90FF; /* Nền màu xanh lam */
+.tieu-de {
+    background-color: #0000FF; /* Nền xanh lam */
     color: white;
     padding: 5px;
-    text-align: center;
+    border-radius: 5px;
 }
 
-.chuyen-muc .noi-dung {
-    border: 2px solid #1E90FF; /* Kẻ khung xung quanh */
-    padding: 10px;
-    background-color: white; /* Nền màu trắng bên trong khung */
-    text-align: center;
+.noi-dung {
+    border: 2px solid #0000FF; /* Kẻ khung xanh lam */
+    padding: 5px;
+    border-radius: 5px;
+    background-color: white; /* Nền trắng */
+}
+
+.noi-dung a {
+    color: blue;
+    text-decoration: underline;
 }
 
 /* CSS cho màn hình máy tính để bàn */
@@ -99,5 +104,14 @@ body {
 
     .overlay-images img {
         width: 18%; /* Kích thước hình ảnh trên màn hình di động */
+    }
+
+    /* Điều chỉnh vị trí của các phần tử trên màn hình di động */
+    .website-links {
+        top: 50%; /* Thấp hơn nữa */
+    }
+
+    .chuyen-muc {
+        top: 60%; /* Thấp hơn nữa */
     }
 }
