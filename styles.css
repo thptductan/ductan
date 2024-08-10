@@ -65,12 +65,12 @@ body {
     width: 66.66%; /* Tương đương 2/3 chiều ngang của trình duyệt */
     margin: auto;
     background-image: url('Nen1.png'); /* Hình nền mặc định */
-    background-size: cover;
+    background-size: contain; /* Đảm bảo hình nền không bị cắt */
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh; /* Chiều cao toàn bộ màn hình */
     display: none; /* Ẩn phần thân mặc định */
-    color: #000000; /* Màu chữ mặc định, thay đổi theo màu bạn cần */
+    color: #000000; /* Màu chữ mặc định */
     padding: 20px; /* Padding để nội dung không bị dính vào viền */
 }
 
@@ -83,5 +83,7 @@ body {
 @media (max-width: 768px) {
     .main-content {
         width: 100%; /* Chiếm toàn bộ chiều ngang màn hình trên điện thoại */
+        box-sizing: border-box; /* Đảm bảo padding và border không làm thay đổi kích thước tổng thể */
+        background-size: contain; /* Đảm bảo hình nền không bị cắt trên điện thoại */
     }
 }
