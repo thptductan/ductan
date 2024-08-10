@@ -71,11 +71,6 @@ body {
     display: block; /* Hiển thị phần thân */
 }
 
-/* CSS khi phần thân hiện ra */
-.show-main-content {
-    display: block;
-}
-
 /* Quy định cho màn hình di động */
 @media (max-width: 768px) {
     .main-content {
