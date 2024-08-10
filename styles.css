@@ -68,7 +68,7 @@ body {
     background-size: cover; /* Đảm bảo hình nền bao phủ toàn bộ phần thân */
     background-position: center; /* Căn giữa hình nền */
     background-repeat: no-repeat; /* Không lặp lại hình nền */
-    aspect-ratio: 16 / 9; /* Tỷ lệ khung hình của hình nền (thay đổi theo tỷ lệ của hình nền của bạn) */
+    aspect-ratio: 161 / 278; /* Tỷ lệ khung hình của hình nền (thay đổi theo tỷ lệ của hình nền của bạn) */
     height: auto; /* Chiều cao tự động để giữ tỷ lệ khung hình */
     display: block; /* Hiển thị phần thân */
     overflow: hidden; /* Đảm bảo không có cuộn ngang */
