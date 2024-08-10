@@ -67,12 +67,21 @@ body {
     background-image: url('Nen1.png'); /* Hình nền mặc định */
     background-size: cover;
     background-position: center;
-    height: 100vh; /* Chiều cao toàn bộ màn hình */
     background-repeat: no-repeat;
-    display: none; /* Ẩn phần thân mặc định */
+    height: auto; /* Tự động điều chỉnh chiều cao dựa trên nội dung */
+    display: block; /* Hiển thị phần thân mặc định */
+    padding: 20px; /* Thêm khoảng cách bên trong */
+    color: #fff; /* Màu chữ trắng để nổi bật trên nền tối */
 }
 
-/* CSS khi phần thân hiện ra */
-.show-main-content {
-    display: block;
+/* Định dạng tiêu đề và đoạn văn */
+.main-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
 }
