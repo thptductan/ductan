@@ -20,16 +20,15 @@ body {
 
 .overlay-images {
     position: absolute;
-    top: 75%; /* Thay đổi từ 90% thành 70% để di chuyển ảnh lên cao hơn */
+    top: 75%; /* Vị trí theo chiều cao của DauTrang.png */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 10%; /* Đảm bảo ảnh nằm cách đều nhau và cách mép ảnh lớn */
+    justify-content: space-around; /* Chia đều khoảng cách giữa các ảnh */
+    width: 80%; /* Chiều rộng của dãy ảnh, đảm bảo cách đều các mép */
 }
 
-.overlay-image {
-    width: 18%; /* Đảm bảo các ảnh nhỏ cách đều nhau */
-    height: auto;
+.overlay-images img {
+    flex: 1;
+    max-width: 16%; /* Đảm bảo mỗi ảnh chiếm khoảng 16% chiều rộng để có khoảng trống ở giữa và hai bên */
 }
