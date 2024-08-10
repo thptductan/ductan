@@ -36,7 +36,7 @@ header h1 {
 /* Định dạng tiêu đề phụ */
 header h2 {
     font-size: 2vw; /* Đổi kích thước chữ cho dòng tiêu đề phụ */
-    color: blue; /* Đổi màu chữ thành xanh dương */
+    color: red; /* Đổi màu chữ thành xanh dương */
     margin: 0.5rem 0; /* Điều chỉnh lề để phù hợp */
 }
 
