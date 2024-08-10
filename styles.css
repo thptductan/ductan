@@ -5,7 +5,7 @@ body {
 
 .header img {
     width: 66.67vw; /* 2/3 chiều ngang của trình duyệt */
-    max-width: 100%; /* Giới hạn tối đa bằng 100% chiều ngang của trình duyệt */
+    height: auto; /* Giữ nguyên tỉ lệ chiều cao */
     display: block;
     margin: 0 auto;
 }
@@ -13,7 +13,7 @@ body {
 @media only screen and (max-width: 768px) {
     .header img {
         width: 100%; /* Chiều ngang full trên thiết bị di động */
-        max-width: none; /* Bỏ giới hạn để hiển thị toàn bộ chiều ngang */
+        height: auto; /* Giữ nguyên tỉ lệ chiều cao */
         position: fixed;
         top: 0;
         left: 0;
