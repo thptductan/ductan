@@ -32,5 +32,5 @@ body {
 .overlay-images img {
     flex: 1;
     max-width: 16%; /* Đảm bảo mỗi ảnh chiếm khoảng 16% chiều rộng để có khoảng trống ở giữa và hai bên */
-    border-radius: 15px; /* Bo tròn góc của các ảnh */
+    border-radius: 10px; /* Bo tròn góc của các ảnh */
 }
