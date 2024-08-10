@@ -14,7 +14,7 @@
 @media (min-width: 769px) {
     .main-content {
         width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang của trình duyệt */
-        height: calc(66.66vw * 85 / 162); /* Tỷ lệ chiều cao dựa trên tỷ lệ chính xác của hình ảnh */
+        height: calc(66.66vw * 162 / 85); /* Tỷ lệ chiều cao dựa trên tỷ lệ chính xác của hình ảnh */
     }
 }
 
@@ -22,6 +22,6 @@
 @media (max-width: 768px) {
     .main-content {
         width: 100vw; /* Chiều ngang bằng chiều ngang màn hình */
-        height: calc(100vw * 85 / 162); /* Tỷ lệ chiều cao dựa trên tỷ lệ chính xác của hình ảnh */
+        height: calc(100vw * 162 / 85); /* Tỷ lệ chiều cao dựa trên tỷ lệ chính xác của hình ảnh */
     }
 }
