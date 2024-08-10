@@ -29,71 +29,89 @@
     </div>
 
     <script>
-        document.getElementById('home').addEventListener('click', function() {
-            document.getElementById('main-content').innerHTML = `
-                <div class="section" id="home-content">
-                    <div class="section-left">
-                        <h2>Hoạt động nổi bật</h2>
-                        <p>Chào mừng bạn đến với trang web của chúng tôi. Đây là nơi bạn có thể tìm thấy những thông tin mới nhất về các hoạt động và sự kiện của trường.</p>
-                        <img src="main/activity1.jpg" alt="Hoạt động 1">
-                        <p>Chi tiết về hoạt động đầu tiên. Đây là nội dung mô tả hoạt động.</p>
-                        <img src="main/activity2.jpg" alt="Hoạt động 2">
-                        <p>Chi tiết về hoạt động thứ hai. Đây là nội dung mô tả hoạt động.</p>
-                    </div>
-                    <div class="section-right">
-                        <div class="section-right-header">LIÊN KẾT</div>
-                        <div class="section-right-content">
-                            <a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn">Sổ tay điện tử cải cách hành chính tỉnh Bình Thuận</a>
-                            <a href="https://sgddt.binhthuan.gov.vn">Sở Giáo dục và Đào tạo Bình Thuận</a>
-                            <a href="https://moet.gov.vn">Bộ Giáo dục và Đào tạo</a>
+        // Hàm để cập nhật nội dung của phần thân
+        function updateContent(sectionId) {
+            const contentMap = {
+                'home': `
+                    <div class="section" id="home-content">
+                        <div class="section-left">
+                            <h2>Hoạt động nổi bật</h2>
+                            <p>Chào mừng bạn đến với trang web của chúng tôi. Đây là nơi bạn có thể tìm thấy những thông tin mới nhất về các hoạt động và sự kiện của trường.</p>
+                            <img src="main/activity1.jpg" alt="Hoạt động 1">
+                            <p>Chi tiết về hoạt động đầu tiên. Đây là nội dung mô tả hoạt động.</p>
+                            <img src="main/activity2.jpg" alt="Hoạt động 2">
+                            <p>Chi tiết về hoạt động thứ hai. Đây là nội dung mô tả hoạt động.</p>
+                        </div>
+                        <div class="section-right">
+                            <div class="section-right-header">LIÊN KẾT</div>
+                            <div class="section-right-content">
+                                <a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn">Sổ tay điện tử cải cách hành chính tỉnh Bình Thuận</a>
+                                <a href="https://sgddt.binhthuan.gov.vn">Sở Giáo dục và Đào tạo Bình Thuận</a>
+                                <a href="https://moet.gov.vn">Bộ Giáo dục và Đào tạo</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="grid">
-                    <div class="grid-item">
-                        <h3>Bài viết 1</h3>
-                        <img src="main/grid1.jpg" alt="Bài viết 1">
-                        <p>Mô tả bài viết 1.</p>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h3>Bài viết 1</h3>
+                            <img src="main/grid1.jpg" alt="Bài viết 1">
+                            <p>Mô tả bài viết 1.</p>
+                        </div>
+                        <div class="grid-item">
+                            <h3>Bài viết 2</h3>
+                            <img src="main/grid2.jpg" alt="Bài viết 2">
+                            <p>Mô tả bài viết 2.</p>
+                        </div>
                     </div>
-                    <div class="grid-item">
-                        <h3>Bài viết 2</h3>
-                        <img src="main/grid2.jpg" alt="Bài viết 2">
-                        <p>Mô tả bài viết 2.</p>
+                `,
+                'intro': `
+                    <div class="section" id="intro-content">
+                        <!-- Hiển thị nội dung cho mục Giới thiệu và các mục con -->
                     </div>
-                </div>
-            `;
-        });
+                `,
+                'activities': `
+                    <div class="section" id="activities-content">
+                        <!-- Hiển thị nội dung cho mục Hoạt động -->
+                    </div>
+                `,
+                'students': `
+                    <div class="section" id="students-content">
+                        <!-- Hiển thị nội dung cho mục Học sinh và Cựu học sinh -->
+                    </div>
+                `,
+                'contact': `
+                    <div class="section" id="contact-content">
+                        <!-- Hiển thị nội dung cho mục Liên hệ -->
+                    </div>
+                `
+            };
+            document.getElementById('main-content').innerHTML = contentMap[sectionId] || contentMap['home'];
+        }
 
-        document.getElementById('intro').addEventListener('click', function() {
-            document.getElementById('main-content').innerHTML = `
-                <div class="section" id="intro-content">
-                    <!-- Hiển thị nội dung cho mục Giới thiệu và các mục con -->
-                </div>
-            `;
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hiển thị nội dung của trang chủ khi trang được tải
+            updateContent('home');
 
-        document.getElementById('activities').addEventListener('click', function() {
-            document.getElementById('main-content').innerHTML = `
-                <div class="section" id="activities-content">
-                    <!-- Hiển thị nội dung cho mục Hoạt động -->
-                </div>
-            `;
-        });
+            // Thêm sự kiện click cho các liên kết
+            document.getElementById('home').addEventListener('click', function() {
+                updateContent('home');
+            });
 
-        document.getElementById('students').addEventListener('click', function() {
-            document.getElementById('main-content').innerHTML = `
-                <div class="section" id="students-content">
-                    <!-- Hiển thị nội dung cho mục Học sinh và Cựu học sinh -->
-                </div>
-            `;
-        });
+            document.getElementById('intro').addEventListener('click', function() {
+                updateContent('intro');
+            });
 
-        document.getElementById('contact').addEventListener('click', function() {
-            document.getElementById('main-content').innerHTML = `
-                <div class="section" id="contact-content">
-                    <!-- Hiển thị nội dung cho mục Liên hệ -->
-                </div>
-            `;
+            document.getElementById('activities').addEventListener('click', function() {
+                updateContent('activities');
+            });
+
+            document.getElementById('students').addEventListener('click', function() {
+                updateContent('students');
+            });
+
+            document.getElementById('contact').addEventListener('click', function() {
+                updateContent('contact');
+            });
         });
     </script>
 </body>
