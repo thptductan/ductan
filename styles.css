@@ -1,8 +1,3 @@
-body {
-    overflow-x: hidden; /* Ngăn không cho cuộn ngang */
-    margin: 0; /* Đảm bảo không có khoảng cách xung quanh trang */
-    padding: 0; /* Đảm bảo không có khoảng cách xung quanh trang */
-}
 /* CSS chung cho phần thân */
 .main-content {
     background-image: url('DT1.png') !important; /* Đặt hình nền */
@@ -12,23 +7,7 @@ body {
     margin: 0 auto; /* Căn giữa phần thân */
     display: block; /* Hiển thị phần thân */
     overflow: hidden; /* Đảm bảo không có cuộn ngang */
-    background-color: rgba(255, 255, 255, 0.1); /* Màu nền tạm thời */
-}
-
-/* CSS cho màn hình máy tính để bàn */
-@media (min-width: 769px) {
-    .main-content {
-        width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang của trình duyệt */
-        height: calc(66.66vw * 1864 / 1056); /* Tỷ lệ chiều cao dựa trên tỷ lệ chính xác của hình ảnh */
-    }
-}
-
-/* CSS cho màn hình di động */
-@media (max-width: 768px) {
-    .main-content {
-        width: 100vw; /* Chiều ngang bằng chiều ngang màn hình */
-        height: calc(100vw * 1864 / 1056); /* Tỷ lệ chiều cao dựa trên tỷ lệ chính xác của hình ảnh */
-    }
+    position: relative; /* Đảm bảo các phần tử con được đặt đúng vị trí */
 }
 
 /* CSS cho các hình ảnh đè lên */
@@ -47,19 +26,36 @@ body {
     border-radius: 10px; /* Bo tròn các góc của hình ảnh */
 }
 
-/* Điều chỉnh cho màn hình nhỏ hơn */
-@media (max-width: 768px) {
+/* CSS cho màn hình máy tính để bàn */
+@media (min-width: 769px) {
+    .main-content {
+        width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang của trình duyệt */
+        height: calc(66.66vw * 1864 / 1056); /* Tỷ lệ chiều cao dựa trên tỷ lệ chính xác của hình ảnh */
+    }
+
     .overlay-images {
-        top: 20%; /* Giữ vị trí 20% cho màn hình nhỏ hơn */
-        width: 90%; /* Tăng chiều ngang để hình ảnh chiếm nhiều không gian hơn */
+        top: 20%; /* Vị trí theo chiều dọc cho màn hình máy tính để bàn */
+        width: 80%; /* Chiều ngang của dãy hình ảnh trên màn hình máy tính */
     }
 
     .overlay-images img {
-        width: 18%; /* Đảm bảo hình ảnh nhỏ gọn hơn trên thiết bị di động */
+        width: 18%; /* Kích thước hình ảnh trên màn hình máy tính */
     }
 }
 
-/* Căn chỉnh phần thân để đè lên hình nền */
-.main-content {
-    position: relative; /* Đảm bảo các phần tử bên trong được căn chỉnh chính xác */
+/* CSS cho màn hình di động */
+@media (max-width: 768px) {
+    .main-content {
+        width: 100vw; /* Chiều ngang bằng chiều ngang màn hình */
+        height: calc(100vw * 1864 / 1056); /* Tỷ lệ chiều cao dựa trên tỷ lệ chính xác của hình ảnh */
+    }
+
+    .overlay-images {
+        top: 20%; /* Vị trí theo chiều dọc cho màn hình di động */
+        width: 90%; /* Chiều ngang của dãy hình ảnh trên màn hình di động */
+    }
+
+    .overlay-images img {
+        width: 18%; /* Kích thước hình ảnh trên màn hình di động */
+    }
 }
