@@ -54,9 +54,11 @@ body {
     }
 
     .overlay-images img {
+        flex: 1;
         max-width: 18%; /* Điều chỉnh kích thước của ảnh phủ trên điện thoại để chúng đều nhau */
     }
 }
+
 /* CSS cho phần thân */
 .main-content {
     width: 66.66%; /* Tương đương 2/3 chiều ngang của trình duyệt */
