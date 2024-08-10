@@ -1,89 +1,26 @@
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow-x: hidden; /* Đảm bảo không có cuộn ngang */
-}
-
-.header-wrapper {
-    position: relative;
-    width: 66.66%; /* Tương đương 2/3 chiều ngang của trình duyệt trên máy tính */
-    margin: auto;
-}
-
-.header-image {
-    width: 100%;
-    height: auto;
-    max-width: 100%; /* Đảm bảo ảnh không vượt quá chiều rộng của phần tử chứa */
-    min-width: calc(66.66vw); /* Đảm bảo ảnh không nhỏ hơn 2/3 chiều ngang của trình duyệt */
-}
-
-.overlay-images {
-    position: absolute;
-    top: 80%; /* Vị trí theo chiều cao của DauTrang.png */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-around; /* Chia đều khoảng cách giữa các ảnh */
-    width: 80%; /* Chiều rộng của dãy ảnh, đảm bảo cách đều các mép */
-}
-
-.overlay-images img {
-    flex: 1;
-    max-width: 16%; /* Đảm bảo mỗi ảnh chiếm khoảng 16% chiều rộng để có khoảng trống ở giữa và hai bên */
-}
-
-/* Quy định cụ thể cho màn hình điện thoại */
-@media (max-width: 768px) {
-    .header-wrapper {
-        width: 100%; /* Chiếm toàn bộ chiều ngang màn hình trên điện thoại */
-        overflow: hidden; /* Đảm bảo không có cuộn ngang */
-    }
-
-    .header-image {
-        width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều ngang của màn hình */
-        height: auto;
-    }
-
-    .overlay-images {
-        top: 75%; /* Vị trí theo chiều cao của DauTrang.png trên điện thoại */
-        width: 100%; /* Chiều rộng của dãy ảnh trên điện thoại */
-        justify-content: space-between; /* Chia đều khoảng cách giữa các ảnh */
-    }
-
-    .overlay-images img {
-        flex: 1;
-        max-width: 18%; /* Điều chỉnh kích thước của ảnh phủ trên điện thoại để chúng đều nhau */
-    }
-}
-/* CSS cho phần thân */
+/* CSS chung cho phần thân */
 .main-content {
-    width: 66.66vw; /* Đảm bảo chiều ngang không vượt quá chiều ngang của phần đầu */
-    margin: 0 auto; /* Căn giữa phần thân */
-    background-image: url('Nen1.png'); /* Đặt hình nền */
+    background-image: url('Hình ảnh.png'); /* Đặt hình nền */
     background-size: cover; /* Đảm bảo hình nền bao phủ toàn bộ phần thân */
     background-position: center; /* Căn giữa hình nền */
     background-repeat: no-repeat; /* Không lặp lại hình nền */
-    aspect-ratio: 161 / 278; /* Tỷ lệ khung hình của hình nền (thay đổi theo tỷ lệ của hình nền của bạn) */
-    height: calc(100vw * 161 / 278); /* Chiều cao dựa trên tỷ lệ khung hình */
+    margin: 0 auto; /* Căn giữa phần thân */
     display: block; /* Hiển thị phần thân */
     overflow: hidden; /* Đảm bảo không có cuộn ngang */
-    box-sizing: border-box; /* Đảm bảo padding và border không ảnh hưởng đến chiều rộng */
 }
 
-/* CSS khi phần thân hiện ra */
-.show-main-content {
-    display: block;
+/* CSS cho màn hình máy tính để bàn */
+@media (min-width: 769px) {
+    .main-content {
+        width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang của trình duyệt */
+        height: calc(66.66vw * 278 / 161); /* Tỷ lệ chiều cao dựa trên tỷ lệ hình ảnh */
+    }
 }
 
-/* Quy định cho màn hình điện thoại */
+/* CSS cho màn hình di động */
 @media (max-width: 768px) {
     .main-content {
-        width: 100vw; /* Chiếm toàn bộ chiều ngang màn hình trên điện thoại */
-        max-width: none; /* Bỏ giới hạn chiều ngang */
-        aspect-ratio: auto; /* Tỷ lệ khung hình tự động */
+        width: 100vw; /* Chiều ngang bằng chiều ngang màn hình */
+        height: calc(100vw * 278 / 161); /* Tỷ lệ chiều cao dựa trên tỷ lệ hình ảnh */
     }
 }
