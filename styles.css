@@ -1,106 +1,108 @@
-/* Đặt kích thước chữ và màu sắc cho hai dòng đầu trong phần đầu */
-header h1 {
-    color: #0000FF; /* Màu xanh dương */
-    font-size: 16px; /* Khoảng 2/3 kích thước hiện tại (24px) */
-    margin: 0;
-}
-
-header p {
-    color: #0000FF; /* Màu xanh dương */
-    font-size: 10px; /* Khoảng 2/3 kích thước hiện tại (15px) */
-    margin: 0;
-}
-
-/* Thiết lập chung cho body */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
     background-color: #f0f0f0;
+    font-size: 2vw; /* Đổi từ px sang vw để chữ tỷ lệ với màn hình */
 }
 
-/* Thiết lập vùng nội dung */
 .content-wrapper {
-    max-width: 66.67%;
+    max-width: 66.67%; /* 2/3 chiều ngang */
     margin: 0 auto;
-    background-color: white;
+    background-color: white; /* Màu nền của vùng nội dung */
     border: 1px solid #ccc;
     padding: 0;
 }
 
-/* Phần đầu */
 header {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Nền màu xanh lá */
     text-align: center;
-    padding: 20px 0; /* Điều chỉnh padding */
+    padding: 2vw 0; /* Điều chỉnh padding */
     color: white;
 }
 
-header nav {
+header h1 {
+    color: #0000FF; /* Màu xanh dương */
+    font-size: 2vw; /* Cỡ chữ khoảng 2/3 hiện tại */
+    margin: 0.5vw 0;
+}
+
+header p {
+    color: #0000FF; /* Màu xanh dương */
+    font-size: 1.5vw; /* Cỡ chữ khoảng 2/3 hiện tại */
+    margin: 0.5vw 0;
+}
+
+nav {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 1vw;
 }
 
 nav a {
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 1vw 2vw;
+    border-radius: 1vw;
     color: white;
-    font-size: 16px;
+    font-size: 1.5vw; /* Kích thước chữ cho các thiết bị lớn */
     text-decoration: none;
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Màu nền của các liên kết */
+    white-space: nowrap; /* Đảm bảo text không bị xuống dòng */
 }
 
-nav a:nth-child(1) { background-color: #0000FF; } /* Xanh dương */
-nav a:nth-child(2) { background-color: #00BFFF; } /* Xanh lam */
-nav a:nth-child(3) { background-color: #FF0000; } /* Đỏ */
-nav a:nth-child(4) { background-color: #FFC0CB; } /* Hồng */
-nav a:nth-child(5) { background-color: #800080; } /* Tím */
+/* Quy tắc riêng cho các thiết bị di động */
+@media (max-width: 768px) {
+    nav a {
+        font-size: 14px; /* Giảm kích thước chữ trên các thiết bị nhỏ */
+        padding: 8px 16px; /* Điều chỉnh khoảng cách bên trong cho phù hợp */
+    }
+}
 
-/* Phần thân */
-.main-content {
-    background-color: url('Nen1.png');
-    background-size: cover;
-    padding: 0;
-    margin: 0;
-    position: relative;
+/* Quy tắc cho các thiết bị rất nhỏ */
+@media (max-width: 480px) {
+    nav a {
+        font-size: 12px; /* Kích thước chữ nhỏ hơn cho các màn hình nhỏ hơn */
+        padding: 6px 12px; /* Điều chỉnh padding cho vừa vặn */
+    }
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5vw;
 }
 
 .section {
     display: flex;
-    padding: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .section-left {
-    width: 66.67%;
-    background-color: white;
-    padding: 10px;
-    box-sizing: border-box;
+    width: 66.67%; /* 2/3 chiều ngang */
+    padding: 1.5vw;
 }
 
 .section-right {
-    width: 33.33%;
-    background-color: white;
-    padding: 10px;
-    border: 1px solid #8B0000; /* Đỏ thẩm */
-    box-sizing: border-box;
+    width: 33.33%; /* 1/3 chiều ngang */
+    padding: 1.5vw;
+    background-color: #fff;
+    border: 1px solid #ccc;
 }
 
 .section-right-header {
-    background-color: #8B0000; /* Đỏ thẩm */
-    color: white;
-    padding: 10px;
-    text-align: center;
     font-weight: bold;
+    margin-bottom: 1vw;
+}
+
+.section-right-content {
+    margin-bottom: 1vw;
 }
 
 .section-right-content a {
-    display: block;
-    color: #0000FF; /* Xanh dương */
+    color: blue;
     text-decoration: none;
-    margin-bottom: 5px;
 }
 
 .section-right-content a:hover {
@@ -108,50 +110,22 @@ nav a:nth-child(5) { background-color: #800080; } /* Tím */
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vw;
+    margin-top: 1.5vw;
 }
 
 .grid-item {
-    background-color: white;
-    padding: 10px;
-    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 300px;
+    padding: 1vw;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .grid-item img {
     width: 100%;
     height: auto;
-}
-
-.grid-item h3 {
-    margin: 5px 0;
-}
-
-/* Quy tắc cho thiết bị di động */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 14px;
-    }
-    header p {
-        font-size: 9px;
-    }
-    nav a {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 12px;
-    }
-    header p {
-        font-size: 8px;
-    }
-    nav a {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
 }
