@@ -62,26 +62,17 @@ body {
 
 /* CSS cho phần thân */
 .main-content {
-    width: 66.66%; /* Tương đương 2/3 chiều ngang của trình duyệt */
+    width: 66.66%; /* Chiều ngang tương đương với chiều ngang của phần đầu */
     margin: auto;
-    background-image: url('Nen1.png'); /* Hình nền mặc định */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: auto; /* Tự động điều chỉnh chiều cao dựa trên nội dung */
-    display: block; /* Hiển thị phần thân mặc định */
-    padding: 20px; /* Thêm khoảng cách bên trong */
-    color: #fff; /* Màu chữ trắng để nổi bật trên nền tối */
+    background-image: url('Nen1.png'); /* Đặt hình nền */
+    background-size: cover; /* Đảm bảo hình nền bao phủ toàn bộ phần thân */
+    background-position: center; /* Căn giữa hình nền */
+    background-repeat: no-repeat; /* Không lặp lại hình nền */
+    height: 100vh; /* Chiều cao toàn bộ màn hình */
+    display: block; /* Hiển thị phần thân */
 }
 
-/* Định dạng tiêu đề và đoạn văn */
-.main-content h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.main-content p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 15px;
+/* CSS khi phần thân hiện ra */
+.show-main-content {
+    display: block;
 }
