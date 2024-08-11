@@ -116,7 +116,6 @@ body {
         text-align: center;
         padding: 10px 15px; /* Tăng khoảng cách trên và dưới cho chữ */
         font-size: 1em; /* Kích thước chữ trên máy tính */
-        line-height: 1.3; /* Chiều cao dòng để căn giữa chữ */
         display: flex;
         flex-direction: column;
         justify-content: center; /* Căn giữa chữ theo chiều dọc */
@@ -125,17 +124,25 @@ body {
         min-height: 40px; /* Đảm bảo các mục có chiều cao tối thiểu để căn giữa */
     }
 
+    .menu span {
+        display: block; /* Đảm bảo các dòng trong span được căn giữa */
+    }
+
     .menu .hocsinh, .menu .cchc {
-        width: 100%; /* Đảm bảo hai cụm này chiếm toàn bộ chiều ngang */
+        flex: 1; /* Cho phép các mục này chiếm toàn bộ chiều ngang có sẵn */
         text-align: center; /* Căn giữa chữ trong cụm */
     }
 
+    .menu .hocsinh span, .menu .cchc span {
+        margin: 0; /* Loại bỏ khoảng cách giữa các dòng */
+    }
+
     .menu .hocsinh {
-        margin-bottom: 5px; /* Khoảng cách dưới giữa 'Học sinh và' và 'Cựu học sinh' */
+        width: 100%; /* Đảm bảo cụm này chiếm toàn bộ chiều ngang */
     }
 
     .menu .cchc {
-        margin-top: 5px; /* Khoảng cách trên giữa 'Sổ tay CCHC' và 'tỉnh Bình Thuận' */
+        width: 100%; /* Đảm bảo cụm này chiếm toàn bộ chiều ngang */
     }
 
     .desktop-only {
