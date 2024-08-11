@@ -106,7 +106,7 @@ body {
         justify-content: space-between; /* Căn đều các mục menu */
         align-items: center; /* Căn giữa các mục theo chiều dọc */
         background-color: #1c8fbb; /* Nền xanh */
-        padding: 5px 0; /* Giảm khoảng cách trên và dưới */
+        padding: 1px 0; /* Giảm khoảng cách trên và dưới */
         box-sizing: border-box;
     }
 
@@ -114,14 +114,14 @@ body {
         color: #ffffff; /* Chữ trắng */
         text-decoration: none; /* Không gạch chân */
         text-align: center;
-        padding: 10px 15px; /* Tăng khoảng cách trên và dưới cho chữ */
+        padding: 5px 5px; /* Tăng khoảng cách trên và dưới cho chữ */
         font-size: 1em; /* Kích thước chữ trên máy tính */
         display: flex;
         flex-direction: column;
         justify-content: center; /* Căn giữa chữ theo chiều dọc */
         align-items: center; /* Căn giữa chữ theo chiều ngang */
         white-space: nowrap; /* Đảm bảo không bị xuống dòng */
-        min-height: 20px; /* Đảm bảo các mục có chiều cao tối thiểu để căn giữa */
+        min-height: 10px; /* Đảm bảo các mục có chiều cao tối thiểu để căn giữa */
     }
 
     .menu span {
