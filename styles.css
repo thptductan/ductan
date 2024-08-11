@@ -109,7 +109,7 @@ body {
     }
 
     .menu a {
-        font-size: 1em; /* Kích thước chữ trên máy tính */
+        font-size: 0.8em; /* Kích thước chữ trên máy tính */
         height: 18px; /* Chiều cao gấp 1.3 lần chiều cao chữ (giảm một nửa) */
         line-height: 18px; /* Căn giữa chữ theo chiều dọc */
         white-space: nowrap; /* Đảm bảo không bị xuống dòng */
