@@ -40,7 +40,6 @@ body {
     display: flex;
     justify-content: center; /* Căn giữa chữ theo chiều ngang */
     align-items: center; /* Căn giữa chữ theo chiều dọc */
-    white-space: nowrap; /* Đảm bảo không bị xuống dòng */
 }
 
 /* Nội dung chỉ hiển thị trên di động */
@@ -69,7 +68,6 @@ body {
         justify-content: center;
         align-items: center;
         text-align: center;
-        white-space: nowrap; /* Đảm bảo không bị xuống dòng */
     }
     
     .mobile-only {
