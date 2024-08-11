@@ -185,18 +185,26 @@ body {
 h1 {
     font-size: 2em;
     margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
 }
 
 h2 {
     font-size: 1.5em;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     margin-bottom: 10px;
     color: #1c8fbb; /* Màu sắc của tiêu đề */
 }
 
 p {
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 5px;
     margin-bottom: 10px;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 @media (max-width: 768px) {
