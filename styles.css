@@ -66,6 +66,19 @@ body {
     }
 }
 
+/* Quy định cho chiều ngang */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Khóa cuộn ngang trên di động */
+    }
+}
+
+@media (min-width: 769px) {
+    body {
+        overflow-x: hidden; /* Khóa cuộn ngang trên máy tính */
+    }
+}
+
 /* Quy định cho màn hình máy tính */
 @media (min-width: 1024px) {
     body {
