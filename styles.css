@@ -114,7 +114,15 @@ body {
         line-height: 18px; /* Căn giữa chữ theo chiều dọc */
         white-space: nowrap; /* Đảm bảo không bị xuống dòng */
     }
-
+    .desktop-only .menu a span {
+        display: block; /* Đảm bảo mỗi span là một khối, giúp chúng xuống dòng */
+    }
+    
+    .desktop-only .menu a {
+        font-size: 0.8em; /* Giảm cỡ chữ xuống 80% */
+        text-align: center; /* Căn giữa nội dung bên trong */
+        line-height: 1.2; /* Điều chỉnh chiều cao dòng để tránh các span chồng lên nhau */
+    }
     .desktop-only {
         display: block; /* Hiển thị nội dung này trên máy tính */
     }
