@@ -27,7 +27,6 @@ body {
     background-color: #1c8fbb; /* Nền xanh */
     padding: 10px 0; /* Tăng khoảng cách trên và dưới */
     box-sizing: border-box;
-    flex-wrap: nowrap; /* Đảm bảo không có xuống dòng */
 }
 
 .menu a {
