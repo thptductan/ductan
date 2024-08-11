@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         #date-time, #date-time-desktop {
-            color: #007bff; /* Đổi thành màu bạn mong muốn */
-            font-size: 0.7em; /* Tăng hoặc giảm cỡ chữ theo mong muốn */
-            font-weight: bold; /* Có thể thêm nếu bạn muốn chữ đậm */
-            text-align: left; /* Căn giữa nếu cần */
-            margin-top: 2px; /* Tạo khoảng cách phía trên nếu cần */
+            color: #007bff; /* Màu xanh */
+            font-size: 0.7em; /* Kích cỡ chữ nhỏ */
+            font-weight: bold; /* Chữ đậm */
+            text-align: left; /* Căn trái */
+            margin-top: 2px; /* Khoảng cách trên */
         }
         .submenu {
             display: none; /* Ẩn submenu mặc định */
@@ -103,6 +103,10 @@
                 color: #ffffff; /* Chữ trắng */
                 text-decoration: none;
             }
+
+            .desktop-only {
+                display: block; /* Hiển thị nội dung này trên máy tính */
+            }
         }
     </style>
 </head>
@@ -152,7 +156,7 @@
                 <span>tỉnh Bình Thuận</span>
             </a>
         </div>
-        <div id="date-time"></div> <!-- Thêm phần hiển thị ngày giờ hiện tại cho di động -->
+        <div id="date-time"></div> <!-- Hiển thị ngày giờ hiện tại cho di động -->
     </div>
 
     <!-- Nội dung chỉ hiển thị trên máy tính -->
@@ -178,36 +182,33 @@
             <a href="#">Liên hệ</a>
             <a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn/">Sổ tay CCHC tỉnh Bình Thuận</a>
         </div>
-        <div id="date-time-desktop"></div> <!-- Thêm phần hiển thị ngày giờ hiện tại cho máy tính -->
+        <div id="date-time-desktop"></div> <!-- Hiển thị ngày giờ hiện tại cho máy tính -->
+    </div>
+
+    <div class="main">
+        <p>Nội dung chính của trang web...</p>
     </div>
 
     <script>
-        // Hiển thị ngày giờ hiện tại cho di động
-        function updateTime() {
+        function updateDateTime() {
             const now = new Date();
-            const options = {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: 'numeric',
-                minute: 'numeric',
-                second: 'numeric'
-            };
-            const dateTimeString = now.toLocaleDateString('vi-VN', options);
-            document.getElementById('date-time').textContent = dateTimeString;
-            document.getElementById('date-time-desktop').textContent = dateTimeString;
+            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+            const formattedDateTime = now.toLocaleDateString('vi-VN', options);
+            
+            const dateTimeElement = document.getElementById('date-time');
+            const dateTimeDesktopElement = document.getElementById('date-time-desktop');
+            
+            if (dateTimeElement) {
+                dateTimeElement.textContent = formattedDateTime;
+            }
+
+            if (dateTimeDesktopElement) {
+                dateTimeDesktopElement.textContent = formattedDateTime;
+            }
         }
 
-        // Cập nhật thời gian mỗi giây
-        setInterval(updateTime, 1000);
-
-        // Hiển thị menu con khi nhấn vào "Giới thiệu" trên di động
-        document.querySelector('.gioithieu').addEventListener('click', function(event) {
-            const submenu = document.querySelector('.submenu');
-            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-            event.preventDefault(); // Ngăn chặn sự kiện mặc định để không gây ra sự kiện nhấp vào link
-        });
+        setInterval(updateDateTime, 1000); // Cập nhật thời gian mỗi giây
+        updateDateTime(); // Cập nhật ngay khi trang được tải
     </script>
 </body>
 </html>
