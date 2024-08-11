@@ -115,7 +115,7 @@ body {
         white-space: nowrap; /* Đảm bảo không bị xuống dòng */
     }
     .desktop-only .menu a span {
-        display: block; /* Đảm bảo mỗi span là một khối, giúp chúng xuống dòng */
+        display: block !important; /* Bắt buộc mỗi span được hiển thị như một khối */
     }
     
     .desktop-only .menu a {
