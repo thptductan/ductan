@@ -56,13 +56,13 @@ body {
 @media (max-width: 768px) {
     .menu {
         flex-direction: row; /* Hiển thị theo hàng ngang */
-        padding: 8px 0; /* Giảm khoảng cách trên và dưới */
+        padding: 2px 0; /* Giảm khoảng cách trên và dưới */
         justify-content: space-around; /* Căn chỉnh đều trên di động */
     }
     
     .menu a {
         font-size: 0.8em; /* Giảm kích thước chữ trên di động */
-        padding: 5px 0; /* Giảm khoảng cách trên và dưới cho chữ */
+        padding: 2px 0; /* Giảm khoảng cách trên và dưới cho chữ */
         display: flex;
         flex-direction: column;
         justify-content: center;
