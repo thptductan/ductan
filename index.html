@@ -35,6 +35,7 @@
                 <span>hệ</span>
             </a>
         </div>
+        <div id="date-time"></div> <!-- Thêm phần hiển thị ngày giờ hiện tại cho di động -->
     </div>
 
     <!-- Nội dung chỉ hiển thị trên máy tính -->
@@ -46,6 +47,7 @@
             <a href="#">Học sinh và Cựu học sinh</a>
             <a href="#">Liên hệ</a>
         </div>
+        <div id="date-time-desktop"></div> <!-- Thêm phần hiển thị ngày giờ hiện tại cho máy tính -->
     </div>
 
     <!-- Nội dung chung cho cả di động và máy tính -->
@@ -53,6 +55,29 @@
         <!-- Thêm nội dung dành cho máy tính ở đây -->
         <p>Đây là nội dung chỉ hiển thị chung.</p>
     </div>
-    
+
+    <script>
+        // JavaScript để hiển thị ngày giờ hiện tại
+        function updateDateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true
+            };
+            const dateTimeString = now.toLocaleDateString('vi-VN', options);
+
+            document.getElementById('date-time').textContent = dateTimeString;
+            document.getElementById('date-time-desktop').textContent = dateTimeString;
+        }
+
+        // Cập nhật ngày giờ ngay khi tải trang
+        window.onload = updateDateTime;
+    </script>
 </body>
 </html>
