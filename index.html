@@ -25,18 +25,19 @@
 
         .header {
             width: 100%;
+            max-width: 100%;
             background-color: #ffffff;
         }
 
         .header img {
             width: 100%;
             height: auto;
-            max-width: 100%;
+            max-width: none; /* Đảm bảo ảnh chiếm toàn bộ chiều ngang */
         }
 
         .menu {
             display: flex;
-            justify-content: space-around;
+            justify-content: center; /* Căn giữa menu */
             background-color: #1c8fbb;
             padding: 10px 0;
             position: relative;
@@ -88,7 +89,6 @@
             display: block;
         }
 
-        /* Ẩn hoặc hiện các phần dựa trên loại thiết bị */
         .mobile-only {
             display: none;
         }
@@ -166,7 +166,9 @@
     <div class="desktop-only">
         <div class="menu">
             <a href="#">Trang chủ</a>
-            <a href="#">Giới thiệu</a>
+            <a href="#" class="gioithieu">
+                Giới thiệu
+            </a>
             <div class="submenu">
                 <a href="#" data-content="truong">Trường THPT Đức Tân</a>
                 <a href="#" data-content="chi_bo">Chi bộ</a>
@@ -223,6 +225,27 @@
 
         updateDateTime();
         setInterval(updateDateTime, 1000);
+
+        // Thay đổi trạng thái lớp 'active' và hiển thị submenu
+        document.querySelectorAll('.gioithieu').forEach(function(element) {
+            element.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const submenu = this.nextElementSibling;
+                if (submenu) {
+                    submenu.style.display = this.classList.contains('active') ? 'block' : 'none';
+                }
+            });
+        });
+
+        // Đảm bảo submenu chỉ hiển thị khi hover hoặc khi 'active'
+        document.querySelectorAll('.submenu').forEach(function(submenu) {
+            submenu.previousElementSibling.addEventListener('mouseenter', function() {
+                submenu.style.display = 'block';
+            });
+            submenu.addEventListener('mouseleave', function() {
+                submenu.style.display = 'none';
+            });
+        });
     </script>
 </body>
 </html>
