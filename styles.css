@@ -53,6 +53,10 @@ body {
     list-style: none;
 }
 
+.gioithieu:hover .submenu {
+    display: block; /* Hiển thị danh sách con khi hover */
+}
+
 .submenu li {
     margin-bottom: 5px;
 }
@@ -60,10 +64,6 @@ body {
 .submenu li a {
     color: #ffffff; /* Chữ trắng */
     text-decoration: none;
-}
-
-.gioithieu:hover .submenu {
-    display: block; /* Hiển thị danh sách con khi hover */
 }
 
 /* Nội dung chỉ hiển thị trên di động */
