@@ -36,7 +36,7 @@ body {
     flex: 1; /* Các mục sẽ phân chia đều không gian */
     padding: 4px 0; /* Tăng khoảng cách trên và dưới cho chữ */
     font-size: 1em; /* Kích thước chữ trên máy tính */
-    line-height: 1.3; /* Chiều cao dòng để căn giữa chữ */
+    line-height: 1; /* Chiều cao dòng để căn giữa chữ */
     display: flex;
     justify-content: center; /* Căn giữa chữ theo chiều ngang */
     align-items: center; /* Căn giữa chữ theo chiều dọc */
@@ -121,7 +121,7 @@ body {
         justify-content: center; /* Căn giữa chữ theo chiều dọc */
         align-items: center; /* Căn giữa chữ theo chiều ngang */
         white-space: nowrap; /* Đảm bảo không bị xuống dòng */
-        min-height: 10px; /* Đảm bảo các mục có chiều cao tối thiểu để căn giữa */
+        min-height: 5px; /* Đảm bảo các mục có chiều cao tối thiểu để căn giữa */
     }
 
     .menu span {
