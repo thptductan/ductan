@@ -23,13 +23,14 @@ body {
 /* Danh mục */
 .menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly; /* Phân phối đều các mục và khoảng trống */
     background-color: #1c8fbb; /* Nền xanh */
     padding: 10px 0; /* Tăng khoảng cách trên và dưới */
     box-sizing: border-box;
     flex-wrap: nowrap; /* Đảm bảo không có xuống dòng */
 }
 
+/* Các mục trong menu */
 .menu a {
     color: #ffffff; /* Chữ trắng */
     text-decoration: none; /* Không gạch chân */
@@ -59,6 +60,7 @@ body {
         flex-direction: row; /* Hiển thị theo hàng ngang */
         flex-wrap: nowrap; /* Đảm bảo không có xuống dòng */
         padding: 8px 0; /* Giảm khoảng cách trên và dưới */
+        justify-content: space-evenly; /* Căn chỉnh đều trên di động */
     }
     
     .menu a {
@@ -115,6 +117,7 @@ body {
     .menu {
         padding: 10px 0; /* Đảm bảo khoảng cách cho danh mục trên máy tính */
         white-space: nowrap; /* Đảm bảo không bị xuống dòng */
+        justify-content: space-evenly; /* Căn chỉnh đều trên máy tính */
     }
 
     .menu a {
