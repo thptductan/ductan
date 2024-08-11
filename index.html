@@ -57,27 +57,29 @@
     </div>
 
     <script>
-        // JavaScript để hiển thị ngày giờ hiện tại
+        // JavaScript để hiển thị ngày giờ hiện tại và cập nhật liên tục
         function updateDateTime() {
             const now = new Date();
             const options = {
                 weekday: 'long',
-                year: 'numeric',
-                month: 'long',
                 day: 'numeric',
+                month: 'numeric',
+                year: 'numeric',
                 hour: 'numeric',
                 minute: 'numeric',
                 second: 'numeric',
                 hour12: true
             };
-            const dateTimeString = now.toLocaleDateString('vi-VN', options);
-
+            const dateTimeString = now.toLocaleDateString('vi-VN', options).replace(',', '') + ', ' + now.toLocaleTimeString('en-US', { hour12: true });
+        
             document.getElementById('date-time').textContent = dateTimeString;
             document.getElementById('date-time-desktop').textContent = dateTimeString;
         }
-
-        // Cập nhật ngày giờ ngay khi tải trang
-        window.onload = updateDateTime;
-    </script>
+        
+        // Cập nhật ngày giờ ngay khi tải trang và cập nhật mỗi giây
+        window.onload = function() {
+            updateDateTime();
+            setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
+        };
 </body>
 </html>
