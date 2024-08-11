@@ -54,6 +54,7 @@ body {
         justify-content: center;
         align-items: center;
         text-align: center;
+        line-height: 1.2; /* Giảm chiều cao dòng để chữ căn giữa trong phần tô màu */
     }
     
     .menu .hocsinh {
@@ -63,6 +64,10 @@ body {
     
     .menu .hocsinh span {
         display: block;
+    }
+
+    .menu .hocsinh {
+        line-height: 1.2; /* Điều chỉnh để hiển thị đúng */
     }
 }
 
@@ -87,13 +92,13 @@ body {
         position: relative;
     }
 
-    .top-image {
+    .header img {
         width: 100%; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
     }
 
-    .nav-menu a {
-        font-size: 18px; /* Tăng kích thước chữ trên máy tính */
-        height: 36px; /* Chiều cao gấp 1.3 lần chiều cao chữ */
-        line-height: 36px; /* Căn giữa chữ theo chiều dọc */
+    .menu a {
+        font-size: 1em; /* Kích thước chữ cho máy tính */
+        height: 1.3em; /* Chiều cao gấp 1.3 lần chiều cao chữ */
+        line-height: 1.3em; /* Căn giữa chữ theo chiều dọc */
     }
 }
