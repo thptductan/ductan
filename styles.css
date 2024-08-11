@@ -27,6 +27,7 @@ body {
     background-color: #1c8fbb; /* Nền xanh */
     padding: 4px 0; /* Tăng khoảng cách trên và dưới */
     box-sizing: border-box;
+    position: relative;
 }
 
 .menu a {
@@ -41,6 +42,29 @@ body {
     justify-content: center; /* Căn giữa chữ theo chiều ngang */
     align-items: center; /* Căn giữa chữ theo chiều dọc */
 }
+}
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #1c8fbb; /* Nền xanh giống như menu chính */
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.submenu li {
+    margin-bottom: 5px;
+}
+
+.submenu li a {
+    color: #ffffff; /* Chữ trắng */
+    text-decoration: none;
+}
+
+.gioithieu:hover .submenu {
+    display: block; /* Hiển thị danh sách con khi hover */
+}
 
 /* Nội dung chỉ hiển thị trên di động */
 .mobile-only {
@@ -51,7 +75,7 @@ body {
 .desktop-only {
     display: none; /* Ẩn nội dung này trên di động */
 }
-
+ 
                                                                                     /* Đối với thiết bị di động */
 @media (max-width: 768px) {
     .menu {
