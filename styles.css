@@ -51,11 +51,11 @@ body, html {
 .nav-menu a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px; /* Kích thước chữ */
     text-align: center;
     display: block;
-    height: 50px; /* Chiều cao gấp đôi chiều cao chữ */
-    line-height: 50px; /* Căn giữa chữ theo chiều dọc */
+    height: 30px; /* Chiều cao gấp 1.3 lần chiều cao chữ */
+    line-height: 30px; /* Căn giữa chữ theo chiều dọc */
 }
 
 /* Quy định cho thiết bị di động */
@@ -65,7 +65,9 @@ body, html {
     }
 
     .nav-menu a {
-        font-size: 16px;
+        font-size: 14px; /* Giảm kích thước chữ trên di động */
+        height: 25px; /* Chiều cao gấp 1.3 lần chiều cao chữ */
+        line-height: 25px; /* Căn giữa chữ theo chiều dọc */
     }
 }
 
@@ -82,6 +84,8 @@ body, html {
     }
 
     .nav-menu a {
-        font-size: 20px;
+        font-size: 18px; /* Tăng kích thước chữ trên máy tính */
+        height: 36px; /* Chiều cao gấp 1.3 lần chiều cao chữ */
+        line-height: 36px; /* Căn giữa chữ theo chiều dọc */
     }
 }
