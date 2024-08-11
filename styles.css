@@ -25,7 +25,7 @@ body {
     display: flex;
     justify-content: space-around; /* Phân phối đều khoảng cách */
     background-color: #1c8fbb; /* Nền xanh */
-    padding: 10px 0; /* Tăng khoảng cách trên và dưới */
+    padding: 4px 0; /* Tăng khoảng cách trên và dưới */
     box-sizing: border-box;
 }
 
@@ -34,7 +34,7 @@ body {
     text-decoration: none; /* Không gạch chân */
     text-align: center;
     flex: 1; /* Các mục sẽ phân chia đều không gian */
-    padding: 10px 0; /* Tăng khoảng cách trên và dưới cho chữ */
+    padding: 4px 0; /* Tăng khoảng cách trên và dưới cho chữ */
     font-size: 1em; /* Kích thước chữ trên máy tính */
     line-height: 1.3; /* Chiều cao dòng để căn giữa chữ */
     display: flex;
