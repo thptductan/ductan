@@ -41,16 +41,14 @@ body {
 
 /* Đối với thiết bị di động */
 @media (max-width: 768px) {
-    .menu a {
-        font-size: 0.8em; /* Giảm kích thước chữ trên di động */
-        padding: 5px 0; /* Giảm khoảng cách trên và dưới cho chữ */
-    }
-    
     .menu {
+        flex-direction: column;
         padding: 8px 0; /* Giảm khoảng cách trên và dưới */
     }
     
     .menu a {
+        font-size: 0.8em; /* Giảm kích thước chữ trên di động */
+        padding: 5px 0; /* Giảm khoảng cách trên và dưới cho chữ */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -65,5 +63,24 @@ body {
     
     .menu .hocsinh span {
         display: block;
+    }
+}
+
+/* Quy định cho màn hình máy tính */
+@media (min-width: 1024px) {
+    body {
+        max-width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
+        margin: 0 auto; /* Căn giữa phần nội dung */
+        position: relative;
+    }
+
+    .top-image {
+        width: 100%; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
+    }
+
+    .nav-menu a {
+        font-size: 18px; /* Tăng kích thước chữ trên máy tính */
+        height: 36px; /* Chiều cao gấp 1.3 lần chiều cao chữ */
+        line-height: 36px; /* Căn giữa chữ theo chiều dọc */
     }
 }
