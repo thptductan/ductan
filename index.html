@@ -6,17 +6,16 @@
     <title>THPT Đức Tân</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        #date-time, #date-time-desktop {                                     /* đặt định dạng cho id */
-            color: #007bff; /* Đổi thành màu xanh dương */
-            font-size: 0.7em; /* Tăng hoặc giảm cỡ chữ theo mong muốn */
-            font-weight: bold; /* Có thể thêm nếu bạn muốn chữ đậm */
-            text-align: left; /* Căn giữa nếu cần */
-            margin-top: 4px; /* Tạo khoảng cách phía trên nếu cần */
+        #date-time, #date-time-desktop {
+            color: #007bff;
+            font-size: 0.7em;
+            font-weight: bold;
+            text-align: left;
+            margin-top: 4px;
         }
-        .cchc {                                                              /* đặt định dạng cho class */
-            color: #00ff00; /* Màu chữ xanh lá cây */
+        .cchc {
+            color: #00ff00;
         }
-        /* CSS đã đề cập ở trên */
         body {
             margin: 0;
             padding: 0;
@@ -32,6 +31,7 @@
         .header img {
             width: 100%;
             height: auto;
+            max-width: 100%;
         }
 
         .menu {
@@ -39,7 +39,7 @@
             justify-content: space-around;
             background-color: #1c8fbb;
             padding: 10px 0;
-            position: relative; /* Thêm để submenu căn theo */
+            position: relative;
         }
 
         .menu a {
@@ -86,6 +86,27 @@
         .menu .gioithieu:hover + .submenu,
         .submenu:hover {
             display: block;
+        }
+
+        /* Ẩn hoặc hiện các phần dựa trên loại thiết bị */
+        .mobile-only {
+            display: none;
+        }
+
+        .desktop-only {
+            display: none;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .mobile-only {
+                display: block;
+            }
+        }
+
+        @media only screen and (min-width: 769px) {
+            .desktop-only {
+                display: block;
+            }
         }
 
         #content-area {
@@ -174,16 +195,13 @@
 
     <!-- Nội dung chung cho cả di động và máy tính -->
     <div class="noidung">
-        <!-- Thêm nội dung dành cho máy tính ở đây -->
         <p>Trang web đang trong thời gian cập nhật.</p> 
     </div>
-    <div id="content-area"> /* Hiển thị bài viết */
-        <!-- Nội dung sẽ được tải vào đây -->
+    <div id="content-area"> <!-- Hiển thị bài viết -->
         <p>Chào mừng bạn đến với trang web của Trường THPT Đức Tân.</p>
     </div>
 
     <script>
-        // JavaScript để hiển thị ngày giờ hiện tại và cập nhật liên tục
         function updateDateTime() {
             const now = new Date();
             const options = {
@@ -197,69 +215,14 @@
                 hour12: true
             };
             const datePart = now.toLocaleDateString('vi-VN', { weekday: 'long', day: 'numeric', month: 'numeric', year: 'numeric' });
-            const timePart = now.toLocaleTimeString('en-US', { hour12: true });
-        
+            const timePart = now.toLocaleTimeString('vi-VN', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
             const dateTimeString = `${datePart}, ${timePart}`;
-            
             document.getElementById('date-time').textContent = dateTimeString;
             document.getElementById('date-time-desktop').textContent = dateTimeString;
         }
-        
-        // Cập nhật ngày giờ ngay khi tải trang và cập nhật mỗi giây
-        window.onload = function() {
-            updateDateTime();
-            setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
-        };
-        // JavaScript đã đề cập ở trên (Lấy và hiển thị nội dung trong List)
-        document.addEventListener('DOMContentLoaded', function() {
-            const gioiThieuLink = document.querySelector('.menu .gioithieu');
-            const submenu = document.querySelector('.submenu');
 
-            gioiThieuLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                gioiThieuLink.classList.toggle('active');
-                submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-            });
-
-            document.addEventListener('click', function(e) {
-                if (!gioiThieuLink.contains(e.target) && !submenu.contains(e.target)) {
-                    gioiThieuLink.classList.remove('active');
-                    submenu.style.display = 'none';
-                }
-            });
-
-            const submenuLinks = document.querySelectorAll('.submenu a');
-            const contentArea = document.getElementById('content-area');
-
-            submenuLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const contentKey = this.getAttribute('data-content');
-                    loadContent(contentKey);
-                    
-                    gioiThieuLink.classList.remove('active');
-                    submenu.style.display = 'none';
-                });
-            });
-
-            function loadContent(key) {
-                const contents = {
-                    'truong': '<h2>Trường THPT Đức Tân</h2><p>Nội dung về Trường THPT Đức Tân...</p>',
-                    'chi_bo': '<h2>Chi bộ</h2><p>Nội dung về Chi bộ...</p>',
-                    'ban_giam_hieu': '<h2>Ban giám hiệu</h2><p>Nội dung về Ban giám hiệu...</p>',
-                    'cong_doan': '<h2>Công đoàn</h2><p>Nội dung về Công đoàn...</p>',
-                    'doan_truong': '<h2>Đoàn trường</h2><p>Nội dung về Đoàn trường...</p>',
-                    'to_toan_tin': '<h2>Tổ Toán - Tin</h2><p>Nội dung về Tổ Toán - Tin...</p>',
-                    'to_van_anh': '<h2>Tổ Văn - Anh</h2><p>Nội dung về Tổ Văn - Anh...</p>',
-                    'to_hoa_sinh_cnnn': '<h2>Tổ Hóa - Sinh - CNNN</h2><p>Nội dung về Tổ Hóa - Sinh - CNNN...</p>',
-                    'to_su_dia_ktpl': '<h2>Tổ Sử - Địa - KTPL</h2><p>Nội dung về Tổ Sử - Địa - KTPL...</p>',
-                    'to_li_tcqp_cncn': '<h2>Tổ Lí - TCQP - CNCN</h2><p>Nội dung về Tổ Lí - TCQP - CNCN...</p>',
-                };
-
-                contentArea.innerHTML = contents[key] || '<p>Nội dung đang được cập nhật.</p>';
-            }
-        });
-    </script> <!-- Đóng thẻ script -->
-    
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
 </body>
 </html>
