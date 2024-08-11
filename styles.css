@@ -76,7 +76,7 @@ body {
     display: none; /* Ẩn nội dung này trên di động */
 }
 
-/* Đối với thiết bị di động */
+/* Quy định cho thiết bị di động */
 @media (max-width: 768px) {
     .menu {
         flex-direction: row; /* Hiển thị theo hàng ngang */
@@ -172,5 +172,43 @@ body {
 
     .desktop-only {
         display: block; /* Hiển thị nội dung này trên máy tính */
+    }
+}
+
+/* Phần nội dung giới thiệu */
+.content {
+    padding: 20px;
+    max-width: 800px; /* Giới hạn chiều rộng của phần nội dung */
+    margin: 0 auto; /* Căn giữa phần nội dung */
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #1c8fbb; /* Màu sắc của tiêu đề */
+}
+
+p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 0.9em;
     }
 }
