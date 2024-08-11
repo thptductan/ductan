@@ -105,6 +105,7 @@ body {
         display: flex;
         flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
         justify-content: space-between; /* Căn đều các mục menu */
+        align-items: center; /* Căn giữa các mục theo chiều dọc */
         background-color: #1c8fbb; /* Nền xanh */
         padding: 10px 0; /* Tăng khoảng cách trên và dưới */
         box-sizing: border-box;
@@ -122,10 +123,12 @@ body {
         justify-content: center; /* Căn giữa chữ theo chiều dọc */
         align-items: center; /* Căn giữa chữ theo chiều ngang */
         white-space: nowrap; /* Đảm bảo không bị xuống dòng */
+        min-height: 50px; /* Đảm bảo các mục có chiều cao tối thiểu để căn giữa */
     }
 
     .menu .hocsinh, .menu .cchc {
         width: 100%; /* Đảm bảo hai cụm này chiếm toàn bộ chiều ngang */
+        text-align: center; /* Căn giữa chữ trong cụm */
     }
 
     .menu .hocsinh {
