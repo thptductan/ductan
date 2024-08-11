@@ -16,6 +16,81 @@
         .cchc {                                                              /* đặt định dạng cho class */
             color: #00ff00; /* Màu chữ xanh lá cây */
         }
+        /* CSS đã đề cập ở trên */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #ffffff;
+        }
+
+        .header img {
+            width: 100%;
+            height: auto;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            background-color: #1c8fbb;
+            padding: 10px 0;
+            position: relative; /* Thêm để submenu căn theo */
+        }
+
+        .menu a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        .menu .gioithieu {
+            cursor: pointer;
+        }
+
+        .menu .gioithieu.active {
+            background-color: #ffffff;
+            color: #1c8fbb;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-top: none;
+            z-index: 1000;
+            width: 200px;
+        }
+
+        .submenu a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .submenu a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .menu .gioithieu:hover + .submenu,
+        .submenu:hover {
+            display: block;
+        }
+
+        #content-area {
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
@@ -34,6 +109,18 @@
                 <span>Giới</span>
                 <span>thiệu</span>
             </a>
+            <div class="submenu">
+                <a href="#" data-content="truong">Trường THPT Đức Tân</a>
+                <a href="#" data-content="chi_bo">Chi bộ</a>
+                <a href="#" data-content="ban_giam_hieu">Ban giám hiệu</a>
+                <a href="#" data-content="cong_doan">Công đoàn</a>
+                <a href="#" data-content="doan_truong">Đoàn trường</a>
+                <a href="#" data-content="to_toan_tin">Tổ Toán - Tin</a>
+                <a href="#" data-content="to_van_anh">Tổ Văn - Anh</a>
+                <a href="#" data-content="to_hoa_sinh_cnnn">Tổ Hóa - Sinh - CNNN</a>
+                <a href="#" data-content="to_su_dia_ktpl">Tổ Sử - Địa - KTPL</a>
+                <a href="#" data-content="to_li_tcqp_cncn">Tổ Lí - TCQP - CNCN</a>
+            </div>
             <a href="#" class="hoatdong">
                 <span>Hoạt</span>
                 <span>động</span>
@@ -59,6 +146,18 @@
         <div class="menu">
             <a href="#">Trang chủ</a>
             <a href="#">Giới thiệu</a>
+            <div class="submenu">
+                <a href="#" data-content="truong">Trường THPT Đức Tân</a>
+                <a href="#" data-content="chi_bo">Chi bộ</a>
+                <a href="#" data-content="ban_giam_hieu">Ban giám hiệu</a>
+                <a href="#" data-content="cong_doan">Công đoàn</a>
+                <a href="#" data-content="doan_truong">Đoàn trường</a>
+                <a href="#" data-content="to_toan_tin">Tổ Toán - Tin</a>
+                <a href="#" data-content="to_van_anh">Tổ Văn - Anh</a>
+                <a href="#" data-content="to_hoa_sinh_cnnn">Tổ Hóa - Sinh - CNNN</a>
+                <a href="#" data-content="to_su_dia_ktpl">Tổ Sử - Địa - KTPL</a>
+                <a href="#" data-content="to_li_tcqp_cncn">Tổ Lí - TCQP - CNCN</a>
+            </div>
             <a href="#">Hoạt động</a>
             <a href="#" class="hocsinh">
                 <span>Học sinh và</span>
@@ -76,7 +175,11 @@
     <!-- Nội dung chung cho cả di động và máy tính -->
     <div class="noidung">
         <!-- Thêm nội dung dành cho máy tính ở đây -->
-        <p>Trang web đang trong thời gian cập nhật.</p>
+        <p>Trang web đang trong thời gian cập nhật.</p> 
+    </div>
+    <div id="content-area"> /* Hiển thị bài viết */
+        <!-- Nội dung sẽ được tải vào đây -->
+        <p>Chào mừng bạn đến với trang web của Trường THPT Đức Tân.</p>
     </div>
 
     <script>
@@ -107,6 +210,55 @@
             updateDateTime();
             setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
         };
+        // JavaScript đã đề cập ở trên (Lấy và hiển thị nội dung trong List)
+        document.addEventListener('DOMContentLoaded', function() {
+            const gioiThieuLink = document.querySelector('.menu .gioithieu');
+            const submenu = document.querySelector('.submenu');
+
+            gioiThieuLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                gioiThieuLink.classList.toggle('active');
+                submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!gioiThieuLink.contains(e.target) && !submenu.contains(e.target)) {
+                    gioiThieuLink.classList.remove('active');
+                    submenu.style.display = 'none';
+                }
+            });
+
+            const submenuLinks = document.querySelectorAll('.submenu a');
+            const contentArea = document.getElementById('content-area');
+
+            submenuLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const contentKey = this.getAttribute('data-content');
+                    loadContent(contentKey);
+                    
+                    gioiThieuLink.classList.remove('active');
+                    submenu.style.display = 'none';
+                });
+            });
+
+            function loadContent(key) {
+                const contents = {
+                    'truong': '<h2>Trường THPT Đức Tân</h2><p>Nội dung về Trường THPT Đức Tân...</p>',
+                    'chi_bo': '<h2>Chi bộ</h2><p>Nội dung về Chi bộ...</p>',
+                    'ban_giam_hieu': '<h2>Ban giám hiệu</h2><p>Nội dung về Ban giám hiệu...</p>',
+                    'cong_doan': '<h2>Công đoàn</h2><p>Nội dung về Công đoàn...</p>',
+                    'doan_truong': '<h2>Đoàn trường</h2><p>Nội dung về Đoàn trường...</p>',
+                    'to_toan_tin': '<h2>Tổ Toán - Tin</h2><p>Nội dung về Tổ Toán - Tin...</p>',
+                    'to_van_anh': '<h2>Tổ Văn - Anh</h2><p>Nội dung về Tổ Văn - Anh...</p>',
+                    'to_hoa_sinh_cnnn': '<h2>Tổ Hóa - Sinh - CNNN</h2><p>Nội dung về Tổ Hóa - Sinh - CNNN...</p>',
+                    'to_su_dia_ktpl': '<h2>Tổ Sử - Địa - KTPL</h2><p>Nội dung về Tổ Sử - Địa - KTPL...</p>',
+                    'to_li_tcqp_cncn': '<h2>Tổ Lí - TCQP - CNCN</h2><p>Nội dung về Tổ Lí - TCQP - CNCN...</p>',
+                };
+
+                contentArea.innerHTML = contents[key] || '<p>Nội dung đang được cập nhật.</p>';
+            }
+        });
     </script> <!-- Đóng thẻ script -->
     
 </body>
