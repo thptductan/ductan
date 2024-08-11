@@ -43,6 +43,16 @@ body {
     align-items: center; /* Căn giữa chữ theo chiều dọc */
 }
 
+/* Nội dung chỉ hiển thị trên di động */
+.mobile-only {
+    display: none; /* Ẩn nội dung này trên máy tính */
+}
+
+/* Nội dung chỉ hiển thị trên máy tính */
+.desktop-only {
+    display: none; /* Ẩn nội dung này trên di động */
+}
+
 /* Đối với thiết bị di động */
 @media (max-width: 768px) {
     .menu {
@@ -70,6 +80,10 @@ body {
     
     .menu .hocsinh span {
         display: block;
+    }
+
+    .mobile-only {
+        display: block; /* Hiển thị nội dung này trên di động */
     }
 }
 
@@ -106,5 +120,9 @@ body {
         font-size: 1em; /* Kích thước chữ trên máy tính */
         height: 36px; /* Chiều cao gấp 1.3 lần chiều cao chữ */
         line-height: 36px; /* Căn giữa chữ theo chiều dọc */
+    }
+
+    .desktop-only {
+        display: block; /* Hiển thị nội dung này trên máy tính */
     }
 }
