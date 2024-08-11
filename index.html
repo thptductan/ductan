@@ -191,24 +191,39 @@
 
     <script>
         function updateDateTime() {
-            const now = new Date();
-            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
-            const formattedDateTime = now.toLocaleDateString('vi-VN', options);
-            
-            const dateTimeElement = document.getElementById('date-time');
-            const dateTimeDesktopElement = document.getElementById('date-time-desktop');
-            
-            if (dateTimeElement) {
-                dateTimeElement.textContent = formattedDateTime;
-            }
-
-            if (dateTimeDesktopElement) {
-                dateTimeDesktopElement.textContent = formattedDateTime;
-            }
+        const now = new Date();
+        const daysOfWeek = ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
+    
+        const dayName = daysOfWeek[now.getDay()];
+        const day = now.getDate();
+        const month = now.getMonth() + 1; // Tháng trong JavaScript bắt đầu từ 0
+        const year = now.getFullYear();
+    
+        let hours = now.getHours();
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        
+        hours = hours % 12;
+        hours = hours ? hours : 12; // Nếu giờ là 0 thì đổi thành 12
+    
+        const formattedTime = `${hours}:${minutes}:${seconds} ${ampm}`;
+        const formattedDateTime = `${dayName}, ngày ${day}/${month}/${year}, ${formattedTime}`;
+    
+        const dateTimeElement = document.getElementById('date-time');
+        const dateTimeDesktopElement = document.getElementById('date-time-desktop');
+    
+        if (dateTimeElement) {
+            dateTimeElement.textContent = formattedDateTime;
         }
-
-        setInterval(updateDateTime, 1000); // Cập nhật thời gian mỗi giây
-        updateDateTime(); // Cập nhật ngay khi trang được tải
+    
+        if (dateTimeDesktopElement) {
+            dateTimeDesktopElement.textContent = formattedDateTime;
+        }
+    }
+    
+    setInterval(updateDateTime, 1000); // Cập nhật thời gian mỗi giây
+    updateDateTime(); // Cập nhật ngay khi trang được tải
     </script>
 </body>
 </html>
