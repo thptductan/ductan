@@ -147,6 +147,7 @@ body {
         align-items: center; /* Căn giữa chữ theo chiều ngang */
         white-space: nowrap; /* Đảm bảo không bị xuống dòng */
         min-height: 5px; /* Đảm bảo các mục có chiều cao tối thiểu để căn giữa */
+        font-weight: bold; /* Bôi đậm */
     }
 
     .menu span {
