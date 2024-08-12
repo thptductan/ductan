@@ -171,7 +171,7 @@ body {
 		position: relative;
 	}
 	.menu {
-		font-size: 2em
+		font-size: 1em
 		flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
 		justify-content: space-between; /* Căn đều các mục menu */
 		padding: 1px 0; /* Giảm khoảng cách trên và dưới */
