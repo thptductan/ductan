@@ -57,7 +57,7 @@ body {
 .submenu, .list {
 	display: none;
 	position: absolute;
-	background-color: rgba(242, 241, 239, 0.8);
+	background-color: #f2f1ef;
 	margin-top: 5px;
 	padding: 10px;
 	border-radius: 5px;
