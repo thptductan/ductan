@@ -151,8 +151,16 @@ body {
 	.main { */ Nội dung chi tiết của bài viết */
 		width: 100%;
 	}
-	.dropdown-content {	*/ Vùng danh sách bài viết */
+	.dropdown-content {
 		width: 100%;
+		top: 100%; /* Đảm bảo list xuất hiện ngay dưới "Giới thiệu" */
+		left: 0; /* Đảm bảo list căn lề trái */
+		position: absolute;
+		background-color: #f0f0f0; /* Màu nền nhạt hơn */
+	}
+
+	.gioithieu {
+		position: relative; /* Để đảm bảo dropdown xuất hiện ngay bên dưới */
 	}
 
 	.mobile-only {
