@@ -104,70 +104,41 @@
 		</ul>
 	</div>
 	<script>
-		function getBottomLeftCoordinates(element) {
-		  var rect = element.getBoundingClientRect();
-		  return {
-		    left: rect.left,
-		    bottom: rect.bottom
-		  };
-		}
-		
-		function positionDropdown() {
-		  var gioithieu = document.querySelector('.gioithieu');
-		  var dropdown = document.querySelector('.dropdown-content');
-		
-		  var coords = getBottomLeftCoordinates(gioithieu);
-		
-		  dropdown.style.left = coords.left + 'px'; // Đặt căn trái dựa trên tọa độ
-		  dropdown.style.top = coords.bottom + 'px'; // Đặt căn dưới dựa trên tọa độ
-		}
-		
-		// Hiển thị dropdown khi hover hoặc nhấn vào "Giới thiệu"
-		function showDropdown() {
-		  var dropdown = document.querySelector('.dropdown-content');
-		  dropdown.style.display = 'block';
-		  positionDropdown();
-		}
-		
-		// Ẩn dropdown khi nhấn ra ngoài hoặc khi một mục được chọn
-		function hideDropdown() {
-		  var dropdown = document.querySelector('.dropdown-content');
-		  dropdown.style.display = 'none';
-		}
-		
-		function setupDropdown() {
-		  var gioithieu = document.querySelector('.gioithieu');
-		  var dropdown = document.querySelector('.dropdown-content');
-		
-		  // Hiển thị dropdown khi hover hoặc nhấn vào "Giới thiệu"
-		  gioithieu.addEventListener('mouseover', showDropdown);
-		
-		  // Hiển thị dropdown khi nhấn vào "Giới thiệu"
-		  gioithieu.addEventListener('click', function(event) {
-		    event.stopPropagation(); // Ngăn không cho sự kiện click lan truyền ra ngoài
-		    showDropdown();
-		  });
-		
-		  // Ẩn dropdown khi nhấn ra ngoài hoặc khi một mục được chọn
-		  document.addEventListener('click', function(event) {
-		    if (!gioithieu.contains(event.target) && !dropdown.contains(event.target)) {
-		      hideDropdown();
+		document.addEventListener('DOMContentLoaded', function () {
+		    var gioithieu = document.querySelector('.gioithieu');
+		    var dropdownContent = document.querySelector('.dropdown-content');
+		    
+		    function showDropdown() {
+			var gioithieuRect = gioithieu.getBoundingClientRect();
+			dropdownContent.style.display = 'block';
+			dropdownContent.style.position = 'absolute';
+			dropdownContent.style.left = `${gioithieuRect.left}px`;
+			dropdownContent.style.top = `${gioithieuRect.bottom}px`;
+			dropdownContent.style.width = `${gioithieuRect.width}px`;
 		    }
-		  });
 		
-		  // Ẩn dropdown khi nhấn vào một mục trong danh sách
-		  var listItems = dropdown.querySelectorAll('a');
-		  listItems.forEach(function(item) {
-		    item.addEventListener('click', hideDropdown);
-		  });
+		    function hideDropdown() {
+			dropdownContent.style.display = 'none';
+		    }
 		
-		  // Cập nhật vị trí khi tài liệu đã tải xong và khi kích thước cửa sổ thay đổi
-		  document.addEventListener('DOMContentLoaded', positionDropdown);
-		  window.addEventListener('resize', positionDropdown);
-		}
+		    // Hiển thị dropdown khi hover hoặc nhấn vào gioithieu
+		    gioithieu.addEventListener('mouseenter', showDropdown);
+		    gioithieu.addEventListener('click', showDropdown);
 		
-		// Thực thi khi tài liệu đã tải xong
-		document.addEventListener('DOMContentLoaded', setupDropdown);
+		    // Ẩn dropdown khi nhấn ra ngoài hoặc chọn một mục trong dropdown
+		    document.addEventListener('click', function (event) {
+			if (!gioithieu.contains(event.target) && !dropdownContent.contains(event.target)) {
+			    hideDropdown();
+			}
+		    });
+		
+		    // Xử lý sự kiện khi nhấn vào một mục trong dropdown
+		    dropdownContent.addEventListener('click', function (event) {
+			if (event.target.tagName === 'A') {
+			    hideDropdown();
+			}
+		    });
+		});
 		
 		function updateDateTime() {
 		    const now = new Date();
