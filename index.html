@@ -105,65 +105,67 @@
 	</div>
 	<script>
 		/* Hàm quản lí menu */
-		document.querySelector('.gioithieu').addEventListener('mouseover', function() {
-			document.querySelector('.dropdown-content').style.display = 'block';
-		});
-		document.querySelector('.dropdown-content').addEventListener('mouseleave', function() {
-			this.style.display = 'none';
-		});
-
-		/* Hàm hiển thị nội dung khi nhấn vào trong list */
-		const contentArea = document.querySelector('.main');
-		const listLinks = document.querySelectorAll('.list a');
-		const dropdownContent = document.querySelector('.dropdown-content');
-		
-		listLinks.forEach(link => {
-			link.addEventListener('click', function(e) {
-				e.preventDefault();
-				const section = link.getAttribute('href').split('#')[1];
-				loadContent(section);
-				dropdownContent.style.display = 'none'; // Ẩn danh sách sau khi nhấn vào một mục
-			});
-		});
-		// Hàm ẩn list khi ấn vào một nơi khác
-		document.addEventListener('DOMContentLoaded', function() {
-	            document.addEventListener('click', function(event) {
-	                const dropdown = document.querySelector('.dropdown-content');
-	                const gioithieu = document.querySelector('.gioithieu');
+		document.addEventListener('DOMContentLoaded', function () {
+	    const dropdown = document.querySelector('.dropdown-content');
+	    const gioithieu = document.querySelector('.gioithieu');
 	
-	                // Nếu nhấp vào bên ngoài của dropdown hoặc .gioithieu thì ẩn dropdown
-	                if (!dropdown.contains(event.target) && !gioithieu.contains(event.target)) {
-	                    dropdown.style.display = 'none';
+	    function hideDropdown() {
+	        dropdown.style.display = 'none';
+	    }
+	
+	    function loadContent(section) {
+	        const contentDiv = document.querySelector('.main');
+	        
+	        // Sử dụng fetch để lấy nội dung từ zGioiThieu.html
+	        fetch('zGioiThieu.html')
+	            .then(response => response.text())
+	            .then(html => {
+	                // Tạo một DOM parser để phân tích HTML
+	                const parser = new DOMParser();
+	                const doc = parser.parseFromString(html, 'text/html');
+	                
+	                // Tìm phần tử với ID tương ứng trong tài liệu được tải về
+	                const sectionContent = doc.querySelector(`#${section}`);
+	                
+	                // Nếu tìm thấy phần tử, chèn nội dung vào phần tử chính
+	                if (sectionContent) {
+	                    contentDiv.innerHTML = sectionContent.innerHTML;
+	                } else {
+	                    contentDiv.innerHTML = '<p>Không tìm thấy nội dung.</p>';
 	                }
+	            })
+	            .catch(error => {
+	                console.error('Có lỗi xảy ra:', error);
+	                contentDiv.innerHTML = '<p>Không thể tải nội dung.</p>';
 	            });
-	        });
-		// Hàm lấy nội dung từ 'zGioiThieu.html' khi nhấn ở trong list gioithieu
-		function loadContent(section) {
-		    const contentDiv = document.querySelector('.main');
-		    
-		    // Sử dụng fetch để lấy nội dung từ zGioiThieu.html
-		    fetch('zGioiThieu.html')
-		        .then(response => response.text())
-		        .then(html => {
-		            // Tạo một DOM parser để phân tích HTML
-		            const parser = new DOMParser();
-		            const doc = parser.parseFromString(html, 'text/html');
-		            
-		            // Tìm phần tử với ID tương ứng trong tài liệu được tải về
-		            const sectionContent = doc.querySelector(`#${section}`);
-		            
-		            // Nếu tìm thấy phần tử, chèn nội dung vào phần tử chính
-		            if (sectionContent) {
-		                contentDiv.innerHTML = sectionContent.innerHTML;
-		            } else {
-		                contentDiv.innerHTML = '<p>Không tìm thấy nội dung.</p>';
-		            }
-		        })
-		        .catch(error => {
-		            console.error('Có lỗi xảy ra:', error);
-		            contentDiv.innerHTML = '<p>Không thể tải nội dung.</p>';
-		        });
-		}
+	    }
+	
+	    // Hiển thị dropdown khi hover hoặc nhấn vào gioithieu
+	    gioithieu.addEventListener('mouseenter', function () {
+	        dropdown.style.display = 'block';
+	    });
+	    gioithieu.addEventListener('click', function () {
+	        dropdown.style.display = 'block';
+	    });
+	
+	    // Ẩn dropdown khi nhấn ra ngoài hoặc nhấn vào một mục trong dropdown
+	    document.addEventListener('click', function (event) {
+	        if (!dropdown.contains(event.target) && !gioithieu.contains(event.target)) {
+	            hideDropdown();
+	        }
+	    });
+	
+	    // Xử lý và ẩn dropdown khi nhấn vào một mục trong dropdown
+	    dropdown.addEventListener('click', function (event) {
+	        if (event.target.tagName === 'A') {
+	            const sectionId = event.target.getAttribute('data-section'); // Lấy ID của mục cần tải nội dung
+	            if (sectionId) {
+	                loadContent(sectionId); // Gọi hàm tải nội dung
+	            }
+	            hideDropdown(); // Sau khi xử lý dữ liệu, ẩn dropdown
+	        }
+	    });
+	});
 		
 		function updateDateTime() {
 		    const now = new Date();
