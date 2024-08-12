@@ -235,13 +235,14 @@ body {
   }
 
   .dropdown-content {
-    border: 1px solid blue; /* Thêm border để kiểm tra vị trí */
-    width: 100%;
-    position: absolute;
-    top: 100%; /* Đảm bảo list xuất hiện ngay dưới "Giới thiệu" */
-    left: 0; /* Đảm bảo list căn lề trái */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+	  display: none;
+	  position: absolute; /* Sử dụng absolute để căn chỉnh tương đối với gioithieu */
+	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	  z-index: 10;
+	  padding-left: 15.65%; /* Khoảng hở từ lề trái */
+	  top: 100%; /* Xuất hiện ngay dưới gioithieu */
+	  width: 100%;
+	  box-sizing: border-box; /* Bao gồm padding trong kích thước tổng cộng */
   }
 
   .desktop-only {
