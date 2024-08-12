@@ -93,6 +93,7 @@ body {
         align-items: center;
         text-align: center;
         white-space: nowrap; /* Đảm bảo không bị xuống dòng */
+        font-weight: bold; /* Bôi đậm */
     }
     
     .mobile-only {
