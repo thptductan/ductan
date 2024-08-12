@@ -125,7 +125,18 @@
 				dropdownContent.style.display = 'none'; // Ẩn danh sách sau khi nhấn vào một mục
 			});
 		});
-		
+		// Hàm ẩn list khi ấn vào một nơi khác
+		document.addEventListener('DOMContentLoaded', function() {
+	            document.addEventListener('click', function(event) {
+	                const dropdown = document.querySelector('.dropdown-content');
+	                const gioithieu = document.querySelector('.gioithieu');
+	
+	                // Nếu nhấp vào bên ngoài của dropdown hoặc .gioithieu thì ẩn dropdown
+	                if (!dropdown.contains(event.target) && !gioithieu.contains(event.target)) {
+	                    dropdown.style.display = 'none';
+	                }
+	            });
+	        });
 		// Hàm lấy nội dung từ 'zGioiThieu.html' khi nhấn ở trong list gioithieu
 		function loadContent(section) {
 		    const contentDiv = document.querySelector('.main');
