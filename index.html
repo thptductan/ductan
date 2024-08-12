@@ -1,178 +1,145 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>THPT Đức Tân</title>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THPT Đức Tân</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	<div class="header">
-		<img src="Top1.png" alt="Top1">
-	</div>
-	<div class="mobile-only">
-		<div class="menu">
-			<a href="#" class="trangchu">
-				<span>Trang</span>
-				<span>chủ</span>
-			</a>
-			<a href="#" class="gioithieu">
-				<span>Giới</span>
-				<span>thiệu</span>
-			</a>
-			<div class="dropdown-content">
-				<ul class="list">
-					<li><a href="zGioiThieu.html#GioiThieu11">Trường THPT Đức Tân</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu10">Chi bộ</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu9">Ban giám hiệu</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu8">Công đoàn</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu7">Đoàn trường</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu6">Tổ Văn phòng</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu5">Tổ Toán - Tin</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu4">Tổ Văn - Anh</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu3">Tổ Hóa - Sinh - CNNN</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu2">Tổ Sử - Địa - KTPL</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu1">Tổ Lí - TCQP- CNCN</a></li>
-				</ul>
-			</div>
-			<a href="#" class="hoatdong">
-				<span>Hoạt</span>
-				<span>động</span>
-			</a>
-			<a href="#" class="hocsinh">
-				<span>Học sinh và</span>
-				<span>Cựu học sinh</span>
-			</a>
-			<ul class="submenu">
-				<li><a href="zHocSinh.html#hs">Học sinh tiêu biểu</a></li>
-				<li><a href="zHocSinh.html#cb">Hoạt động của Cựu học sinh</a></li>
-			</ul>
-			<a href="#" class="lienhe">
-				<span>Liên</span>
-				<span>hệ</span>
-			</a>
-			<a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn/" class="cchc">
-				<span>Sổ tay CCHC</span>
-				<span>tỉnh Bình Thuận</span>
-			</a>
-		</div>
-	</div>
-	<div class="desktop-only">
-		<div class="menu">
-			<a href="#">Trang chủ</a>
-			<a href="#" class="gioithieu">Giới thiệu</a>
-			<div class="dropdown-content">
-				<ul class="list">
-					<li><a href="zGioiThieu.html#GioiThieu11">Trường THPT Đức Tân</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu10">Chi bộ</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu9">Ban giám hiệu</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu8">Công đoàn</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu7">Đoàn trường</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu6">Tổ văn phòng</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu5">Tổ Toán - Tin</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu4">Tổ Văn - Anh</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu3">Tổ Hóa - Sinh - CNNN</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu2">Tổ Sử - Địa - KTPL</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu1">Tổ Lí TCQP- CNCN</a></li>
-				</ul>
-			</div>
-			<a href="#">Hoạt động</a>
-			<a href="#" class="hocsinh">
-				<span>Học sinh và</span>
-				<span>Cựu học sinh</span>
-			</a>
-			<ul class="submenu">
-				<li><a href="zHocSinh.html#hs">Học sinh tiêu biểu</a></li>
-				<li><a href="zHocSinh.html#cb">Hoạt động của Cựu học sinh</a></li>
-			</ul>
-			<a href="#">Liên hệ</a>
-			<a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn/" class="cchc">
-				<span>Sổ tay CCHC</span>
-				<span>tỉnh Bình Thuận</span>
-			</a>
-		</div>
-	</div>
-	<div id="date-time"></div>
-	<div class="main">
-		<p>Trang web đang trong quá trình cập nhật ...</p>
-		<!-- Nội dung bài viết sẽ hiển thị tại đây -->
-	</div>
-	<div class="sidebar">
-		<ul class="list">
-			<!-- Danh sách các bài viết -->
-		</ul>
-	</div>
-	<script>
-		/* Hàm quản lí menu */
-		document.querySelector('.gioithieu').addEventListener('mouseover', function() {
-			document.querySelector('.dropdown-content').style.display = 'block';
-		});
-		document.querySelector('.dropdown-content').addEventListener('mouseleave', function() {
-			this.style.display = 'none';
-		});
+    <div class="header">
+        <img src="Top1.png" alt="Top1">
+    </div>
+    <div class="mobile-only">
+        <div class="menu">
+            <a href="#" class="trangchu">
+                <span>Trang</span>
+                <span>chủ</span>
+            </a>
+            <a href="#" class="gioithieu">
+                <span>Giới</span>
+                <span>thiệu</span>
+            </a>
+            <div class="dropdown-content">
+                <ul class="list">
+                    <li><a href="zGioiThieu.html#GioiThieu11">Trường THPT Đức Tân</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu10">Chi bộ</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu9">Ban giám hiệu</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu8">Công đoàn</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu7">Đoàn trường</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu6">Tổ Văn phòng</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu5">Tổ Toán - Tin</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu4">Tổ Văn - Anh</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu3">Tổ Hóa - Sinh - CNNN</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu2">Tổ Sử - Địa - KTPL</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu1">Tổ Lí - TCQP- CNCN</a></li>
+                </ul>
+            </div>
+            <a href="#" class="hoatdong">
+                <span>Hoạt</span>
+                <span>động</span>
+            </a>
+            <a href="#" class="hocsinh">
+                <span>Học sinh và</span>
+                <span>Cựu học sinh</span>
+            </a>
+            <ul class="submenu">
+                <li><a href="zHocSinh.html#hs">Học sinh tiêu biểu</a></li>
+                <li><a href="zHocSinh.html#cb">Hoạt động của Cựu học sinh</a></li>
+            </ul>
+            <a href="#" class="lienhe">
+                <span>Liên</span>
+                <span>hệ</span>
+            </a>
+            <a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn/" class="cchc">
+                <span>Sổ tay CCHC</span>
+                <span>tỉnh Bình Thuận</span>
+            </a>
+        </div>
+    </div>
+    <div class="desktop-only">
+        <div class="menu">
+            <a href="#">Trang chủ</a>
+            <a href="#" class="gioithieu">Giới thiệu</a>
+            <div class="dropdown-content">
+                <ul class="list">
+                    <li><a href="zGioiThieu.html#GioiThieu11">Trường THPT Đức Tân</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu10">Chi bộ</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu9">Ban giám hiệu</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu8">Công đoàn</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu7">Đoàn trường</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu6">Tổ văn phòng</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu5">Tổ Toán - Tin</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu4">Tổ Văn - Anh</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu3">Tổ Hóa - Sinh - CNNN</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu2">Tổ Sử - Địa - KTPL</a></li>
+                    <li><a href="zGioiThieu.html#GioiThieu1">Tổ Lí TCQP- CNCN</a></li>
+                </ul>
+            </div>
+            <a href="#">Hoạt động</a>
+            <a href="#" class="hocsinh">
+                <span>Học sinh và</span>
+                <span>Cựu học sinh</span>
+            </a>
+            <ul class="submenu">
+                <li><a href="zHocSinh.html#hs">Học sinh tiêu biểu</a></li>
+                <li><a href="zHocSinh.html#cb">Hoạt động của Cựu học sinh</a></li>
+            </ul>
+            <a href="#">Liên hệ</a>
+            <a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn/" class="cchc">
+                <span>Sổ tay CCHC</span>
+                <span>tỉnh Bình Thuận</span>
+            </a>
+        </div>
+    </div>
+    <div id="date-time"></div>
+    <div class="main">
+        <p>Trang web đang trong quá trình cập nhật ...</p>
+        <!-- Nội dung bài viết sẽ hiển thị tại đây -->
+    </div>
+    <div class="sidebar">
+        <ul class="list">
+            <!-- Danh sách các bài viết -->
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+        });
 
-		/* Hàm hiển thị nội dung khi nhấn vào trong list */
-		const contentArea = document.querySelector('.main');
-		const listLinks = document.querySelectorAll('.list a');
-		const dropdownContent = document.querySelector('.dropdown-content');
-		
-		listLinks.forEach(link => {
-			link.addEventListener('click', function(e) {
-				e.preventDefault();
-				const section = link.getAttribute('href').split('#')[1];
-				loadContent(section);
-				dropdownContent.style.display = 'none'; // Ẩn danh sách sau khi nhấn vào một mục
-			});
-		});
-		
-		// Hàm lấy nội dung từ 'zGioiThieu.html' khi nhấn ở trong list gioithieu
-		function loadContent(section) {
-		    const contentDiv = document.querySelector('.main');
-		    
-		    // Sử dụng fetch để lấy nội dung từ zGioiThieu.html
-		    fetch('zGioiThieu.html')
-		        .then(response => response.text())
-		        .then(html => {
-		            // Tạo một DOM parser để phân tích HTML
-		            const parser = new DOMParser();
-		            const doc = parser.parseFromString(html, 'text/html');
-		            
-		            // Tìm phần tử với ID tương ứng trong tài liệu được tải về
-		            const sectionContent = doc.querySelector(`#${section}`);
-		            
-		            // Nếu tìm thấy phần tử, chèn nội dung vào phần tử chính
-		            if (sectionContent) {
-		                contentDiv.innerHTML = sectionContent.innerHTML;
-		            } else {
-		                contentDiv.innerHTML = '<p>Không tìm thấy nội dung.</p>';
-		            }
-		        })
-		        .catch(error => {
-		            console.error('Có lỗi xảy ra:', error);
-		            contentDiv.innerHTML = '<p>Không thể tải nội dung.</p>';
-		        });
-		}
+        /* Hàm quản lí menu */
+        document.querySelector('.gioithieu').addEventListener('mouseover', function() {
+            document.querySelector('.dropdown-content').style.display = 'block';
+        });
+        document.querySelector('.dropdown-content').addEventListener('mouseleave', function() {
+            this.style.display = 'none';
+        });
 
-		// Hiển thị ngày giờ
-		function updateDateTime() {
-		  const now = new Date();
-		  const daysOfWeek = ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
-		  const dayName = daysOfWeek[now.getDay()];
-		  const day = now.getDate();
-		  const month = now.getMonth() + 1;
-		  const year = now.getFullYear();
-		  let hours = now.getHours();
-		  const minutes = now.getMinutes().toString().padStart(2, '0');
-		  const seconds = now.getSeconds().toString().padStart(2, '0');
-		  const ampm = hours >= 12 ? 'PM' : 'AM';
-		  hours = hours % 12 || 12;
-		  const formattedTime = `${hours}:${minutes}:${seconds} ${ampm}`;
-		  const formattedDateTime = `${dayName}, ${day}/${month}/${year}, ${formattedTime}`;
-		  document.getElementById('date-time')?.textContent = formattedDateTime;
-		}
-		
-		setInterval(updateDateTime, 1000);
-		updateDateTime();
-	</script>
+        /* Hàm hiển thị nội dung khi nhấn vào trong list */
+        const contentArea = document.querySelector('.main');
+        const listLinks = document.querySelectorAll('.list a');
+        const dropdownContent = document.querySelector('.dropdown-content');
+        
+        listLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                contentArea.innerHTML = `<p>Đang tải nội dung cho ${this.textContent}...</p>`;
+            });
+        });
+
+        /* Hàm cập nhật ngày và giờ */
+        function updateDateTime() {
+            const now = new Date();
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const dateTimeString = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+            document.getElementById('date-time').textContent = dateTimeString;
+        }
+    </script>
 </body>
 </html>
