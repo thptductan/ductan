@@ -111,6 +111,7 @@ body {
 
 	h2 {
 		font-size: 1.2em;
+		color: #1c8fbb;
 	}
 
 	p {
@@ -129,9 +130,6 @@ body {
 		position: relative;
 	}
 	
-	.header img {
-		width: 100%; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
-	}
 	.menu {
 		flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
 		justify-content: space-between; /* Căn đều các mục menu */
@@ -140,7 +138,6 @@ body {
 	
 	.menu a {
 		padding: 5px 5px; /* Tăng khoảng cách trên và dưới cho chữ */
-		font-size: 1em; /* Kích thước chữ trên máy tính */
 		white-space: nowrap; /* Đảm bảo không bị xuống dòng */
 		min-height: 5px; /* Đảm bảo các mục có chiều cao tối thiểu để căn giữa */
 	}
@@ -179,7 +176,7 @@ body {
 		margin-left: 5px;
 		margin-right: 5px;
 		margin-bottom: 10px;
-		color: #1c8fbb; /* Màu sắc của tiêu đề */
+		color: #1c8fbb;
 	}
 	
 	p {
