@@ -22,6 +22,13 @@ body {
 	height: auto;
 }
 
+#date-time, #date-time-desktop {
+	color: #007bff;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: left;
+	margin-top: 5px;
+}
 /* Danh mục */
 .menu {
 	display: flex;
@@ -58,14 +65,6 @@ body {
 	z-index: 10;
 }
 
-#date-time, #date-time-desktop {
-	color: #007bff;
-	font-size: 1em;
-	font-weight: bold;
-	text-align: left;
-	margin-top: 5px;
-}
-
 .gioithieu:hover .submenu {
 	display: block; /* Hiển thị danh sách con khi hover */
 }
@@ -79,21 +78,11 @@ body {
 	text-decoration: none;
 }
 
-/* Nội dung chỉ hiển thị trên di động */
-.mobile-only {
-	display: none; /* Ẩn nội dung này trên máy tính */
-}
-
-/* Nội dung chỉ hiển thị trên máy tính */
-.desktop-only {
-	display: none; /* Ẩn nội dung này trên di động */
-}
-
 /* định dạng cho list của GioiThieu */
 .dropdown-content {
 	display: none;
 	position: absolute;
-	background-color: #f9f9f9;
+	background-color: #f2f1ef;
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
@@ -119,8 +108,15 @@ body {
 	display: block;
 }
 
+.mobile-only { /* Nội dung chỉ hiển thị trên di động */
+	display: none; /* Ẩn nội dung này trên máy tính */
+}
 
-																/* Quy định cho thiết bị di động */
+.desktop-only { /* Nội dung chỉ hiển thị trên máy tính */
+	display: none; /* Ẩn nội dung này trên di động */
+}
+
+								/* Quy định cho thiết bị di động */
 @media (max-width: 768px) {
 	.menu {
 		font-size: 0.8em; /* Giảm kích thước chữ trên di động */
