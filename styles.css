@@ -24,7 +24,7 @@ body {
 
 #date-time, #date-time-desktop {
 	color: #007bff;
-	font-size: 1em;
+	font-size: 1.5em;
 	font-weight: bold;
 	text-align: left;
 	margin-top: 5px;
@@ -172,6 +172,7 @@ body {
   }
 
   .menu {
+	font-size: 1.5em	
     flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
     justify-content: space-between; /* Căn đều các mục menu */
     padding: 1px 0; /* Giảm khoảng cách trên và dưới */
