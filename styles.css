@@ -89,6 +89,37 @@ body {
 	display: none; /* Ẩn nội dung này trên di động */
 }
 
+/* định dạng cho list của GioiThieu */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-content .list {
+	display: block;
+	padding: 12px 16px;
+	text-decoration: none;
+	color: black;
+}
+
+.dropdown-content .list a {
+	color: black;
+	text-decoration: none;
+	display: block;
+	padding: 5px 0;
+}
+
+/* Hover để hiển thị menu */
+.gioithieu:hover + .dropdown-content, 
+.dropdown-content:hover {
+	display: block;
+}
+
+
 																/* Quy định cho thiết bị di động */
 @media (max-width: 768px) {
 	.menu {
@@ -184,6 +215,15 @@ body {
 		margin-right: 5px;
 		margin-bottom: 10px;
 		line-height: 1.5;
+	}
+	/* Qui định vùng hiển thị */
+	.main { */ Nội dung chi tiết của bài viết */
+		width: 70%;
+		float: left;
+	}
+	.sidebar { */ Danh sách bài viết */
+		width: 30%;
+		float: right;
 	}
 	
 	.desktop-only {
