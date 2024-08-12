@@ -60,11 +60,10 @@ body {
 
 #date-time, #date-time-desktop {
 	color: #007bff;
-	font-size: 0.7em;
+	font-size: 1em;
 	font-weight: bold;
 	text-align: left;
 	margin-top: 5px;
-	margin-left: 5px;
 }
 
 .gioithieu:hover .submenu {
