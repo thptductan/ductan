@@ -231,9 +231,11 @@ body {
 
   .gioithieu {
     position: relative; /* Để đảm bảo dropdown xuất hiện ngay bên dưới */
+    border: 1px solid red; /* Thêm border để kiểm tra vị trí */
   }
 
   .dropdown-content {
+    border: 1px solid blue; /* Thêm border để kiểm tra vị trí */
     width: 100%;
     position: absolute;
     top: 100%; /* Đảm bảo list xuất hiện ngay dưới "Giới thiệu" */
