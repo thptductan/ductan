@@ -165,19 +165,17 @@ body {
 }
 																/* Quy định cho màn hình máy tính */
 @media (min-width: 1024px) {
-  body {
-    max-width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
-    margin: 0 auto; /* Căn giữa phần nội dung */
-    position: relative;
-  }
-
-  .menu {
-	font-size: 1.5em	
-    flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
-    justify-content: space-between; /* Căn đều các mục menu */
-    padding: 1px 0; /* Giảm khoảng cách trên và dưới */
-  }
-
+	body {
+		max-width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
+		margin: 0 auto; /* Căn giữa phần nội dung */
+		position: relative;
+	}
+	.menu {
+		font-size: 1.5em
+		flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
+		justify-content: space-between; /* Căn đều các mục menu */
+		padding: 1px 0; /* Giảm khoảng cách trên và dưới */
+	}
   .menu a {
     padding: 5px 5px; /* Tăng khoảng cách trên và dưới cho chữ */
     white-space: nowrap; /* Đảm bảo không bị xuống dòng */
