@@ -48,15 +48,25 @@ body {
 
 }
 
-.submenu {
-	display: none;
-	position: absolute;
-	background-color: #1c8fbb; /* Nền xanh giống như menu chính */
-	margin-top: 5px;
-	padding: 10px;
-	border-radius: 5px;
-	list-style: none;
-}
+.submenu, .list {
+		display: none;
+		position: absolute;
+		background-color: #b3d9ff; /* Nền xanh nhạt */
+		margin-top: 5px;
+		padding: 10px;
+		border-radius: 5px;
+		list-style: none;
+		z-index: 10;
+	}
+
+#date-time, #date-time-desktop {
+		color: #007bff;
+		font-size: 0.7em;
+		font-weight: bold;
+		text-align: left;
+		margin-top: 5px;
+		margin-left: 5px;
+	}
 
 .gioithieu:hover .submenu {
 	display: block; /* Hiển thị danh sách con khi hover */
