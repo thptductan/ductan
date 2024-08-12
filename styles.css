@@ -1,10 +1,10 @@
-/* Quy định chung */
+CSS:
+/* Toàn bộ trang */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #ffffff; /* Nền trắng cho toàn trang */
-    overflow-x: hidden; /* Khóa cuộn ngang */
 }
 
 /* Phần đầu trang với ảnh */
@@ -26,6 +26,7 @@ body {
     display: flex;
     justify-content: space-around; /* Phân phối đều khoảng cách */
     background-color: #1c8fbb; /* Nền xanh */
+    padding: 4px 0; /* Tăng khoảng cách trên và dưới */
     box-sizing: border-box;
     position: relative;
 }
@@ -35,33 +36,26 @@ body {
     text-decoration: none; /* Không gạch chân */
     text-align: center;
     flex: 1; /* Các mục sẽ phân chia đều không gian */
+    padding: 4px 0; /* Tăng khoảng cách trên và dưới cho chữ */
     font-size: 1em; /* Kích thước chữ trên máy tính */
     line-height: 1; /* Chiều cao dòng để căn giữa chữ */
     display: flex;
     justify-content: center; /* Căn giữa chữ theo chiều ngang */
     align-items: center; /* Căn giữa chữ theo chiều dọc */
-    font-weight: bold; /* Bôi đậm */
-    flex-direction: column;
 }
-
-/* Danh sách con và danh sách chính */
-.submenu, .list {
+}
+.submenu {
     display: none;
     position: absolute;
-    background-color: #b3d9ff; /* Nền xanh nhạt */
+    background-color: #1c8fbb; /* Nền xanh giống như menu chính */
     margin-top: 5px;
     padding: 10px;
     border-radius: 5px;
     list-style: none;
-    z-index: 10;
 }
 
-#date-time, #date-time-desktop {
-    color: #007bff;
-    font-size: 1em;
-    font-weight: bold;
-    text-align: left;
-    margin-top: 5px;
+.gioithieu:hover .submenu {
+    display: block; /* Hiển thị danh sách con khi hover */
 }
 
 .submenu li {
@@ -82,73 +76,44 @@ body {
 .desktop-only {
     display: none; /* Ẩn nội dung này trên di động */
 }
-
-/* Định dạng cho list của GioiThieu */
-.dropdown-content {
-    display: none; /* Ẩn mặc định */
-    position: absolute; /* Đặt vị trí tuyệt đối */
-    background-color: rgba(255, 255, 255, 0.25); /* Màu nền nhạt hơn */
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Thêm bóng cho danh sách */
-    z-index: 1;
-    width: 100%; /* Đảm bảo danh sách chiếm toàn bộ chiều ngang của phần tử chứa */
-    top: 100%; /* Đặt danh sách ngay dưới phần tử chứa */
-    left: 0; /* Đặt danh sách căn lề trái của phần tử chứa */
-}
-
-/* Đặt vị trí cho phần tử chứa danh sách */
-.gioithieu {
-    position: relative; /* Để đảm bảo dropdown xuất hiện ngay bên dưới */
-}
-
-/* Hiển thị danh sách khi hover */
-.gioithieu:hover .dropdown-content, 
-.dropdown-content:hover {
-    display: block;
-}
-
-/* Quy định cho thiết bị di động */
+ 
+                                                                                    /* Đối với thiết bị di động */
 @media (max-width: 768px) {
     .menu {
-        font-size: 0.8em; /* Giảm kích thước chữ trên di động */
         flex-direction: row; /* Hiển thị theo hàng ngang */
         padding: 2px 0; /* Giảm khoảng cách trên và dưới */
         justify-content: space-around; /* Căn chỉnh đều trên di động */
     }
-
+    
     .menu a {
         font-size: 0.8em; /* Giảm kích thước chữ trên di động */
         padding: 2px 0; /* Giảm khoảng cách trên và dưới cho chữ */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         white-space: nowrap; /* Đảm bảo không bị xuống dòng */
     }
-
-    h1 {
-        font-size: 1.3em;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    h2 {
-        font-size: 1em;
-        font-weight: bold;
-    }
-
-    p {
-        font-size: 1em;
-        margin: 20px 0;
-    }
-
-    /* Qui định vùng hiển thị */
-    .main { /* Nội dung chi tiết của bài viết */
-        width: 100%;
-    }
-
+    
     .mobile-only {
         display: block; /* Hiển thị nội dung này trên di động */
     }
 }
 
-/* Quy định cho màn hình máy tính */
+/* Quy định cho chiều ngang */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Khóa cuộn ngang trên di động */
+    }
+}
+
+@media (min-width: 769px) {
+    body {
+        overflow-x: hidden; /* Khóa cuộn ngang trên máy tính */
+    }
+}
+                                                                                /* Quy định cho màn hình máy tính */
 @media (min-width: 1024px) {
     body {
         max-width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
@@ -156,14 +121,30 @@ body {
         position: relative;
     }
 
+    .header img {
+        width: 100%; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
+    }
+
     .menu {
+        display: flex;
         flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
         justify-content: space-between; /* Căn đều các mục menu */
+        align-items: center; /* Căn giữa các mục theo chiều dọc */
+        background-color: #1c8fbb; /* Nền xanh */
         padding: 1px 0; /* Giảm khoảng cách trên và dưới */
+        box-sizing: border-box;
     }
 
     .menu a {
+        color: #ffffff; /* Chữ trắng */
+        text-decoration: none; /* Không gạch chân */
+        text-align: center;
         padding: 5px 5px; /* Tăng khoảng cách trên và dưới cho chữ */
+        font-size: 1em; /* Kích thước chữ trên máy tính */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Căn giữa chữ theo chiều dọc */
+        align-items: center; /* Căn giữa chữ theo chiều ngang */
         white-space: nowrap; /* Đảm bảo không bị xuống dòng */
         min-height: 5px; /* Đảm bảo các mục có chiều cao tối thiểu để căn giữa */
     }
@@ -189,34 +170,221 @@ body {
         width: 100%; /* Đảm bảo cụm này chiếm toàn bộ chiều ngang */
     }
 
-    h1 {
-        font-size: 2em;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    h2 {
-        font-size: 1.5em;
-        font-weight: bold;
-    }
-
-    p {
-        font-size: 1.5em;
-        margin: 20px 0;
-    }
-
-    /* Qui định vùng hiển thị */
-    .main { /* Nội dung chi tiết của bài viết */
-        width: 70%;
-        float: left;
-        margin-top: 5px; /* Điều chỉnh khoảng cách phía trên nếu cần */
-    }
-    .sidebar { /* Danh sách bài viết */
-        width: 30%;
-        float: right;
-    }
-
     .desktop-only {
         display: block; /* Hiển thị nội dung này trên máy tính */
     }
 }
+Html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THPT Đức Tân</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #date-time, #date-time-desktop {
+            color: #007bff; /* Đổi thành màu bạn mong muốn */
+            font-size: 0.7em; /* Tăng hoặc giảm cỡ chữ theo mong muốn */
+            font-weight: bold; /* Có thể thêm nếu bạn muốn chữ đậm */
+            text-align: left; /* Căn giữa nếu cần */
+            margin-top: 2px; /* Tạo khoảng cách phía trên nếu cần */
+        }
+        .submenu {
+            display: none; /* Ẩn submenu mặc định */
+            position: absolute;
+            background-color: #1c8fbb; /* Nền xanh giống như menu chính */
+            margin-top: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            list-style: none;
+        }
+
+        .submenu li {
+            margin-bottom: 5px;
+        }
+
+        .submenu li a {
+            color: #ffffff; /* Chữ trắng */
+            text-decoration: none;
+        }
+
+        .gioithieu:hover .submenu {
+            display: block; /* Hiển thị danh sách con khi hover */
+        }
+
+        /* Nội dung chỉ hiển thị trên di động */
+        .mobile-only {
+            display: none; /* Ẩn nội dung này trên máy tính */
+        }
+
+        /* Nội dung chỉ hiển thị trên máy tính */
+        .desktop-only {
+            display: none; /* Ẩn nội dung này trên di động */
+        }
+
+        /* Đối với thiết bị di động */
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: row; /* Hiển thị theo hàng ngang */
+                padding: 2px 0; /* Giảm khoảng cách trên và dưới */
+                justify-content: space-around; /* Căn chỉnh đều trên di động */
+            }
+
+            .menu a {
+                font-size: 0.8em; /* Giảm kích thước chữ trên di động */
+                padding: 2px 0; /* Giảm khoảng cách trên và dưới cho chữ */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                white-space: nowrap; /* Đảm bảo không bị xuống dòng */
+            }
+
+            .mobile-only {
+                display: block; /* Hiển thị nội dung này trên di động */
+            }
+        }
+
+        /* Quy định cho chiều ngang */
+        @media (min-width: 769px) {
+            body {
+                overflow-x: hidden; /* Khóa cuộn ngang trên máy tính */
+            }
+        }
+
+        /* Quy định cho màn hình máy tính */
+        @media (min-width: 1024px) {
+            body {
+                max-width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
+                margin: 0 auto; /* Căn giữa phần nội dung */
+                position: relative;
+            }
+
+            .header img {
+                width: 100%; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
+            }
+
+            .menu {
+                display: flex;
+                flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
+                justify-content: space-between; /* Căn đều các mục menu */
+                align-items: center; /* Căn giữa các mục theo chiều dọc */
+                background-color: #1c8fbb; /* Nền xanh */
+                padding: 1px 0; /* Giảm khoảng cách trên và dưới */
+                box-sizing: border-box;
+            }
+
+            .menu a {
+                color: #ffffff; /* Chữ trắng */
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="Top1.png" alt="Top1">
+    </div>
+
+    <!-- Nội dung chỉ hiển thị trên di động -->
+    <div class="mobile-only">
+        <div class="menu">
+            <a href="#" class="trangchu">
+                <span>Trang</span>
+                <span>chủ</span>
+            </a>
+            <a href="#" class="gioithieu">
+                <span>Giới</span>
+                <span>thiệu</span>
+            </a>
+            <ul class="submenu">
+                <li><a href="zGioiThieu.html#truong">Trường THPT Đức Tân</a></li>
+                <li><a href="zGioiThieu.html#chi-bo">Chi bộ</a></li>
+                <li><a href="zGioiThieu.html#ban-giam-hieu">Ban giám hiệu</a></li>
+                <li><a href="zGioiThieu.html#cong-doan">Công đoàn</a></li>
+                <li><a href="zGioiThieu.html#doan-truong">Đoàn trường</a></li>
+                <li><a href="zGioiThieu.html#to-van-phong">Tổ văn phòng</a></li>
+                <li><a href="zGioiThieu.html#to-toan-tin">Tổ Toán - Tin</a></li>
+                <li><a href="zGioiThieu.html#to-van-anh">Tổ Văn - Anh</a></li>
+                <li><a href="zGioiThieu.html#to-hoa-sinh-cn">Tổ Hóa - Sinh - CNNN</a></li>
+                <li><a href="zGioiThieu.html#to-su-dia-ktpl">Tổ Sử - Địa - KTPL</a></li>
+                <li><a href="zGioiThieu.html#to-li-tcqp-cnc">Tổ Lí TCQP- CNCN</a></li>
+            </ul>
+            <a href="#" class="hoatdong">
+                <span>Hoạt</span>
+                <span>động</span>
+            </a>
+            <a href="#" class="hocsinh">
+                <span>Học sinh và</span>
+                <span>Cựu học sinh</span>
+            </a>
+            <a href="#" class="lienhe">
+                <span>Liên</span>
+                <span>hệ</span>
+            </a>
+            <a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn/" class="cchc">
+                <span>Sổ tay CCHC</span>
+                <span>tỉnh Bình Thuận</span>
+            </a>
+        </div>
+        <div id="date-time"></div> <!-- Thêm phần hiển thị ngày giờ hiện tại cho di động -->
+    </div>
+
+    <!-- Nội dung chỉ hiển thị trên máy tính -->
+    <div class="desktop-only">
+        <div class="menu">
+            <a href="#">Trang chủ</a>
+            <a href="#" class="gioithieu">Giới thiệu</a>
+            <ul class="submenu">
+                <li><a href="zGioiThieu.html#truong">Trường THPT Đức Tân</a></li>
+                <li><a href="zGioiThieu.html#chi-bo">Chi bộ</a></li>
+                <li><a href="zGioiThieu.html#ban-giam-hieu">Ban giám hiệu</a></li>
+                <li><a href="zGioiThieu.html#cong-doan">Công đoàn</a></li>
+                <li><a href="zGioiThieu.html#doan-truong">Đoàn trường</a></li>
+                <li><a href="zGioiThieu.html#to-van-phong">Tổ văn phòng</a></li>
+                <li><a href="zGioiThieu.html#to-toan-tin">Tổ Toán - Tin</a></li>
+                <li><a href="zGioiThieu.html#to-van-anh">Tổ Văn - Anh</a></li>
+                <li><a href="zGioiThieu.html#to-hoa-sinh-cn">Tổ Hóa - Sinh - CNNN</a></li>
+                <li><a href="zGioiThieu.html#to-su-dia-ktpl">Tổ Sử - Địa - KTPL</a></li>
+                <li><a href="zGioiThieu.html#to-li-tcqp-cnc">Tổ Lí TCQP- CNCN</a></li>
+            </ul>
+            <a href="#">Hoạt động</a>
+            <a href="#">Học sinh và Cựu học sinh</a>
+            <a href="#">Liên hệ</a>
+            <a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn/">Sổ tay CCHC tỉnh Bình Thuận</a>
+        </div>
+        <div id="date-time-desktop"></div> <!-- Thêm phần hiển thị ngày giờ hiện tại cho máy tính -->
+    </div>
+
+    <script>
+        // Hiển thị ngày giờ hiện tại cho di động
+        function updateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+            };
+            const dateTimeString = now.toLocaleDateString('vi-VN', options);
+            document.getElementById('date-time').textContent = dateTimeString;
+            document.getElementById('date-time-desktop').textContent = dateTimeString;
+        }
+
+        // Cập nhật thời gian mỗi giây
+        setInterval(updateTime, 1000);
+
+        // Hiển thị menu con khi nhấn vào "Giới thiệu" trên di động
+        document.querySelector('.gioithieu').addEventListener('click', function(event) {
+            const submenu = document.querySelector('.submenu');
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+            event.preventDefault(); // Ngăn chặn sự kiện mặc định để không gây ra sự kiện nhấp vào link
+        });
+    </script>
+</body>
+</html>
