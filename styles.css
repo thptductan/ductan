@@ -234,9 +234,11 @@ body {
 
 	.dropdown-content {
 		width: 100%;
+		position: absolute;
 		top: 100%; /* Đảm bảo list xuất hiện ngay dưới "Giới thiệu" */
 		left: 0; /* Đảm bảo list căn lề trái */
-		position: absolute;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  		z-index: 1;
 	}
 
 	
