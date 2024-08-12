@@ -106,18 +106,23 @@
 	</div>
 	<script>
 		/* Hàm quản lí menu */
-		document.querySelector('.gioithieu').addEventListener('mouseover', function() {
-			document.querySelector('.dropdown-content').style.display = 'block';
+		document.querySelector('.gioithieu').addEventListener('click', function(e) {
+			e.preventDefault();
+			const dropdownContent = document.querySelector('.dropdown-content');
+			dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
+			
+			// Đảm bảo list hiện ra ngay dưới "Giới thiệu"
+			const rect = this.getBoundingClientRect();
+			dropdownContent.style.top = `${rect.bottom}px`;
+			dropdownContent.style.left = `${rect.left}px`;
 		});
-		document.querySelector('.dropdown-content').addEventListener('mouseleave', function() {
-			this.style.display = 'none';
-		});
-
-		/* Hàm hiển thị nội dung khi nhấn vào trong list */
-		const contentArea = document.querySelector('.main');
-		const listLinks = document.querySelectorAll('.list a');
-		const dropdownContent = document.querySelector('.dropdown-content');
 		
+		document.addEventListener('click', function(e) {
+			const dropdownContent = document.querySelector('.dropdown-content');
+			if (!dropdownContent.contains(e.target) && !document.querySelector('.gioithieu').contains(e.target)) {
+				dropdownContent.style.display = 'none';
+			}
+		});
 		listLinks.forEach(link => {
 			link.addEventListener('click', function(e) {
 				e.preventDefault();
