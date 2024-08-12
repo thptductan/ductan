@@ -123,17 +123,35 @@
 				dropdownContent.style.display = 'none'; // Ẩn danh sách sau khi nhấn vào một mục
 			});
 		});
-		
+		// Hàm lấy nội dung từ 'zGioiThieu.html' khi nhấn ở trong list gioithieu
 		function loadContent(section) {
-			// Giả lập nội dung. Thay đổi mã này để tải nội dung thực từ zGioiThieu.
-			const content = {
-				truong: "Nội dung về Trường THPT Đức Tân...",
-				cb: "Nội dung về Chi bộ...",
-				bgh: "Nội dung về Ban giám hiệu...",
-				// Thêm các mục khác tại đây.
-			};
-		
-			contentArea.innerHTML = `<h2>${section}</h2><p>${content[section]}</p>`;
+		    const contentDiv = document.querySelector('.main-content');
+		    
+		    // Sử dụng fetch để lấy nội dung từ zGioiThieu.html
+		    fetch('zGioiThieu.html')
+		        .then(response => response.text())
+		        .then(html => {
+		            // Tạo một DOM parser để phân tích HTML
+		            const parser = new DOMParser();
+		            const doc = parser.parseFromString(html, 'text/html');
+		            
+		            // Tìm phần tử với id tương ứng
+		            const sectionContent = doc.getElementById(section);
+		            if (sectionContent) {
+		                // Gắn nội dung vào contentDiv
+		                contentDiv.innerHTML = sectionContent.innerHTML;
+		            } else {
+		                contentDiv.innerHTML = '<p>Không tìm thấy nội dung.</p>';
+		            }
+		        })
+		        .catch(error => {
+		            console.error('Lỗi khi tải nội dung:', error);
+		            contentDiv.innerHTML = '<p>Đã xảy ra lỗi khi tải nội dung.</p>';
+		        });
+		    
+		    // Ẩn list sau khi chọn
+		    const list = document.querySelector('.list');
+		    list.style.display = 'none';
 		}
 		// Hiển thị list khi nhấn vào "Giới thiệu" trên di động
 		document.querySelector('.gioithieu').addEventListener('click', function(e) {
