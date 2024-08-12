@@ -58,7 +58,7 @@ body {
 	z-index: 10;
 }
 
-#date-time, #date-time-desktop {
+#date-time {
 	color: #007bff;
 	font-size: 1em;
 	font-weight: bold;
