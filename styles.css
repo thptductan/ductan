@@ -239,7 +239,7 @@ body {
 	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	  z-index: 10;
 	  left: 16%; /* Căn chỉnh lề trái */
-	  top: 98%; /* Căn chỉnh khoảng cách từ trên xuống */
+	  top: 94%; /* Căn chỉnh khoảng cách từ trên xuống */
   }
 
   .desktop-only {
