@@ -148,6 +148,7 @@ body {
 
 	p {
 		font-size: 1em;
+		margin: 20px 0;
 	}
 	/* Qui định vùng hiển thị */
 	.main { */ Nội dung chi tiết của bài viết */
@@ -232,6 +233,7 @@ body {
 		margin-right: 5px;
 		line-height: 1.5;
 		font-size: 1.5em;
+		margin: 20px 0;
 	}
 	/* Qui định vùng hiển thị */
 	.main { */ Nội dung chi tiết của bài viết */
