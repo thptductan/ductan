@@ -231,7 +231,6 @@ body {
 
   .gioithieu {
     position: relative; /* Để đảm bảo dropdown xuất hiện ngay bên dưới */
-    border: 1px solid red; /* Thêm border để kiểm tra vị trí */
   }
 
   .dropdown-content {
@@ -241,8 +240,6 @@ body {
 	  z-index: 10;
 	  left: 32%px; /* Căn chỉnh lề trái */
 	  top: 100%; /* Căn chỉnh khoảng cách từ trên xuống */
-	  width: auto; /* Chiều rộng tự động dựa trên nội dung */
-	  transform: translateX(-50%); /* Dịch chuyển để căn giữa chính xác */
   }
 
   .desktop-only {
