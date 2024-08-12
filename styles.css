@@ -89,33 +89,29 @@ body {
 	display: none; /* Ẩn nội dung này trên di động */
 }
 
-/* định dạng cho list của GioiThieu */
+/* Định dạng cho list của GioiThieu */
 .dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: rgba(255, 255, 255, 0.5); /* Nền trắng với 50% độ trong suốt */
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
-}
-.dropdown-content {
-	width: 100%;
-	top: 100%; /* Đảm bảo list xuất hiện ngay dưới "Giới thiệu" */
-	left: 0; /* Đảm bảo list căn lề trái */
-	position: absolute;
-	background-color: #f0f0f0; /* Màu nền nhạt hơn */
+    display: none; /* Ẩn mặc định */
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    background-color: rgba(255, 255, 255, 0.5); /* Nền trắng với 50% độ trong suốt */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Thêm bóng cho danh sách */
+    z-index: 1;
+    width: 100%; /* Đảm bảo danh sách chiếm toàn bộ chiều ngang của phần tử chứa */
+    top: 100%; /* Đặt danh sách ngay dưới phần tử chứa */
+    left: 0; /* Đặt danh sách căn lề trái của phần tử chứa */
 }
 
+/* Đặt vị trí cho phần tử chứa danh sách */
 .gioithieu {
-	position: relative; /* Để đảm bảo dropdown xuất hiện ngay bên dưới */
+    position: relative; /* Để đảm bảo dropdown xuất hiện ngay bên dưới */
 }
-/* Hover để hiển thị menu */
-.gioithieu:hover + .dropdown-content, 
+
+/* Hiển thị danh sách khi hover */
+.gioithieu:hover .dropdown-content, 
 .dropdown-content:hover {
-	display: block;
+    display: block;
 }
-
-
 																/* Quy định cho thiết bị di động */
 @media (max-width: 768px) {
 	.menu {
