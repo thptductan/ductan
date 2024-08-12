@@ -125,8 +125,10 @@
 		        const section = link.getAttribute('href').split('#')[1];
 		        loadContent(section);
 		
-		        // Ẩn danh sách sau khi nhấn vào một mục
-		        dropdownContent.style.display = 'none';
+		        // Đặt một timeout nhỏ để đảm bảo rằng dropdown sẽ ẩn đi sau khi click vào mục
+		        setTimeout(() => {
+		            dropdownContent.style.display = 'none';
+		        }, 100); // 100ms để tránh xung đột sự kiện
 		    });
 		});
 		
@@ -170,8 +172,6 @@
 		            contentDiv.innerHTML = '<p>Không thể tải nội dung.</p>';
 		        });
 		}
-
-
 		// Hàm lấy và hiển thị thứ ngày giờ: Định dạng nó ở styles --> #date-time, #date-time-desktop
 		
 		function updateDateTime() {
