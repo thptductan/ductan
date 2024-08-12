@@ -154,18 +154,20 @@
 		        });
 		}
 
-		// Hiển thị ngày giờ
-		function updateDateTime() {
-			const now = new Date();
-			const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-			const dateTimeString = now.toLocaleDateString('vi-VN', options);
-			document.getElementById('date-time').textContent = dateTimeString;
-			document.getElementById('date-time-desktop').textContent = dateTimeString;
-		}
+		/* Hàm cập nhật ngày và giờ */
+	        function updateDateTime() {
+	            const now = new Date();
+	            const day = String(now.getDate()).padStart(2, '0');
+	            const month = String(now.getMonth() + 1).padStart(2, '0');
+	            const year = now.getFullYear();
+	            const hours = String(now.getHours()).padStart(2, '0');
+	            const minutes = String(now.getMinutes()).padStart(2, '0');
+	            const seconds = String(now.getSeconds()).padStart(2, '0');
+	            const dateTimeString = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+	            document.getElementById('date-time').textContent = dateTimeString;
+				document.getElementById('date-time-desktop').textContent = dateTimeString;
+	        }
 
-		// Cập nhật ngày giờ mỗi giây
-		setInterval(updateDateTime, 1000);
-		updateDateTime(); // Gọi ngay một lần để hiển thị ngay lập tức
 	</script>
 </body>
 </html>
