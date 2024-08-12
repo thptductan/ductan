@@ -228,6 +228,10 @@ body {
 		width: 30%;
 		float: right;
 	}
+	.gioithieu {
+		position: relative; /* Để đảm bảo dropdown xuất hiện ngay bên dưới */
+	}
+
 	.dropdown-content {
 		width: 100%;
 		top: 100%; /* Đảm bảo list xuất hiện ngay dưới "Giới thiệu" */
@@ -235,10 +239,7 @@ body {
 		position: absolute;
 	}
 
-	.gioithieu {
-		position: relative; /* Để đảm bảo dropdown xuất hiện ngay bên dưới */
-	}
-
+	
 	.desktop-only {
 		display: block; /* Hiển thị nội dung này trên máy tính */
 	}
