@@ -1,5 +1,5 @@
 <!Bắt đầu code của styles.html -->
-																/* Quy định chung */
+						/* Quy định chung */
 body {
 	margin: 0;
 	padding: 0;
@@ -114,7 +114,7 @@ body {
 	display: none; /* Ẩn nội dung này trên di động */
 }
 
-													/* Quy định cho thiết bị di động */
+						/* Quy định cho thiết bị di động */
 @media (max-width: 768px) {
 	.menu {
 		font-size: 0.8em; /* Giảm kích thước chữ trên di động */
@@ -163,7 +163,7 @@ body {
 		display: block; /* Hiển thị nội dung này trên di động */
 	}
 }
-																/* Quy định cho màn hình máy tính */
+						// Quy định cho màn hình máy tính
 @media (min-width: 1024px) {
 	body {
 		max-width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
@@ -171,7 +171,7 @@ body {
 		position: relative;
 	}
 	.menu {
-		font-size: 1.5em
+		font-size: 3em
 		flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
 		justify-content: space-between; /* Căn đều các mục menu */
 		padding: 1px 0; /* Giảm khoảng cách trên và dưới */
