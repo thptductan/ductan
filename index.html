@@ -137,30 +137,33 @@
 	            });
 	        });
 		// Hàm lấy nội dung từ 'zGioiThieu.html' khi nhấn ở trong list gioithieu
-		document.addEventListener('DOMContentLoaded', function() {
-		    const links = document.querySelectorAll('.dropdown-content a');
-		    const dropdown = document.querySelector('.dropdown-content');
+		function loadContent(section) {
+		    const contentDiv = document.querySelector('.main');
 		    
-		    links.forEach(link => {
-		        link.addEventListener('click', function(event) {
-		            event.preventDefault();
-		            const section = this.getAttribute('data-section');
+		    // Sử dụng fetch để lấy nội dung từ zGioiThieu.html
+		    fetch('zGioiThieu.html')
+		        .then(response => response.text())
+		        .then(html => {
+		            // Tạo một DOM parser để phân tích HTML
+		            const parser = new DOMParser();
+		            const doc = parser.parseFromString(html, 'text/html');
 		            
-		            // Gọi hàm loadContent để tải nội dung vào trang chính
-		            loadContent(section);
+		            // Tìm phần tử với ID tương ứng trong tài liệu được tải về
+		            const sectionContent = doc.querySelector(`#${section}`);
 		            
-		            // Ẩn danh sách sau khi nhấn vào mục
-		            dropdown.style.display = 'none';
+		            // Nếu tìm thấy phần tử, chèn nội dung vào phần tử chính
+		            if (sectionContent) {
+		                contentDiv.innerHTML = sectionContent.innerHTML;
+		            } else {
+		                contentDiv.innerHTML = '<p>Không tìm thấy nội dung.</p>';
+		            }
+		        })
+		        .catch(error => {
+		            console.error('Có lỗi xảy ra:', error);
+		            contentDiv.innerHTML = '<p>Không thể tải nội dung.</p>';
 		        });
-		    });
-		    
-		    // Hàm ẩn danh sách khi nhấn ra ngoài
-		    document.addEventListener('click', function(event) {
-		        if (!dropdown.contains(event.target) && !event.target.classList.contains('gioithieu')) {
-		            dropdown.style.display = 'none';
-		        }
-		    });
-		});
+		}
+
 
 		// Hàm lấy và hiển thị thứ ngày giờ: Định dạng nó ở styles --> #date-time, #date-time-desktop
 		
