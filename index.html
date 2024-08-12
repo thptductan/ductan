@@ -113,12 +113,14 @@
 		/* Hàm hiển thị nội dung khi nhấn vào trong list */
 		const contentArea = document.querySelector('.main');
 		const listLinks = document.querySelectorAll('.list a');
+		const dropdownContent = document.querySelector('.dropdown-content');
 		
 		listLinks.forEach(link => {
 			link.addEventListener('click', function(e) {
 				e.preventDefault();
 				const section = link.getAttribute('href').split('#')[1];
 				loadContent(section);
+				dropdownContent.style.display = 'none'; // Ẩn danh sách sau khi nhấn vào một mục
 			});
 		});
 		
@@ -133,7 +135,18 @@
 		
 			contentArea.innerHTML = `<h2>${section}</h2><p>${content[section]}</p>`;
 		}
+		// Hiển thị list khi nhấn vào "Giới thiệu" trên di động
+		document.querySelector('.gioithieu').addEventListener('click', function(e) {
+			e.preventDefault();
+			dropdownContent.style.display = 'block';
+		});
 		
+		// Ẩn list khi nhấn ra ngoài
+		document.addEventListener('click', function(e) {
+			if (!dropdownContent.contains(e.target) && !document.querySelector('.gioithieu').contains(e.target)) {
+				dropdownContent.style.display = 'none';
+			}
+		});
 		/* Hàm Thứ, ngày, giờ */
 		function updateDateTime() {
 			const now = new Date();
