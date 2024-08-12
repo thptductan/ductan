@@ -140,7 +140,7 @@ body {
         text-decoration: none; /* Không gạch chân */
         text-align: center;
         padding: 5px 5px; /* Tăng khoảng cách trên và dưới cho chữ */
-        font-size: 1.3em; /* Kích thước chữ trên máy tính */
+        font-size: 1.1em; /* Kích thước chữ trên máy tính */
         display: flex;
         flex-direction: column;
         justify-content: center; /* Căn giữa chữ theo chiều dọc */
