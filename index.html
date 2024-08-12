@@ -104,8 +104,14 @@
 		</ul>
 	</div>
 	<script>
-		// Hiển thị danh sách khi di chuột qua 'gioithieu'
-		document.querySelector('.gioithieu').addEventListener('mouseover', function() {
+		// Hiển thị danh sách khi nhấp hoặc chạm vào 'gioithieu'
+		document.querySelector('.gioithieu').addEventListener('click', function(event) {
+		    event.preventDefault(); // Ngăn chặn hành động mặc định
+		    document.querySelector('.dropdown-content').style.display = 'block';
+		});
+		
+		document.querySelector('.gioithieu').addEventListener('touchstart', function(event) {
+		    event.preventDefault(); // Ngăn chặn hành động mặc định
 		    document.querySelector('.dropdown-content').style.display = 'block';
 		});
 		
@@ -125,24 +131,28 @@
 		        const section = link.getAttribute('href').split('#')[1];
 		        loadContent(section);
 		
-		        // Đặt một timeout nhỏ để đảm bảo rằng dropdown sẽ ẩn đi sau khi click vào mục
-		        setTimeout(() => {
-		            dropdownContent.style.display = 'none';
-		        }, 100); // 100ms để tránh xung đột sự kiện
+		        // Ẩn danh sách sau khi nhấn vào mục trong danh sách
+		        dropdownContent.style.display = 'none';
+		    });
+		
+		    link.addEventListener('touchstart', function(e) {
+		        e.preventDefault();
+		        const section = link.getAttribute('href').split('#')[1];
+		        loadContent(section);
+		
+		        // Ẩn danh sách sau khi chạm vào mục trong danh sách
+		        dropdownContent.style.display = 'none';
 		    });
 		});
 		
-		// Hàm ẩn list khi ấn vào một nơi khác
-		document.addEventListener('DOMContentLoaded', function() {
-		    document.addEventListener('click', function(event) {
-		        const dropdown = document.querySelector('.dropdown-content');
-		        const gioithieu = document.querySelector('.gioithieu');
+		// Hàm ẩn list khi ấn vào một nơi khác ngoài list và 'gioithieu'
+		document.addEventListener('click', function(event) {
+		    const dropdown = document.querySelector('.dropdown-content');
+		    const gioithieu = document.querySelector('.gioithieu');
 		
-		        // Nếu nhấp vào bên ngoài của dropdown hoặc .gioithieu thì ẩn dropdown
-		        if (!dropdown.contains(event.target) && !gioithieu.contains(event.target)) {
-		            dropdown.style.display = 'none';
-		        }
-		    });
+		    if (!dropdown.contains(event.target) && !gioithieu.contains(event.target)) {
+		        dropdown.style.display = 'none';
+		    }
 		});
 		
 		// Hàm lấy nội dung từ 'zGioiThieu.html' khi nhấn ở trong list gioithieu
@@ -153,14 +163,10 @@
 		    fetch('zGioiThieu.html')
 		        .then(response => response.text())
 		        .then(html => {
-		            // Tạo một DOM parser để phân tích HTML
 		            const parser = new DOMParser();
 		            const doc = parser.parseFromString(html, 'text/html');
-		            
-		            // Tìm phần tử với ID tương ứng trong tài liệu được tải về
 		            const sectionContent = doc.querySelector(`#${section}`);
 		            
-		            // Nếu tìm thấy phần tử, chèn nội dung vào phần tử chính
 		            if (sectionContent) {
 		                contentDiv.innerHTML = sectionContent.innerHTML;
 		            } else {
