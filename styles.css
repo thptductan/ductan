@@ -93,6 +93,7 @@ body {
 																/* Quy định cho thiết bị di động */
 @media (max-width: 768px) {
 	.menu {
+		font-size: 0.8em; /* Giảm kích thước chữ trên di động */
 		flex-direction: row; /* Hiển thị theo hàng ngang */
 		padding: 2px 0; /* Giảm khoảng cách trên và dưới */
 		justify-content: space-around; /* Căn chỉnh đều trên di động */
