@@ -7,105 +7,115 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         #date-time, #date-time-desktop {
-            color: #007bff; /* Màu xanh */
-            font-size: 0.7em; /* Kích cỡ chữ nhỏ */
-            font-weight: bold; /* Chữ đậm */
-            text-align: left; /* Căn trái */
-            margin-top: 2px; /* Khoảng cách trên */
+            color: #007bff;
+            font-size: 0.7em;
+            font-weight: bold;
+            text-align: left;
+            margin-top: 2px;
         }
-        .submenu {
-            display: none; /* Ẩn submenu mặc định */
+
+        .submenu, .list {
+            display: none;
             position: absolute;
-            background-color: #1c8fbb; /* Nền xanh giống như menu chính */
+            background-color: #b3d9ff; /* Nền xanh nhạt */
             margin-top: 5px;
             padding: 10px;
             border-radius: 5px;
             list-style: none;
+            z-index: 10;
         }
 
-        .submenu li {
+        .submenu li, .list li {
             margin-bottom: 5px;
         }
 
-        .submenu li a {
-            color: #ffffff; /* Chữ trắng */
+        .submenu li a, .list li a {
+            color: #ffffff;
             text-decoration: none;
         }
 
-        .gioithieu:hover .submenu {
+        .menu a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        .menu a:hover, .menu a:focus {
+            color: #007bff; /* Đổi màu chữ thành xanh dương khi hover */
+        }
+
+        .gioithieu:hover .list, .hocsinh:hover .submenu {
             display: block; /* Hiển thị danh sách con khi hover */
         }
 
-        /* Nội dung chỉ hiển thị trên di động */
+        .gioithieu, .hocsinh {
+            position: relative;
+        }
+
+        .list li a:hover, .submenu li a:hover {
+            color: #007bff; /* Đổi màu chữ thành xanh dương khi hover mục con */
+        }
+
         .mobile-only {
-            display: none; /* Ẩn nội dung này trên máy tính */
+            display: none;
         }
 
-        /* Nội dung chỉ hiển thị trên máy tính */
         .desktop-only {
-            display: none; /* Ẩn nội dung này trên di động */
+            display: none;
         }
 
-        /* Đối với thiết bị di động */
         @media (max-width: 768px) {
             .menu {
-                flex-direction: row; /* Hiển thị theo hàng ngang */
-                padding: 2px 0; /* Giảm khoảng cách trên và dưới */
-                justify-content: space-around; /* Căn chỉnh đều trên di động */
+                flex-direction: row;
+                padding: 2px 0;
+                justify-content: space-around;
             }
 
             .menu a {
-                font-size: 0.8em; /* Giảm kích thước chữ trên di động */
-                padding: 2px 0; /* Giảm khoảng cách trên và dưới cho chữ */
+                font-size: 0.8em;
+                padding: 2px 0;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 text-align: center;
-                white-space: nowrap; /* Đảm bảo không bị xuống dòng */
+                white-space: nowrap;
             }
 
             .mobile-only {
-                display: block; /* Hiển thị nội dung này trên di động */
+                display: block;
             }
         }
 
-        /* Quy định cho chiều ngang */
         @media (min-width: 769px) {
             body {
-                overflow-x: hidden; /* Khóa cuộn ngang trên máy tính */
+                overflow-x: hidden;
             }
         }
 
-        /* Quy định cho màn hình máy tính */
         @media (min-width: 1024px) {
             body {
-                max-width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
-                margin: 0 auto; /* Căn giữa phần nội dung */
+                max-width: 66.66vw;
+                margin: 0 auto;
                 position: relative;
             }
 
             .header img {
-                width: 100%; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
+                width: 100%;
             }
 
             .menu {
                 display: flex;
-                flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
-                justify-content: space-between; /* Căn đều các mục menu */
-                align-items: center; /* Căn giữa các mục theo chiều dọc */
-                background-color: #1c8fbb; /* Nền xanh */
-                padding: 1px 0; /* Giảm khoảng cách trên và dưới */
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #1c8fbb;
+                padding: 1px 0;
                 box-sizing: border-box;
             }
 
-            .menu a {
-                color: #ffffff; /* Chữ trắng */
-                text-decoration: none;
-            }
-
             .desktop-only {
-                display: block; /* Hiển thị nội dung này trên máy tính */
+                display: block;
             }
         }
     </style>
@@ -115,17 +125,10 @@
         <img src="Top1.png" alt="Top1">
     </div>
 
-    <!-- Nội dung chỉ hiển thị trên di động -->
     <div class="mobile-only">
         <div class="menu">
-            <a href="#" class="trangchu">
-                <span>Trang</span>
-                <span>chủ</span>
-            </a>
-            <a href="#" class="gioithieu">
-                <span>Giới</span>
-                <span>thiệu</span>
-            </a>
+            <a href="#" class="trangchu">Trang chủ</a>
+            <a href="#" class="gioithieu">Giới thiệu</a>
             <ul class="list">
                 <li><a href="zGioiThieu.html#truong">Trường THPT Đức Tân</a></li>
                 <li><a href="zGioiThieu.html#cb">Chi bộ</a></li>
@@ -139,31 +142,21 @@
                 <li><a href="zGioiThieu.html#tosd">Tổ Sử - Địa - KTPL</a></li>
                 <li><a href="zGioiThieu.html#toli">Tổ Lí TCQP- CNCN</a></li>
             </ul>
-            <a href="#" class="hoatdong">
-                <span>Hoạt</span>
-                <span>động</span>
-            </a>
-            <a href="#" class="hocsinh">
-                <span>Học sinh và</span>
-                <span>Cựu học sinh</span>
-            </a>
+            <a href="#" class="hoatdong">Hoạt động</a>
+            <a href="#" class="hocsinh">Học sinh và Cựu học sinh</a>
             <ul class="submenu">
                 <li><a href="zHocSinh.html#hs">Học sinh tiêu biểu</a></li>
                 <li><a href="zHocSinh.html#cb">Hoạt động của Cựu học sinh</a></li>
             </ul>
-            <a href="#" class="lienhe">
-                <span>Liên</span>
-                <span>hệ</span>
-            </a>
+            <a href="#" class="lienhe">Liên hệ</a>
             <a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn/" class="cchc">
                 <span>Sổ tay CCHC</span>
                 <span>tỉnh Bình Thuận</span>
             </a>
         </div>
-        <div id="date-time"></div> <!-- Hiển thị ngày giờ hiện tại cho di động -->
+        <div id="date-time"></div>
     </div>
 
-                                                                                    <!-- Nội dung chỉ hiển thị trên máy tính -->
     <div class="desktop-only">
         <div class="menu">
             <a href="#">Trang chủ</a>
@@ -182,10 +175,7 @@
                 <li><a href="zGioiThieu.html#toli">Tổ Lí TCQP- CNCN</a></li>
             </ul>
             <a href="#">Hoạt động</a>
-             <a href="#" class="hocsinh">
-                <span>Học sinh và</span>
-                <span>Cựu học sinh</span>
-            </a>
+            <a href="#" class="hocsinh">Học sinh và Cựu học sinh</a>
             <ul class="submenu">
                 <li><a href="zHocSinh.html#hs">Học sinh tiêu biểu</a></li>
                 <li><a href="zHocSinh.html#cb">Hoạt động của Cựu học sinh</a></li>
@@ -196,7 +186,7 @@
                 <span>tỉnh Bình Thuận</span>
             </a>
         </div>
-        <div id="date-time-desktop"></div> <!-- Hiển thị ngày giờ hiện tại cho máy tính -->
+        <div id="date-time-desktop"></div>
     </div>
 
     <div class="main">
@@ -205,39 +195,39 @@
 
     <script>
         function updateDateTime() {
-        const now = new Date();
-        const daysOfWeek = ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
-    
-        const dayName = daysOfWeek[now.getDay()];
-        const day = now.getDate();
-        const month = now.getMonth() + 1; // Tháng trong JavaScript bắt đầu từ 0
-        const year = now.getFullYear();
-    
-        let hours = now.getHours();
-        const minutes = now.getMinutes().toString().padStart(2, '0');
-        const seconds = now.getSeconds().toString().padStart(2, '0');
-        const ampm = hours >= 12 ? 'PM' : 'AM';
-        
-        hours = hours % 12;
-        hours = hours ? hours : 12; // Nếu giờ là 0 thì đổi thành 12
-    
-        const formattedTime = `${hours}:${minutes}:${seconds} ${ampm}`;
-        const formattedDateTime = `${dayName}, ngày ${day}/${month}/${year}, ${formattedTime}`;
-    
-        const dateTimeElement = document.getElementById('date-time');
-        const dateTimeDesktopElement = document.getElementById('date-time-desktop');
-    
-        if (dateTimeElement) {
-            dateTimeElement.textContent = formattedDateTime;
+            const now = new Date();
+            const daysOfWeek = ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
+
+            const dayName = daysOfWeek[now.getDay()];
+            const day = now.getDate();
+            const month = now.getMonth() + 1;
+            const year = now.getFullYear();
+
+            let hours = now.getHours();
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+
+            const formattedTime = `${hours}:${minutes}:${seconds} ${ampm}`;
+            const formattedDateTime = `${dayName}, ngày ${day}/${month}/${year}, ${formattedTime}`;
+
+            const dateTimeElement = document.getElementById('date-time');
+            const dateTimeDesktopElement = document.getElementById('date-time-desktop');
+
+            if (dateTimeElement) {
+                dateTimeElement.textContent = formattedDateTime;
+            }
+
+            if (dateTimeDesktopElement) {
+                dateTimeDesktopElement.textContent = formattedDateTime;
+            }
         }
-    
-        if (dateTimeDesktopElement) {
-            dateTimeDesktopElement.textContent = formattedDateTime;
-        }
-    }
-    
-    setInterval(updateDateTime, 1000); // Cập nhật thời gian mỗi giây
-    updateDateTime(); // Cập nhật ngay khi trang được tải
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
     </script>
 </body>
 </html>
