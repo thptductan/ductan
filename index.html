@@ -1,254 +1,237 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THPT Đức Tân</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        #date-time, #date-time-desktop {
-            color: #007bff;
-            font-size: 0.7em;
-            font-weight: bold;
-            text-align: left;
-            margin-top: 5px;
-            margin-left: 5px;
-        }
-
-        .submenu, .list {
-            display: none;
-            position: absolute;
-            background-color: #b3d9ff; /* Nền xanh nhạt */
-            margin-top: 5px;
-            padding: 10px;
-            border-radius: 5px;
-            list-style: none;
-            z-index: 10;
-        }
-
-        .submenu li, .list li {
-            margin-bottom: 5px;
-        }
-
-        .submenu li a, .list li a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .menu a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 5px 10px;
-        }
-
-        .menu a:hover, .menu a:focus {
-            color: red; /* Đổi màu chữ thành xanh dương khi hover */
-        }
-
-        .gioithieu:hover .list, .hocsinh:hover .submenu {
-            display: block; /* Hiển thị danh sách con khi hover */
-        }
-
-        .gioithieu, .hocsinh {
-            position: relative;
-        }
-
-        .list li a:hover, .submenu li a:hover {
-            color: blue; /* Đổi màu chữ thành xanh dương khi hover mục con */
-        }
-
-        .mobile-only {
-            display: none;
-        }
-
-        .desktop-only {
-            display: none;
-        }
-                                                                            /* Trên di động *?
-        @media (max-width: 768px) {
-            .menu {
-                flex-direction: row;
-                padding: 2px 0;
-                justify-content: space-around;
-            }
-
-            .menu a {
-                font-size: 0.8em;
-                padding: 2px 0;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                white-space: nowrap;
-            }
-
-            .mobile-only {
-                display: block;
-            }
-        }
-                                                                        /* Trên máy tính */
-        @media (min-width: 769px) {
-            body {
-                overflow-x: hidden;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            body {
-                max-width: 66.66vw;
-                margin: 0 auto;
-                position: relative;
-            }
-
-            .header img {
-                width: 100%;
-            }
-
-            .menu {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                align-items: center;
-                background-color: #1c8fbb;
-                padding: 1px 0;
-                box-sizing: border-box;
-            }
-
-            .desktop-only {
-                display: block;
-            }
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>THPT Đức Tân</title>
+	<link rel="stylesheet" href="styles.css">
+<style>
+	#date-time, #date-time-desktop {
+		color: #007bff;
+		font-size: 0.7em;
+		font-weight: bold;
+		text-align: left;
+		margin-top: 5px;
+		margin-left: 5px;
+	}
+	.submenu, .list {
+		display: none;
+		position: absolute;
+		background-color: #b3d9ff; /* Nền xanh nhạt */
+		margin-top: 5px;
+		padding: 10px;
+		border-radius: 5px;
+		list-style: none;
+		z-index: 10;
+	}
+	
+	.submenu li, .list li {
+		margin-bottom: 5px;
+	}
+	
+	.submenu li a, .list li a {
+		color: #ffffff;
+		text-decoration: none;
+	}
+	
+	.menu a {
+		color: #ffffff;
+		text-decoration: none;
+		padding: 5px 10px;
+	}
+	
+	.menu a:hover, .menu a:focus {
+		color: red; /* Đổi màu chữ thành xanh dương khi hover */
+	}
+	
+	.gioithieu:hover .list, .hocsinh:hover .submenu {
+		display: block; /* Hiển thị danh sách con khi hover */
+	}
+	
+	.gioithieu, .hocsinh {
+		position: relative;
+	}
+	
+	.list li a:hover, .submenu li a:hover {
+		color: blue; /* Đổi màu chữ thành xanh dương khi hover mục con */
+	}
+	
+	.mobile-only {
+		display: none;
+	}
+	
+	.desktop-only {
+		display: none;
+	}
+							/* Trên di động *?
+	@media (max-width: 768px) {
+		.menu {
+			flex-direction: row;
+			padding: 2px 0;
+			justify-content: space-around;
+		}
+		
+		.menu a {
+			font-size: 0.8em;
+			padding: 2px 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			white-space: nowrap;
+		}
+	
+		.mobile-only {
+			display: block;
+		}
+	}
+	
+							/* Trên máy tính */
+	@media (min-width: 769px) {
+		body {
+			overflow-x: hidden;
+			max-width: 66.66vw;
+			margin: 0 auto;
+			position: relative;
+		}
+		
+		.header img {
+			width: 100%;
+		}
+		
+		.menu {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+			background-color: #1c8fbb;
+			padding: 1px 0;
+			box-sizing: border-box;
+		}
+		.desktop-only {
+			display: block;
+		}
+	}
+}
+</style>
 </head>
 <body>
-    <div class="header">
-        <img src="Top1.png" alt="Top1">
-    </div>
-
-    <div class="mobile-only">
-        <div class="menu">
-            <a href="#" class="trangchu">
-                <span>Trang</span>
-                <span>chủ</span>
-            </a>
-            <a href="#" class="gioithieu">
-                <span>Giới</span>
-                <span>thiệu</span>
-            </a>
-            <ul class="list">
-                <li><a href="zGioiThieu.html#truong">Trường THPT Đức Tân</a></li>
-                <li><a href="zGioiThieu.html#cb">Chi bộ</a></li>
-                <li><a href="zGioiThieu.html#bgh">Ban giám hiệu</a></li>
-                <li><a href="zGioiThieu.html#cd">Công đoàn</a></li>
-                <li><a href="zGioiThieu.html#dt">Đoàn trường</a></li>
-                <li><a href="zGioiThieu.html#tovp">Tổ văn phòng</a></li>
-                <li><a href="zGioiThieu.html#tott">Tổ Toán - Tin</a></li>
-                <li><a href="zGioiThieu.html#tova">Tổ Văn - Anh</a></li>
-                <li><a href="zGioiThieu.html#tohs">Tổ Hóa - Sinh - CNNN</a></li>
-                <li><a href="zGioiThieu.html#tosd">Tổ Sử - Địa - KTPL</a></li>
-                <li><a href="zGioiThieu.html#toli">Tổ Lí TCQP- CNCN</a></li>
-            </ul>
-            
-            <a href="#" class="hoatdong">
-                <span>Hoạt</span>
-                <span>động</span>
-            </a>
-            <a href="#" class="hocsinh">
-                <span>Học sinh và</span>
-                <span>Cựu học sinh</span>
-            </a>
-            <ul class="submenu">
-                <li><a href="zHocSinh.html#hs">Học sinh tiêu biểu</a></li>
-                <li><a href="zHocSinh.html#cb">Hoạt động của Cựu học sinh</a></li>
-            </ul>
-            
-            <a href="#" class="lienhe">
-                <span>Liên</span>
-                <span>hệ</span>
-            </a>
-            <a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn/" class="cchc">
-                <span>Sổ tay CCHC</span>
-                <span>tỉnh Bình Thuận</span>
-            </a>
-        </div>
-        <div id="date-time"></div>
-    </div>
-
-    <div class="desktop-only">
-        <div class="menu">
-            <a href="#">Trang chủ</a>
-            <a href="#" class="gioithieu">Giới thiệu</a>
-            <ul class="list">
-                <li><a href="zGioiThieu.html#truong">Trường THPT Đức Tân</a></li>
-                <li><a href="zGioiThieu.html#cb">Chi bộ</a></li>
-                <li><a href="zGioiThieu.html#bgh">Ban giám hiệu</a></li>
-                <li><a href="zGioiThieu.html#cd">Công đoàn</a></li>
-                <li><a href="zGioiThieu.html#dt">Đoàn trường</a></li>
-                <li><a href="zGioiThieu.html#tovp">Tổ văn phòng</a></li>
-                <li><a href="zGioiThieu.html#tott">Tổ Toán - Tin</a></li>
-                <li><a href="zGioiThieu.html#tova">Tổ Văn - Anh</a></li>
-                <li><a href="zGioiThieu.html#tohs">Tổ Hóa - Sinh - CNNN</a></li>
-                <li><a href="zGioiThieu.html#tosd">Tổ Sử - Địa - KTPL</a></li>
-                <li><a href="zGioiThieu.html#toli">Tổ Lí TCQP- CNCN</a></li>
-            </ul>
-            <a href="#">Hoạt động</a>
-            <a href="#" class="hocsinh">
-                <span>Học sinh và</span>
-                <span>Cựu học sinh</span>
-            </a>
-            <ul class="submenu">
-                <li><a href="zHocSinh.html#hs">Học sinh tiêu biểu</a></li>
-                <li><a href="zHocSinh.html#cb">Hoạt động của Cựu học sinh</a></li>
-            </ul>
-            <a href="#">Liên hệ</a>
-            <a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn/" class="cchc">
-                <span>Sổ tay CCHC</span>
-                <span>tỉnh Bình Thuận</span>
-            </a>
-        </div>
-        <div id="date-time-desktop"></div>
-    </div>
-
-    <div class="main">
-        <p>Trang web đang trong quá trình cập nhật ...</p>
-    </div>
-
-    <script>
-        function updateDateTime() {
-            const now = new Date();
-            const daysOfWeek = ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
-
-            const dayName = daysOfWeek[now.getDay()];
-            const day = now.getDate();
-            const month = now.getMonth() + 1;
-            const year = now.getFullYear();
-
-            let hours = now.getHours();
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const seconds = now.getSeconds().toString().padStart(2, '0');
-            const ampm = hours >= 12 ? 'PM' : 'AM';
-
-            hours = hours % 12;
-            hours = hours ? hours : 12;
-
-            const formattedTime = `${hours}:${minutes}:${seconds} ${ampm}`;
-            const formattedDateTime = `${dayName}, ${day}/${month}/${year}, ${formattedTime}`;
-
-            const dateTimeElement = document.getElementById('date-time');
-            const dateTimeDesktopElement = document.getElementById('date-time-desktop');
-
-            if (dateTimeElement) {
-                dateTimeElement.textContent = formattedDateTime;
-            }
-
-            if (dateTimeDesktopElement) {
-                dateTimeDesktopElement.textContent = formattedDateTime;
-            }
-        }
-
-        setInterval(updateDateTime, 1000);
-        updateDateTime();
-    </script>
+	<div class="header">
+		<img src="Top1.png" alt="Top1">
+	</div>
+	<div class="mobile-only">
+		<div class="menu">
+			<a href="#" class="trangchu">
+				<span>Trang</span>
+				<span>chủ</span>
+			</a>
+			<a href="#" class="gioithieu">
+				<span>Giới</span>
+				<span>thiệu</span>
+			</a>
+			<ul class="list">
+				<li><a href="zGioiThieu.html#truong">Trường THPT Đức Tân</a></li>
+				<li><a href="zGioiThieu.html#cb">Chi bộ</a></li>
+				<li><a href="zGioiThieu.html#bgh">Ban giám hiệu</a></li>
+				<li><a href="zGioiThieu.html#cd">Công đoàn</a></li>
+				<li><a href="zGioiThieu.html#dt">Đoàn trường</a></li>
+				<li><a href="zGioiThieu.html#tovp">Tổ văn phòng</a></li>
+				<li><a href="zGioiThieu.html#tott">Tổ Toán - Tin</a></li>
+				<li><a href="zGioiThieu.html#tova">Tổ Văn - Anh</a></li>
+				<li><a href="zGioiThieu.html#tohs">Tổ Hóa - Sinh - CNNN</a></li>
+				<li><a href="zGioiThieu.html#tosd">Tổ Sử - Địa - KTPL</a></li>
+				<li><a href="zGioiThieu.html#toli">Tổ Lí TCQP- CNCN</a></li>
+				</ul>
+			<a href="#" class="hoatdong">
+				<span>Hoạt</span>
+				<span>động</span>
+			</a>
+			<a href="#" class="hocsinh">
+				<span>Học sinh và</span>
+				<span>Cựu học sinh</span>
+			</a>
+			<ul class="submenu">
+				<li><a href="zHocSinh.html#hs">Học sinh tiêu biểu</a></li>
+				<li><a href="zHocSinh.html#cb">Hoạt động của Cựu học sinh</a></li>
+			</ul>
+			<a href="#" class="lienhe">
+				<span>Liên</span>
+				<span>hệ</span>
+			</a>
+			<a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn/" class="cchc">
+				<span>Sổ tay CCHC</span>
+				<span>tỉnh Bình Thuận</span>
+			</a>
+	</div>
+		<div id="date-time"></div>
+	</div>
+	<div class="desktop-only">
+		<div class="menu">
+		<a href="#">Trang chủ</a>
+		<a href="#" class="gioithieu">Giới thiệu</a>
+			<ul class="list">
+				<li><a href="zGioiThieu.html#truong">Trường THPT Đức Tân</a></li>
+				<li><a href="zGioiThieu.html#cb">Chi bộ</a></li>
+				<li><a href="zGioiThieu.html#bgh">Ban giám hiệu</a></li>
+				<li><a href="zGioiThieu.html#cd">Công đoàn</a></li>
+				<li><a href="zGioiThieu.html#dt">Đoàn trường</a></li>
+				<li><a href="zGioiThieu.html#tovp">Tổ văn phòng</a></li>
+				<li><a href="zGioiThieu.html#tott">Tổ Toán - Tin</a></li>
+				<li><a href="zGioiThieu.html#tova">Tổ Văn - Anh</a></li>
+				<li><a href="zGioiThieu.html#tohs">Tổ Hóa - Sinh - CNNN</a></li>
+				<li><a href="zGioiThieu.html#tosd">Tổ Sử - Địa - KTPL</a></li>
+				<li><a href="zGioiThieu.html#toli">Tổ Lí TCQP- CNCN</a></li>
+				</ul>
+			<a href="#">Hoạt động</a>
+			<a href="#" class="hocsinh">
+			<span>Học sinh và</span>
+			<span>Cựu học sinh</span>
+			</a>
+			<ul class="submenu">
+				<li><a href="zHocSinh.html#hs">Học sinh tiêu biểu</a></li>
+				<li><a href="zHocSinh.html#cb">Hoạt động của Cựu học sinh</a></li>
+			</ul>
+			<a href="#">Liên hệ</a>
+			<a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn/" class="cchc">
+				<span>Sổ tay CCHC</span>
+				<span>tỉnh Bình Thuận</span>
+			</a>
+	</div>
+		<div id="date-time-desktop"></div>
+	</div>
+	<div class="main">
+		<p>Trang web đang trong quá trình cập nhật ...</p>
+	</div>
+	<script>
+		function updateDateTime() {
+			const now = new Date();
+			const daysOfWeek = ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
+			const dayName = daysOfWeek[now.getDay()];
+			const day = now.getDate();
+			const month = now.getMonth() + 1;
+			const year = now.getFullYear();
+			let hours = now.getHours();
+			const minutes = now.getMinutes().toString().padStart(2, '0');
+			const seconds = now.getSeconds().toString().padStart(2, '0');
+			const ampm = hours >= 12 ? 'PM' : 'AM';
+			hours = hours % 12;
+			hours = hours ? hours : 12;
+			const formattedTime = `${hours}:${minutes}:${seconds} ${ampm}`;
+			const formattedDateTime = `${dayName}, ${day}/${month}/${year}, ${formattedTime}`;
+			const dateTimeElement = document.getElementById('date-time');
+			const dateTimeDesktopElement = document.getElementById('date-time-
+desktop');
+			if (dateTimeElement) {
+				dateTimeElement.textContent = formattedDateTime;
+			}
+			if (dateTimeDesktopElement) {
+				dateTimeDesktopElement.textContent = formattedDateTime;
+			}
+		}
+		
+		setInterval(updateDateTime, 1000);
+		updateDateTime();
+	</script>
 </body>
 </html>
