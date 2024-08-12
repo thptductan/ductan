@@ -57,7 +57,7 @@ body {
 .submenu, .list {
 	display: none;
 	position: absolute;
-	background-color: #b3d9ff; /* Nền xanh nhạt */
+	background-color: #f2f1ef; /* Nền xanh nhạt */
 	margin-top: 5px;
 	padding: 10px;
 	border-radius: 5px;
