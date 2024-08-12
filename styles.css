@@ -1,5 +1,5 @@
 <!Bắt đầu code của styles.html -->
-/* Toàn bộ trang */
+																/* Quy định chung */
 body {
 	margin: 0;
 	padding: 0;
@@ -45,28 +45,27 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
 }
 
 .submenu, .list {
-		display: none;
-		position: absolute;
-		background-color: #b3d9ff; /* Nền xanh nhạt */
-		margin-top: 5px;
-		padding: 10px;
-		border-radius: 5px;
-		list-style: none;
-		z-index: 10;
-	}
+	display: none;
+	position: absolute;
+	background-color: #b3d9ff; /* Nền xanh nhạt */
+	margin-top: 5px;
+	padding: 10px;
+	border-radius: 5px;
+	list-style: none;
+	z-index: 10;
+}
 
 #date-time, #date-time-desktop {
-		color: #007bff;
-		font-size: 0.7em;
-		font-weight: bold;
-		text-align: left;
-		margin-top: 5px;
-		margin-left: 5px;
-	}
+	color: #007bff;
+	font-size: 0.7em;
+	font-weight: bold;
+	text-align: left;
+	margin-top: 5px;
+	margin-left: 5px;
+}
 
 .gioithieu:hover .submenu {
 	display: block; /* Hiển thị danh sách con khi hover */
@@ -91,7 +90,7 @@ body {
 	display: none; /* Ẩn nội dung này trên di động */
 }
 
-/* Quy định cho thiết bị di động */
+																/* Quy định cho thiết bị di động */
 @media (max-width: 768px) {
 	.menu {
 		flex-direction: row; /* Hiển thị theo hàng ngang */
@@ -119,78 +118,78 @@ body {
 
 	.mobile-only {
 		display: block; /* Hiển thị nội dung này trên di động */
+	}
 }
-}
-/* Quy định cho màn hình máy tính */
+																/* Quy định cho màn hình máy tính */
 @media (min-width: 1024px) {
-body {
-	max-width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
-	margin: 0 auto; /* Căn giữa phần nội dung */
-	position: relative;
-}
-
-.header img {
-	width: 100%; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
-}
-.menu {
-	flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
-	justify-content: space-between; /* Căn đều các mục menu */
-	padding: 1px 0; /* Giảm khoảng cách trên và dưới */
-}
-
-.menu a {
-	padding: 5px 5px; /* Tăng khoảng cách trên và dưới cho chữ */
-	font-size: 1em; /* Kích thước chữ trên máy tính */
-	white-space: nowrap; /* Đảm bảo không bị xuống dòng */
-	min-height: 5px; /* Đảm bảo các mục có chiều cao tối thiểu để căn giữa */
-}
-
-.menu span {
-	display: block; /* Đảm bảo các dòng trong span được căn giữa */
-}
-
-.menu .hocsinh, .menu .cchc {
-	flex: 1; /* Cho phép các mục này chiếm toàn bộ chiều ngang có sẵn */
-	text-align: center; /* Căn giữa chữ trong cụm */
-}
-
-.menu .hocsinh span, .menu .cchc span {
-	margin: 0; /* Loại bỏ khoảng cách giữa các dòng */
-}
-
-.menu .hocsinh {
-	width: 100%; /* Đảm bảo cụm này chiếm toàn bộ chiều ngang */
-}
-
-.menu .cchc {
-	width: 100%; /* Đảm bảo cụm này chiếm toàn bộ chiều ngang */
-}
-h1 {
-	font-size: 2em;
-	margin-bottom: 20px;
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-bottom: 10px;
-}
-
-h2 {
-	font-size: 1.5em;
-	margin-top: 10px;
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-bottom: 10px;
-	color: #1c8fbb; /* Màu sắc của tiêu đề */
-}
-
-p {
-	margin-top: 10px;
-	margin-left: 15px;
-	margin-right: 5px;
-	margin-bottom: 10px;
-	line-height: 1.5;
-}
-
-.desktop-only {
-	display: block; /* Hiển thị nội dung này trên máy tính */
-}
+	body {
+		max-width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
+		margin: 0 auto; /* Căn giữa phần nội dung */
+		position: relative;
+	}
+	
+	.header img {
+		width: 100%; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
+	}
+	.menu {
+		flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
+		justify-content: space-between; /* Căn đều các mục menu */
+		padding: 1px 0; /* Giảm khoảng cách trên và dưới */
+	}
+	
+	.menu a {
+		padding: 5px 5px; /* Tăng khoảng cách trên và dưới cho chữ */
+		font-size: 1em; /* Kích thước chữ trên máy tính */
+		white-space: nowrap; /* Đảm bảo không bị xuống dòng */
+		min-height: 5px; /* Đảm bảo các mục có chiều cao tối thiểu để căn giữa */
+	}
+	
+	.menu span {
+		display: block; /* Đảm bảo các dòng trong span được căn giữa */
+	}
+	
+	.menu .hocsinh, .menu .cchc {
+		flex: 1; /* Cho phép các mục này chiếm toàn bộ chiều ngang có sẵn */
+		text-align: center; /* Căn giữa chữ trong cụm */
+	}
+	
+	.menu .hocsinh span, .menu .cchc span {
+		margin: 0; /* Loại bỏ khoảng cách giữa các dòng */
+	}
+	
+	.menu .hocsinh {
+		width: 100%; /* Đảm bảo cụm này chiếm toàn bộ chiều ngang */
+	}
+	
+	.menu .cchc {
+		width: 100%; /* Đảm bảo cụm này chiếm toàn bộ chiều ngang */
+	}
+	h1 {
+		font-size: 2em;
+		margin-bottom: 20px;
+		margin-left: 5px;
+		margin-right: 5px;
+		margin-bottom: 10px;
+	}
+	
+	h2 {
+		font-size: 1.5em;
+		margin-top: 10px;
+		margin-left: 5px;
+		margin-right: 5px;
+		margin-bottom: 10px;
+		color: #1c8fbb; /* Màu sắc của tiêu đề */
+	}
+	
+	p {
+		margin-top: 10px;
+		margin-left: 15px;
+		margin-right: 5px;
+		margin-bottom: 10px;
+		line-height: 1.5;
+	}
+	
+	.desktop-only {
+		display: block; /* Hiển thị nội dung này trên máy tính */
+	}
 }
