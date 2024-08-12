@@ -147,6 +147,13 @@ body {
 	p {
 		font-size: 0.9em;
 	}
+	/* Qui định vùng hiển thị */
+	.main { */ Nội dung chi tiết của bài viết */
+		width: 100%;
+	}
+	.dropdown-content {	*/ Vùng danh sách bài viết */
+		width: 100%;
+	}
 
 	.mobile-only {
 		display: block; /* Hiển thị nội dung này trên di động */
