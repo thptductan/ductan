@@ -83,7 +83,6 @@ body {
 	display: none;
 	position: absolute;
 	background-color: #f2f1ef;
-	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
 }
@@ -116,7 +115,7 @@ body {
 	display: none; /* Ẩn nội dung này trên di động */
 }
 
-								/* Quy định cho thiết bị di động */
+													/* Quy định cho thiết bị di động */
 @media (max-width: 768px) {
 	.menu {
 		font-size: 0.8em; /* Giảm kích thước chữ trên di động */
@@ -155,7 +154,6 @@ body {
 		top: 100%; /* Đảm bảo list xuất hiện ngay dưới "Giới thiệu" */
 		left: 0; /* Đảm bảo list căn lề trái */
 		position: absolute;
-		background-color: #f0f0f0; /* Màu nền nhạt hơn */
 	}
 
 	.gioithieu {
@@ -236,7 +234,6 @@ body {
 		top: 100%; /* Đảm bảo list xuất hiện ngay dưới "Giới thiệu" */
 		left: 0; /* Đảm bảo list căn lề trái */
 		position: absolute;
-		background-color: #f0f0f0; /* Màu nền nhạt hơn */
 	}
 
 	.gioithieu {
