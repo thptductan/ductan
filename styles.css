@@ -180,7 +180,7 @@ body {
 		flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
 		justify-content: space-between; /* Căn đều các mục menu */
 		padding: 1px 0; /* Giảm khoảng cách trên và dưới */
-		font-size: 1.3em;
+		font-size: 1.5em;
 	}
 	.menu a {
 		padding: 5px 5px; /* Tăng khoảng cách trên và dưới cho chữ */
@@ -195,7 +195,7 @@ body {
 		text-align: center; /* Căn giữa chữ trong cụm */
 	}
 	.menu .hocsinh span, .menu .cchc span {
-		margin: 0; /* Loại bỏ khoảng cách giữa các dòng */
+		margin: 1; /* Khoảng cách giữa các dòng */
 	}
 	.menu .hocsinh, .menu .cchc {
 		width: 100%; /* Đảm bảo cụm này chiếm toàn bộ chiều ngang */
