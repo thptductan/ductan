@@ -22,15 +22,23 @@ body {
 	height: auto;
 }
 
-#date-time, #date-time-desktop {
+#date-time {
 	color: #007bff;
 	font-size: 1em;
 	font-weight: bold;
 	text-align: left;
 	margin-top: 5px;
 }
+#date-time-desktop {
+	color: #007bff;
+	font-size: 1.3em;
+	font-weight: bold;
+	text-align: left;
+	margin-top: 5px;
+}
 /* Danh mục */
 .menu {
+	margin-top: 5px;
 	display: flex;
 	justify-content: space-around; /* Phân phối đều khoảng cách */
 	background-color: #1c8fbb; /* Nền xanh */
