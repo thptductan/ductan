@@ -136,12 +136,13 @@
 		    });
 		
 		    link.addEventListener('touchstart', function(e) {
-		        e.preventDefault();
+		        // Ẩn danh sách sau khi chạm vào mục trong danh sách
+		        dropdownContent.style.display = 'none';
+			
+			e.preventDefault();
 		        const section = link.getAttribute('href').split('#')[1];
 		        loadContent(section);
 		
-		        // Ẩn danh sách sau khi chạm vào mục trong danh sách
-		        dropdownContent.style.display = 'none';
 		    });
 		});
 		
