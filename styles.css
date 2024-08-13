@@ -172,6 +172,7 @@ body {
 		flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
 		justify-content: space-between; /* Căn đều các mục menu */
 		padding: 1px 0; /* Giảm khoảng cách trên và dưới */
+		font-size: 1.3em;
 	}
 	.menu a {
 		padding: 5px 5px; /* Tăng khoảng cách trên và dưới cho chữ */
