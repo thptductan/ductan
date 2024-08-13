@@ -106,12 +106,10 @@
 	<script>
 		// Hiển thị danh sách khi nhấp hoặc chạm vào 'gioithieu'
 		document.querySelector('.gioithieu').addEventListener('click', function(event) {
-		    event.preventDefault(); // Ngăn chặn hành động mặc định
 		    document.querySelector('.dropdown-content').style.display = 'block';
 		});
 		
 		document.querySelector('.gioithieu').addEventListener('touchstart', function(event) {
-		    event.preventDefault(); // Ngăn chặn hành động mặc định
 		    document.querySelector('.dropdown-content').style.display = 'block';
 		});
 		
@@ -127,12 +125,14 @@
 		
 		listLinks.forEach(link => {
 		    link.addEventListener('click', function(e) {
+	
+		        // Ẩn danh sách sau khi nhấn vào mục trong danh sách
+		        dropdownContent.style.display = 'none';
+			
 		        e.preventDefault();
 		        const section = link.getAttribute('href').split('#')[1];
 		        loadContent(section);
-		
-		        // Ẩn danh sách sau khi nhấn vào mục trong danh sách
-		        dropdownContent.style.display = 'none';
+
 		    });
 		
 		    link.addEventListener('touchstart', function(e) {
