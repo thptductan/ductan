@@ -163,86 +163,70 @@ body {
 		display: block; /* Hiển thị nội dung này trên di động */
 	}
 }
-																/* Quy định cho màn hình máy tính */
+							/* Quy định cho màn hình máy tính */
 @media (min-width: 1024px) {
-  body {
-    max-width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
-    margin: 0 auto; /* Căn giữa phần nội dung */
-    position: relative;
-  }
-
-  .menu {
-    flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
-    justify-content: space-between; /* Căn đều các mục menu */
-    padding: 1px 0; /* Giảm khoảng cách trên và dưới */
-  }
-
-  .menu a {
-    padding: 5px 5px; /* Tăng khoảng cách trên và dưới cho chữ */
-    white-space: nowrap; /* Đảm bảo không bị xuống dòng */
-    min-height: 5px; /* Đảm bảo các mục có chiều cao tối thiểu để căn giữa */
-  }
-
-  .menu span {
-    display: block; /* Đảm bảo các dòng trong span được căn giữa */
-  }
-
-  .menu .hocsinh, .menu .cchc {
-    flex: 1; /* Cho phép các mục này chiếm toàn bộ chiều ngang có sẵn */
-    text-align: center; /* Căn giữa chữ trong cụm */
-  }
-
-  .menu .hocsinh span, .menu .cchc span {
-    margin: 0; /* Loại bỏ khoảng cách giữa các dòng */
-  }
-
-  .menu .hocsinh, .menu .cchc {
-    width: 100%; /* Đảm bảo cụm này chiếm toàn bộ chiều ngang */
-  }
-
-  h1 {
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  h2 {
-    font-size: 1.5em;
-    text-align: left;
-  }
-
-  p {
-    font-size: 1.5em;
-    text-align: left;
-    margin: 20px 0;
-  }
-
-  .main { /* Nội dung chi tiết của bài viết */
-    width: 70%;
-    float: left;
-    box-sizing: border-box; /* Đảm bảo padding và border không ảnh hưởng đến width */
-  }
-
-  .sidebar { /* Danh sách bài viết */
-    width: 30%;
-    float: right;
-    box-sizing: border-box; /* Đảm bảo padding và border không ảnh hưởng đến width */
-  }
-
-  .gioithieu {
-    position: relative; /* Để đảm bảo dropdown xuất hiện ngay bên dưới */
-  }
-
-  .dropdown-content {
-	  display: none;
-	  position: absolute;
-	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	  z-index: 10;
-	  left: 16%; /* Căn chỉnh lề trái */
-	  top: 88%; /* Căn chỉnh khoảng cách từ trên xuống */
-  }
-
-  .desktop-only {
-    display: block; /* Hiển thị nội dung này trên máy tính */
-  }
+	body {
+		max-width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
+		margin: 0 auto; /* Căn giữa phần nội dung */
+		position: relative;
+	}
+	.menu {
+		flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
+		justify-content: space-between; /* Căn đều các mục menu */
+		padding: 1px 0; /* Giảm khoảng cách trên và dưới */
+	}
+	.menu a {
+		padding: 5px 5px; /* Tăng khoảng cách trên và dưới cho chữ */
+		white-space: nowrap; /* Đảm bảo không bị xuống dòng */
+		min-height: 5px; /* Đảm bảo các mục có chiều cao tối thiểu để căn giữa */
+	}
+	.menu span {
+		display: block; /* Đảm bảo các dòng trong span được căn giữa */
+	}
+	.menu .hocsinh, .menu .cchc {
+		flex: 1; /* Cho phép các mục này chiếm toàn bộ chiều ngang có sẵn */
+		text-align: center; /* Căn giữa chữ trong cụm */
+	}
+	.menu .hocsinh span, .menu .cchc span {
+		margin: 0; /* Loại bỏ khoảng cách giữa các dòng */
+	}
+	.menu .hocsinh, .menu .cchc {
+		width: 100%; /* Đảm bảo cụm này chiếm toàn bộ chiều ngang */
+	}
+	h1 {
+		font-size: 2em;
+		font-weight: bold;
+		text-align: center;
+	}
+	h2 {
+		font-size: 1.5em;
+		text-align: left;
+	}
+	p {
+		font-size: 1.5em;
+		text-align: left;
+		margin: 20px 0;
+	}
+	.main { /* Nội dung chi tiết của bài viết */
+		width: 70%;
+		float: left;
+		box-sizing: border-box; /* Đảm bảo padding và border không ảnh hưởng đến width */
+	}
+	.sidebar { /* Danh sách bài viết */
+		width: 30%;
+		float: right;
+		box-sizing: border-box; /* Đảm bảo padding và border không ảnh hưởng đến width */
+	}
+	.dropdown-content {
+		width: 100%;
+		left: 16%; /* Căn chỉnh lề trái */
+		top: 88%; /* Căn chỉnh khoảng cách từ trên xuống */
+		position: absolute;
+	}
+	.gioithieu {
+		position: relative; /* Để đảm bảo dropdown xuất hiện ngay bên dưới */
+	}
+	.desktop-only {
+		display: block; /* Hiển thị nội dung này trên máy tính */
+	}
 }
