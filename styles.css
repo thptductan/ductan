@@ -102,7 +102,9 @@ body {
 	display: block;
 	padding: 5px 0;
 }
-
+.menu .hocsinh span, .menu .cchc span {
+	margin: 5; /* Khoảng cách giữa các dòng */
+}
 /* Hover để hiển thị menu */
 .gioithieu:hover + .dropdown-content, 
 .dropdown-content:hover {
@@ -193,9 +195,6 @@ body {
 	.menu .hocsinh, .menu .cchc {
 		flex: 1; /* Cho phép các mục này chiếm toàn bộ chiều ngang có sẵn */
 		text-align: center; /* Căn giữa chữ trong cụm */
-	}
-	.menu .hocsinh span, .menu .cchc span {
-		margin: 1; /* Khoảng cách giữa các dòng */
 	}
 	.menu .hocsinh, .menu .cchc {
 		width: 100%; /* Đảm bảo cụm này chiếm toàn bộ chiều ngang */
