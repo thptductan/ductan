@@ -102,9 +102,6 @@ body {
 	display: block;
 	padding: 5px 0;
 }
-.menu .hocsinh span, .menu .cchc span {
-	margin: 5; /* Khoảng cách giữa các dòng */
-}
 /* Hover để hiển thị menu */
 .gioithieu:hover + .dropdown-content, 
 .dropdown-content:hover {
