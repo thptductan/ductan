@@ -64,10 +64,6 @@ body {
 	z-index: 10;
 }
 
-.gioithieu:hover .submenu {
-	display: block; /* Hiển thị danh sách con khi hover */
-}
-
 .submenu li {
 	margin-bottom: 5px;
 }
@@ -82,7 +78,6 @@ body {
 	display: none;
 	position: absolute;
 	background-color: #f2f1ef;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
 }
 
@@ -105,6 +100,9 @@ body {
 .dropdown-content:hover {
 	display: block;
 }
+.gioithieu:hover .submenu {
+	display: block; /* Hiển thị danh sách con khi hover */
+}
 
 .mobile-only { /* Nội dung chỉ hiển thị trên di động */
 	display: none; /* Ẩn nội dung này trên máy tính */
@@ -114,7 +112,7 @@ body {
 	display: none; /* Ẩn nội dung này trên di động */
 }
 
-													/* Quy định cho thiết bị di động */
+											/* Quy định cho thiết bị di động */
 @media (max-width: 768px) {
 	.menu {
 		font-size: 0.8em; /* Giảm kích thước chữ trên di động */
@@ -163,7 +161,7 @@ body {
 		display: block; /* Hiển thị nội dung này trên di động */
 	}
 }
-							/* Quy định cho màn hình máy tính */
+											/* Quy định cho màn hình máy tính */
 @media (min-width: 1024px) {
 	body {
 		max-width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
