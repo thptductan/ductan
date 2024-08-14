@@ -22,7 +22,6 @@ body {
 	height: auto;
 }
 
-
 /* Danh mục */
 .menu, .munu2 {
 	margin-top: 5px;
@@ -105,7 +104,11 @@ body {
 .desktop-only { /* Nội dung chỉ hiển thị trên máy tính */
 	display: none; /* Ẩn nội dung này trên di động */
 }
-
+footer {
+    background-color: #1c8fbb; /* Nền xanh */
+    padding: 20px 0;
+    text-align: left;
+}
 										/* Quy định cho thiết bị di động */
 @media (max-width: 768px) {
 	.menu, .menu2 {
@@ -265,9 +268,4 @@ body {
 	.desktop-only {
 		display: block; /* Hiển thị nội dung này trên máy tính */
 	}
-}
-footer {
-    background-color: #1c8fbb; /* Nền xanh */
-    padding: 20px 0;
-    text-align: left;
 }
