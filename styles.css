@@ -164,7 +164,7 @@ body {
 		text-align: justify; /* Căn đều hai bên */
 		text-indent: 2em; /* Thụt đầu dòng cho dòng đầu tiên */
 		line-height: 1.5; /* Khoảng cách giữa các dòng */
-		margin: 15px 0;
+		margin: 5px 0;
 	}
 	/* Qui định vùng hiển thị */
 	.main { /* Nội dung chi tiết của bài viết */
@@ -241,7 +241,7 @@ body {
 		text-indent: 2em; /* Thụt đầu dòng cho dòng đầu tiên */
 		line-height: 1.3; /* Khoảng cách giữa các dòng */
 		line-height: 1.5; /* Khoảng cách giữa các dòng */
-		margin: 15px 0;
+		margin: 5px 0;
 	}
 	.main { /* Nội dung chi tiết của bài viết */
 		width: 70%;
