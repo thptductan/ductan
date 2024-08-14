@@ -138,30 +138,33 @@ body {
 		font-size: 1.3em;
 		text-align: center;
 		font-weight: bold;
+		margin: 20px 0; // Cách trên dưới 20, trái phải 0.
 	}
 
 	.muc {
 		font-size: 1.1em;
 		font-weight: bold;
+		margin: 15px 0;
 	}
 
 	.muc2 {
 		font-size: 1.1em;
 		font-style: italic;
 		text-indent: 2em; /* Thụt đầu dòng cho dòng đầu tiên */
+		margin: 15px 0;
 	}
 
 	.gv {
 		font-size: 1.1em;
 		text-align: left;
-		margin: 20px 0;
+		margin: 15px 0;
 	}
 	.doanvan {
 		font-size: 1.1em;
 		text-align: justify; /* Căn đều hai bên */
 		text-indent: 2em; /* Thụt đầu dòng cho dòng đầu tiên */
-		line-height: 1.3; /* Khoảng cách giữa các dòng */
-		margin-left: 0; /* Lề trái */
+		line-height: 1.5; /* Khoảng cách giữa các dòng */
+		margin: 15px 0;
 	}
 	/* Qui định vùng hiển thị */
 	.main { /* Nội dung chi tiết của bài viết */
@@ -214,27 +217,31 @@ body {
 		font-size: 2em;
 		font-weight: bold;
 		text-align: center;
+		margin: 20px 0; // Cách trên dưới 20, trái phải 0.
 	}
 	.muc {
 		font-size: 1.5em;
 		font-weight: bold;
+		margin: 15px 0;
 	}
 	.muc2 {
 		font-size: 1.5em;
 		font-style: italic;
 		text-indent: 2em; /* Thụt đầu dòng cho dòng đầu tiên */
+		margin: 15px 0;
 	}
 	.gv {
 		font-size: 1.5em;
 		text-align: left;
-		margin: 20px 0;
+		margin: 15px 0;
 	}
 	.doanvan {
 		font-size: 1.5em;
 		text-align: justify; /* Căn đều hai bên */
 		text-indent: 2em; /* Thụt đầu dòng cho dòng đầu tiên */
 		line-height: 1.3; /* Khoảng cách giữa các dòng */
-		margin-left: 0; /* Lề trái */
+		line-height: 1.5; /* Khoảng cách giữa các dòng */
+		margin: 15px 0;
 	}
 	.main { /* Nội dung chi tiết của bài viết */
 		width: 70%;
