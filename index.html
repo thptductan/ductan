@@ -274,15 +274,12 @@
 			// Hàm lấy nội dung từ 'zGioiThieu.html' khi nhấn ở trong list gioithieu
 			function loadContent(section) {
 			    const contentDiv = document.querySelector('.main');
-			    
-			    // Sử dụng fetch để lấy nội dung từ zGioiThieu.html
 			    fetch('zGioiThieu.html')
 			        .then(response => response.text())
 			        .then(html => {
 			            const parser = new DOMParser();
 			            const doc = parser.parseFromString(html, 'text/html');
 			            const sectionContent = doc.querySelector(`#${section}`);
-			            
 			            if (sectionContent) {
 			                contentDiv.innerHTML = sectionContent.innerHTML;
 			            } else {
@@ -294,6 +291,15 @@
 			            contentDiv.innerHTML = '<gv>Không thể tải nội dung.</gv>';
 			        });
 			}
+			
+			const listLinks = document.querySelectorAll('.list a');
+			listLinks.forEach(link => {
+			    link.addEventListener('click', function(e) {
+			        e.preventDefault();
+			        const section = link.getAttribute('href').split('#')[1];
+			        loadContent(section);
+			    });
+			});
 			
 			// Hàm lấy và hiển thị thứ ngày giờ: Định dạng nó ở styles --> #date-time, #date-time-desktop
 			
