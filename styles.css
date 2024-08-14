@@ -267,58 +267,7 @@ body {
 	}
 }
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #1c8fbb; /* Nền xanh */
     padding: 20px 0;
-    text-align: center;
-    font-size: 14px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 20px 0;
-}
-
-.footer-section {
-    flex: 1;
-    padding: 20px;
-    min-width: 200px;
-}
-
-.footer-section h2 {
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-.footer-section ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 10px;
-}
-
-.footer-section ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.footer-section ul li a:hover {
-    text-decoration: underline;
-}
-
-.footer-bottom {
-    background-color: #222;
-    padding: 10px;
-    text-align: center;
-}
-
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: left;
-    }
+    text-align: left;
 }
