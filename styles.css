@@ -162,6 +162,8 @@ body {
 		text-indent: 2em; /* Thụt đầu dòng cho dòng đầu tiên */
 		line-height: 1.3; /* Khoảng cách giữa các dòng */
 		margin-left: 0; /* Lề trái */
+		white-space: nowrap; /* Không ngắt cụm từ */
+		overflow-wrap: break-word; /* Chỉ xuống dòng nếu không đủ chỗ */
 	}
 	/* Qui định vùng hiển thị */
 	.main { /* Nội dung chi tiết của bài viết */
@@ -235,6 +237,8 @@ body {
 		text-indent: 2em; /* Thụt đầu dòng cho dòng đầu tiên */
 		line-height: 1.3; /* Khoảng cách giữa các dòng */
 		margin-left: 0; /* Lề trái */
+		white-space: nowrap; /* Không ngắt cụm từ */
+		overflow-wrap: break-word; /* Chỉ xuống dòng nếu không đủ chỗ */
 	}
 	.main { /* Nội dung chi tiết của bài viết */
 		width: 70%;
