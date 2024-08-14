@@ -37,7 +37,7 @@ body {
 	margin-top: 5px;
 }
 /* Danh mục */
-.menu {
+.menu, .munu2 {
 	margin-top: 5px;
 	display: flex;
 	justify-content: space-around; /* Phân phối đều khoảng cách */
@@ -46,7 +46,7 @@ body {
 	position: relative;
 }
 
-.menu a {
+.menu a, .munu2 a {
 	color: #ffffff; /* Chữ trắng */
 	text-decoration: none; /* Không gạch chân */
 	text-align: center;
@@ -61,7 +61,7 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-.submenu, .list {
+.submenu, .list, .submenu2 {
 	display: none;
 	position: absolute;
 	background-color: #f2f1ef;
@@ -72,11 +72,11 @@ body {
 	z-index: 10;
 }
 
-.submenu li {
+.submenu li, .submenu2 li {
 	margin-bottom: 5px;
 }
 
-.submenu li a {
+.submenu li a, .submenu2 li a {
 	color: #ffffff; /* Chữ trắng */
 	text-decoration: none;
 }
@@ -121,14 +121,14 @@ body {
 
 											/* Quy định cho thiết bị di động */
 @media (max-width: 768px) {
-	.menu {
+	.menu, .menu2 {
 		font-size: 0.8em; /* Giảm kích thước chữ trên di động */
 		flex-direction: row; /* Hiển thị theo hàng ngang */
 		padding: 2px 0; /* Giảm khoảng cách trên và dưới */
 		justify-content: space-around; /* Căn chỉnh đều trên di động */
 	}
 
-	.menu a {
+	.menu a, .menu2 a {
 		font-size: 0.8em; /* Giảm kích thước chữ trên di động */
 		padding: 2px 0; /* Giảm khoảng cách trên và dưới cho chữ */
 		white-space: nowrap; /* Đảm bảo không bị xuống dòng */
@@ -192,25 +192,23 @@ body {
 		margin: 0 auto; /* Căn giữa phần nội dung */
 		position: relative;
 	}
-	.menu {
+	.menu, menu2 {
 		flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
 		justify-content: space-between; /* Căn đều các mục menu */
 		padding: 1px 0; /* Giảm khoảng cách trên và dưới */
 		font-size: 1.5em;
 	}
-	.menu a {
+	.menu a, menu2 a {
 		padding: 5px 5px; /* Tăng khoảng cách trên và dưới cho chữ */
 		white-space: nowrap; /* Đảm bảo không bị xuống dòng */
 		min-height: 5px; /* Đảm bảo các mục có chiều cao tối thiểu để căn giữa */
 	}
-	.menu span {
+	.menu span, .menu2 span {
 		display: block; /* Đảm bảo các dòng trong span được căn giữa */
 	}
-	.menu .hocsinh, .menu .cchc {
+	.menu .hocsinh, .menu .cchc, .menu2 .phhs, .menu2 .congkhai {
 		flex: 1; /* Cho phép các mục này chiếm toàn bộ chiều ngang có sẵn */
 		text-align: center; /* Căn giữa chữ trong cụm */
-	}
-	.menu .hocsinh, .menu .cchc {
 		width: 100%; /* Đảm bảo cụm này chiếm toàn bộ chiều ngang */
 	}
 	.tieude {
