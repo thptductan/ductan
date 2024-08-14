@@ -95,7 +95,7 @@
 		<div id="date-time-desktop"></div>
 	</div>
 	<div class="main">
-		<p>Trang web đang trong quá trình cập nhật ...</p>
+		<gv>Trang web đang trong quá trình cập nhật ...</gv>
 		<!-- Nội dung bài viết sẽ hiển thị tại đây -->
 	</div>
 	<div class="sidebar">
@@ -171,12 +171,12 @@
 		            if (sectionContent) {
 		                contentDiv.innerHTML = sectionContent.innerHTML;
 		            } else {
-		                contentDiv.innerHTML = '<p>Không tìm thấy nội dung.</p>';
+		                contentDiv.innerHTML = '<gv>Không tìm thấy nội dung.</gv>';
 		            }
 		        })
 		        .catch(error => {
 		            console.error('Có lỗi xảy ra:', error);
-		            contentDiv.innerHTML = '<p>Không thể tải nội dung.</p>';
+		            contentDiv.innerHTML = '<gv>Không thể tải nội dung.</gv>';
 		        });
 		}
 		
