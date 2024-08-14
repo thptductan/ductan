@@ -134,22 +134,22 @@ body {
 		white-space: nowrap; /* Đảm bảo không bị xuống dòng */
 	}
 
-	tieude {
+	.tieude {
 		font-size: 1.3em;
 		text-align: center;
 		font-weight: bold; 
 	}
 
-	muc {
+	.muc {
 		font-size: 1.1em;
 	}
 
-	gv {
+	.gv {
 		font-size: 1.1em;
 		text-align: left;
 		margin: 20px 0;
 	}
-	doanvan {
+	.doanvan {
 		font-size: 1.1em;
 		text-align: justify; /* Căn đều hai bên */
 		text-indent: 5em; /* Thụt đầu dòng cho dòng đầu tiên */
@@ -203,21 +203,21 @@ body {
 	.menu .hocsinh, .menu .cchc {
 		width: 100%; /* Đảm bảo cụm này chiếm toàn bộ chiều ngang */
 	}
-	tieude {
+	.tieude {
 		font-size: 2em;
 		font-weight: bold;
 		text-align: center;
 	}
-	muc {
+	.muc {
 		font-size: 1.5em;
 		text-align: left;
 	}
-	gv {
+	.gv {
 		font-size: 1.5em;
 		text-align: left;
 		margin: 20px 0;
 	}
-	doanvan {
+	.doanvan {
 		font-size: 1.5em;
 		text-align: justify; /* Căn đều hai bên */
 		text-indent: 5em; /* Thụt đầu dòng cho dòng đầu tiên */
