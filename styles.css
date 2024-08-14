@@ -22,20 +22,7 @@ body {
 	height: auto;
 }
 
-#date-time {
-	color: #007bff;
-	font-size: 1em;
-	font-weight: bold;
-	text-align: left;
-	margin-top: 5px;
-}
-#date-time-desktop {
-	color: #007bff;
-	font-size: 1.3em;
-	font-weight: bold;
-	text-align: left;
-	margin-top: 5px;
-}
+
 /* Danh mục */
 .menu, .munu2 {
 	margin-top: 5px;
@@ -170,6 +157,14 @@ body {
 	.main { /* Nội dung chi tiết của bài viết */
 		width: 100%;
 	}
+	#date-time {
+		color: #007bff;
+		font-size: 1em;
+		font-weight: bold;
+		text-align: left;
+		margin-top: 5px;
+	}
+	
 	.dropdown-content {
 		width: 100%;
 		top: 86%; /* Đảm bảo list xuất hiện ngay dưới "Giới thiệu" */
@@ -187,6 +182,13 @@ body {
 }
 										/* Quy định cho màn hình máy tính */
 @media (min-width: 1024px) {
+	#date-time-desktop {
+		color: #007bff;
+		font-size: 1.3em;
+		font-weight: bold;
+		text-align: left;
+		margin-top: 5px;
+	}
 	body {
 		max-width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
 		margin: 0 auto; /* Căn giữa phần nội dung */
