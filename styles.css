@@ -147,7 +147,7 @@ body {
 
 	.muc2 {
 		font-size: 1.1em;
-		font-style: italic
+		font-style: italic;
 		text-indent: 2em; /* Thụt đầu dòng cho dòng đầu tiên */
 	}
 
@@ -221,7 +221,7 @@ body {
 	}
 	.muc2 {
 		font-size: 1.5em;
-		font-style: italic
+		font-style: italic;
 		text-indent: 2em; /* Thụt đầu dòng cho dòng đầu tiên */
 	}
 	.gv {
