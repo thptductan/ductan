@@ -56,51 +56,6 @@
 				<span>tỉnh Bình Thuận</span>
 			</a>
 		</div>
-		<div class="menu">
-			<a href="#" class="trangchu">
-				<span>Trang</span>
-				<span>chủ</span>
-			</a>
-			<a href="#" class="gioithieu">
-				<span>Giới</span>
-				<span>thiệu</span>
-			</a>
-			<div class="dropdown-content">
-				<ul class="list">
-					<li><a href="zGioiThieu.html#GioiThieu11">Trường THPT Đức Tân</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu10">Chi bộ</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu9">Ban giám hiệu</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu8">Công đoàn</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu7">Đoàn trường</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu6">Tổ Văn phòng</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu5">Tổ Toán - Tin</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu4">Tổ Văn - Anh</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu3">Tổ Hóa - Sinh - CNNN</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu2">Tổ Sử - Địa - KTPL</a></li>
-					<li><a href="zGioiThieu.html#GioiThieu1">Tổ Lí - TCQP- CNCN</a></li>
-				</ul>
-			</div>
-			<a href="#" class="hoatdong">
-				<span>Hoạt</span>
-				<span>động</span>
-			</a>
-			<a href="#" class="hocsinh">
-				<span>Học sinh và</span>
-				<span>Cựu học sinh</span>
-			</a>
-			<ul class="subhocsinh">
-				<li><a href="zHocSinh.html#hs">Học sinh tiêu biểu</a></li>
-				<li><a href="zHocSinh.html#cb">Hoạt động của Cựu học sinh</a></li>
-			</ul>
-			<a href="#" class="lienhe">
-				<span>Liên</span>
-				<span>hệ</span>
-			</a>
-			<a href="https://sotaycaicachhanhchinh.binhthuan.gov.vn/" class="cchc">
-				<span>Sổ tay CCHC</span>
-				<span>tỉnh Bình Thuận</span>
-			</a>
-		</div>
 		<div class="menu2">
 			<a href="#" class="phhs">
 				<span>Thông tin phụ huynh</span>
@@ -142,6 +97,118 @@
 			</div>
 		</div>
 		<div id="date-time"></div>
+		<div class="main">
+			<gv>Trang web đang trong quá trình cập nhật ...</gv>
+			<!-- Nội dung bài viết sẽ hiển thị tại đây -->
+		</div>
+		<script>
+			// Hiển thị danh sách khi nhấp hoặc chạm vào 'gioithieu'
+			document.querySelector('.gioithieu').addEventListener('click', function(event) {
+			    document.querySelector('.dropdown-content').style.display = 'block';
+			});
+			
+			document.querySelector('.gioithieu').addEventListener('touchstart', function(event) {
+			    document.querySelector('.dropdown-content').style.display = 'block';
+			});
+			
+			// Ẩn danh sách khi rời chuột khỏi 'dropdown-content'
+			document.querySelector('.dropdown-content').addEventListener('mouseleave', function() {
+			    this.style.display = 'none';
+			});
+			
+			/* Hàm hiển thị nội dung khi nhấn vào trong list */
+			const contentArea = document.querySelector('.main');
+			const listLinks = document.querySelectorAll('.list a');
+			const dropdownContent = document.querySelector('.dropdown-content');
+			
+			listLinks.forEach(link => {
+			    link.addEventListener('click', function(e) {
+		
+			        // Ẩn danh sách sau khi nhấn vào mục trong danh sách
+			        dropdownContent.style.display = 'none';
+				
+			        e.preventDefault();
+			        const section = link.getAttribute('href').split('#')[1];
+			        loadContent(section);
+	
+			    });
+			
+			    link.addEventListener('touchstart', function(e) {
+			        // Ẩn danh sách sau khi chạm vào mục trong danh sách
+			        dropdownContent.style.display = 'none';
+				
+				e.preventDefault();
+			        const section = link.getAttribute('href').split('#')[1];
+			        loadContent(section);
+			
+			    });
+			});
+			
+			// Hàm ẩn list khi ấn vào một nơi khác ngoài list và 'gioithieu'
+			document.addEventListener('click', function(event) {
+			    const dropdown = document.querySelector('.dropdown-content');
+			    const gioithieu = document.querySelector('.gioithieu');
+			
+			    if (!dropdown.contains(event.target) && !gioithieu.contains(event.target)) {
+			        dropdown.style.display = 'none';
+			    }
+			});
+			
+			// Hàm lấy nội dung từ 'zGioiThieu.html' khi nhấn ở trong list gioithieu
+			function loadContent(section) {
+			    const contentDiv = document.querySelector('.main');
+			    
+			    // Sử dụng fetch để lấy nội dung từ zGioiThieu.html
+			    fetch('zGioiThieu.html')
+			        .then(response => response.text())
+			        .then(html => {
+			            const parser = new DOMParser();
+			            const doc = parser.parseFromString(html, 'text/html');
+			            const sectionContent = doc.querySelector(`#${section}`);
+			            
+			            if (sectionContent) {
+			                contentDiv.innerHTML = sectionContent.innerHTML;
+			            } else {
+			                contentDiv.innerHTML = '<gv>Không tìm thấy nội dung.</gv>';
+			            }
+			        })
+			        .catch(error => {
+			            console.error('Có lỗi xảy ra:', error);
+			            contentDiv.innerHTML = '<gv>Không thể tải nội dung.</gv>';
+			        });
+			}
+			
+			// Hàm lấy và hiển thị thứ ngày giờ: Định dạng nó ở styles --> #date-time, #date-time-desktop
+			
+			function updateDateTime() {
+			    const now = new Date();
+			    const daysOfWeek = ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
+			    const dayName = daysOfWeek[now.getDay()];
+			    const day = now.getDate();
+			    const month = now.getMonth() + 1; // Tháng bắt đầu từ 0
+			    const year = now.getFullYear();
+			    let hours = now.getHours();
+			    const minutes = now.getMinutes().toString().padStart(2, '0');
+			    const seconds = now.getSeconds().toString().padStart(2, '0');
+			    const ampm = hours >= 12 ? 'PM' : 'AM';
+			    hours = hours % 12;
+			    hours = hours ? hours : 12; // Nếu giờ = 0 thì hiển thị 12
+			    const formattedTime = `${hours}:${minutes}:${seconds} ${ampm}`;
+			    const formattedDateTime = `${dayName}, ${day}/${month}/${year}, ${formattedTime}`;
+			    const dateTimeElement = document.getElementById('date-time');
+			    const dateTimeDesktopElement = document.getElementById('date-time-desktop');
+			    if (dateTimeElement) {
+			        dateTimeElement.textContent = formattedDateTime;
+			    }
+			    if (dateTimeDesktopElement) {
+			        dateTimeDesktopElement.textContent = formattedDateTime;
+			    }
+			}
+			setInterval(updateDateTime, 1000);
+			updateDateTime();
+			// HẾT Thứ ngày giờ
+			
+		</script>
 	</div>
 	<div class="desktop-only">
 		<div class="menu">
@@ -218,149 +285,131 @@
 			</div>
 		</div>
 		<div id="date-time-desktop"></div>
-	</div>
-	<div class="main">
-		<gv>Trang web đang trong quá trình cập nhật ...</gv>
-		<!-- Nội dung bài viết sẽ hiển thị tại đây -->
-	</div>
-	<div class="sidebar">
-		<ul class="list">
-			<!-- Danh sách các bài viết -->
-		</ul>
-	</div>
-	<script>
-		// Hiển thị danh sách khi nhấp hoặc chạm vào 'gioithieu'
-		document.querySelector('.gioithieu').addEventListener('click', function(event) {
-		    document.querySelector('.dropdown-content').style.display = 'block';
-		});
+		<div class="main">
+			<gv>Trang web đang trong quá trình cập nhật ...</gv>
+			<!-- Nội dung bài viết sẽ hiển thị tại đây -->
+		</div>
+		<div class="sidebar">
+			<ul class="list">
+				<!-- Danh sách các bài viết -->
+			</ul>
+		</div>
+		<script>
+			// Hiển thị danh sách khi nhấp hoặc chạm vào 'gioithieu'
+			document.querySelector('.gioithieu').addEventListener('click', function(event) {
+			    document.querySelector('.dropdown-content').style.display = 'block';
+			});
+			
+			document.querySelector('.gioithieu').addEventListener('touchstart', function(event) {
+			    document.querySelector('.dropdown-content').style.display = 'block';
+			});
+			
+			// Ẩn danh sách khi rời chuột khỏi 'dropdown-content'
+			document.querySelector('.dropdown-content').addEventListener('mouseleave', function() {
+			    this.style.display = 'none';
+			});
+			
+			/* Hàm hiển thị nội dung khi nhấn vào trong list */
+			const contentArea = document.querySelector('.main');
+			const listLinks = document.querySelectorAll('.list a');
+			const dropdownContent = document.querySelector('.dropdown-content');
+			
+			listLinks.forEach(link => {
+			    link.addEventListener('click', function(e) {
 		
-		document.querySelector('.gioithieu').addEventListener('touchstart', function(event) {
-		    document.querySelector('.dropdown-content').style.display = 'block';
-		});
-		
-		// Ẩn danh sách khi rời chuột khỏi 'dropdown-content'
-		document.querySelector('.dropdown-content').addEventListener('mouseleave', function() {
-		    this.style.display = 'none';
-		});
-		
-		/* Hàm hiển thị nội dung khi nhấn vào trong list */
-		const contentArea = document.querySelector('.main');
-		const listLinks = document.querySelectorAll('.list a');
-		const dropdownContent = document.querySelector('.dropdown-content');
-		
-		listLinks.forEach(link => {
-		    link.addEventListener('click', function(e) {
+			        // Ẩn danh sách sau khi nhấn vào mục trong danh sách
+			        dropdownContent.style.display = 'none';
+				
+			        e.preventDefault();
+			        const section = link.getAttribute('href').split('#')[1];
+			        loadContent(section);
 	
-		        // Ẩn danh sách sau khi nhấn vào mục trong danh sách
-		        dropdownContent.style.display = 'none';
+			    });
 			
-		        e.preventDefault();
-		        const section = link.getAttribute('href').split('#')[1];
-		        loadContent(section);
-
-		    });
-		
-		    link.addEventListener('touchstart', function(e) {
-		        // Ẩn danh sách sau khi chạm vào mục trong danh sách
-		        dropdownContent.style.display = 'none';
+			    link.addEventListener('touchstart', function(e) {
+			        // Ẩn danh sách sau khi chạm vào mục trong danh sách
+			        dropdownContent.style.display = 'none';
+				
+				e.preventDefault();
+			        const section = link.getAttribute('href').split('#')[1];
+			        loadContent(section);
 			
-			e.preventDefault();
-		        const section = link.getAttribute('href').split('#')[1];
-		        loadContent(section);
-		
-		    });
-		});
-		
-		// Hàm ẩn list khi ấn vào một nơi khác ngoài list và 'gioithieu'
-		document.addEventListener('click', function(event) {
-		    const dropdown = document.querySelector('.dropdown-content');
-		    const gioithieu = document.querySelector('.gioithieu');
-		
-		    if (!dropdown.contains(event.target) && !gioithieu.contains(event.target)) {
-		        dropdown.style.display = 'none';
-		    }
-		});
-		
-		// Hàm lấy nội dung từ 'zGioiThieu.html' khi nhấn ở trong list gioithieu
-		function loadContent(section) {
-		    const contentDiv = document.querySelector('.main');
-		    
-		    // Sử dụng fetch để lấy nội dung từ zGioiThieu.html
-		    fetch('zGioiThieu.html')
-		        .then(response => response.text())
-		        .then(html => {
-		            const parser = new DOMParser();
-		            const doc = parser.parseFromString(html, 'text/html');
-		            const sectionContent = doc.querySelector(`#${section}`);
-		            
-		            if (sectionContent) {
-		                contentDiv.innerHTML = sectionContent.innerHTML;
-		            } else {
-		                contentDiv.innerHTML = '<gv>Không tìm thấy nội dung.</gv>';
-		            }
-		        })
-		        .catch(error => {
-		            console.error('Có lỗi xảy ra:', error);
-		            contentDiv.innerHTML = '<gv>Không thể tải nội dung.</gv>';
-		        });
-		}
-		
-		// Hàm lấy và hiển thị thứ ngày giờ: Định dạng nó ở styles --> #date-time, #date-time-desktop
-		
-		function updateDateTime() {
-		    const now = new Date();
-		    const daysOfWeek = ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
-		    const dayName = daysOfWeek[now.getDay()];
-		    const day = now.getDate();
-		    const month = now.getMonth() + 1; // Tháng bắt đầu từ 0
-		    const year = now.getFullYear();
-		    let hours = now.getHours();
-		    const minutes = now.getMinutes().toString().padStart(2, '0');
-		    const seconds = now.getSeconds().toString().padStart(2, '0');
-		    const ampm = hours >= 12 ? 'PM' : 'AM';
-		    hours = hours % 12;
-		    hours = hours ? hours : 12; // Nếu giờ = 0 thì hiển thị 12
-		    const formattedTime = `${hours}:${minutes}:${seconds} ${ampm}`;
-		    const formattedDateTime = `${dayName}, ${day}/${month}/${year}, ${formattedTime}`;
-		    const dateTimeElement = document.getElementById('date-time');
-		    const dateTimeDesktopElement = document.getElementById('date-time-desktop');
-		    if (dateTimeElement) {
-		        dateTimeElement.textContent = formattedDateTime;
-		    }
-		    if (dateTimeDesktopElement) {
-		        dateTimeDesktopElement.textContent = formattedDateTime;
-		    }
-		}
-		setInterval(updateDateTime, 1000);
-		updateDateTime();
-		// HẾT Thứ ngày giờ
-		
-	</script>
+			    });
+			});
+			
+			// Hàm ẩn list khi ấn vào một nơi khác ngoài list và 'gioithieu'
+			document.addEventListener('click', function(event) {
+			    const dropdown = document.querySelector('.dropdown-content');
+			    const gioithieu = document.querySelector('.gioithieu');
+			
+			    if (!dropdown.contains(event.target) && !gioithieu.contains(event.target)) {
+			        dropdown.style.display = 'none';
+			    }
+			});
+			
+			// Hàm lấy nội dung từ 'zGioiThieu.html' khi nhấn ở trong list gioithieu
+			function loadContent(section) {
+			    const contentDiv = document.querySelector('.main');
+			    
+			    // Sử dụng fetch để lấy nội dung từ zGioiThieu.html
+			    fetch('zGioiThieu.html')
+			        .then(response => response.text())
+			        .then(html => {
+			            const parser = new DOMParser();
+			            const doc = parser.parseFromString(html, 'text/html');
+			            const sectionContent = doc.querySelector(`#${section}`);
+			            
+			            if (sectionContent) {
+			                contentDiv.innerHTML = sectionContent.innerHTML;
+			            } else {
+			                contentDiv.innerHTML = '<gv>Không tìm thấy nội dung.</gv>';
+			            }
+			        })
+			        .catch(error => {
+			            console.error('Có lỗi xảy ra:', error);
+			            contentDiv.innerHTML = '<gv>Không thể tải nội dung.</gv>';
+			        });
+			}
+			
+			// Hàm lấy và hiển thị thứ ngày giờ: Định dạng nó ở styles --> #date-time, #date-time-desktop
+			
+			function updateDateTime() {
+			    const now = new Date();
+			    const daysOfWeek = ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
+			    const dayName = daysOfWeek[now.getDay()];
+			    const day = now.getDate();
+			    const month = now.getMonth() + 1; // Tháng bắt đầu từ 0
+			    const year = now.getFullYear();
+			    let hours = now.getHours();
+			    const minutes = now.getMinutes().toString().padStart(2, '0');
+			    const seconds = now.getSeconds().toString().padStart(2, '0');
+			    const ampm = hours >= 12 ? 'PM' : 'AM';
+			    hours = hours % 12;
+			    hours = hours ? hours : 12; // Nếu giờ = 0 thì hiển thị 12
+			    const formattedTime = `${hours}:${minutes}:${seconds} ${ampm}`;
+			    const formattedDateTime = `${dayName}, ${day}/${month}/${year}, ${formattedTime}`;
+			    const dateTimeElement = document.getElementById('date-time');
+			    const dateTimeDesktopElement = document.getElementById('date-time-desktop');
+			    if (dateTimeElement) {
+			        dateTimeElement.textContent = formattedDateTime;
+			    }
+			    if (dateTimeDesktopElement) {
+			        dateTimeDesktopElement.textContent = formattedDateTime;
+			    }
+			}
+			setInterval(updateDateTime, 1000);
+			updateDateTime();
+			// HẾT Thứ ngày giờ
+			
+		</script>
+	</div>
 </body>
 <footer>
-    <div class="footer-content">
-        <div class="footer-section about">
-            <h2>About Us</h2>
-            <p>Thông tin ngắn về trang web hoặc công ty của bạn.</p>
-        </div>
-        <div class="footer-section links">
-            <h2>Quick Links</h2>
-            <ul>
-                <li><a href="#">Trang Chủ</a></li>
-                <li><a href="#">Giới Thiệu</a></li>
-                <li><a href="#">Dịch Vụ</a></li>
-                <li><a href="#">Liên Hệ</a></li>
-            </ul>
-        </div>
-        <div class="footer-section contact">
-            <h2>Contact Us</h2>
-            <p>Email: example@domain.com</p>
-            <p>Phone: +84 123 456 789</p>
-            <p>Địa chỉ: Số 123, Đường ABC, Thành phố XYZ</p>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        &copy; 2024 | Designed by YourName
-    </div>
+	<div class="footer-section contact">
+		<h2>Trường TPHT Đức Tân</h2>
+		<p>Email: example@domain.com</p>
+        	<p>Phone: +84 123 456 789</p>
+        	<p>Địa chỉ: Số 123, Đường ABC, Thành phố XYZ</p>
+	</div>
 </footer>
 </html>
