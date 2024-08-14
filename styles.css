@@ -1,5 +1,5 @@
 <!Bắt đầu code của styles.html -->
-																/* Quy định chung */
+										/* Quy định chung */
 body {
 	margin: 0;
 	padding: 0;
@@ -119,7 +119,7 @@ body {
 	display: none; /* Ẩn nội dung này trên di động */
 }
 
-											/* Quy định cho thiết bị di động */
+										/* Quy định cho thiết bị di động */
 @media (max-width: 768px) {
 	.menu, .menu2 {
 		font-size: 0.8em; /* Giảm kích thước chữ trên di động */
@@ -134,14 +134,14 @@ body {
 		white-space: nowrap; /* Đảm bảo không bị xuống dòng */
 	}
 
-	.tieude {
+	.tieude, h1 {
 		font-size: 1.3em;
 		text-align: center;
 		font-weight: bold;
 		margin: 20px 0; // Cách trên dưới 20, trái phải 0.
 	}
 
-	.muc {
+	.muc, h2 {
 		font-size: 1.1em;
 		font-weight: bold;
 		margin: 15px 0;
@@ -154,7 +154,7 @@ body {
 		margin: 15px 0;
 	}
 
-	.gv {
+	.gv, p {
 		font-size: 1.1em;
 		text-align: left;
 		margin: 15px 0;
@@ -185,7 +185,7 @@ body {
 		display: block; /* Hiển thị nội dung này trên di động */
 	}
 }
-											/* Quy định cho màn hình máy tính */
+										/* Quy định cho màn hình máy tính */
 @media (min-width: 1024px) {
 	body {
 		max-width: 66.66vw; /* Chiều ngang bằng 2/3 chiều ngang trình duyệt */
@@ -211,13 +211,13 @@ body {
 		text-align: center; /* Căn giữa chữ trong cụm */
 		width: 100%; /* Đảm bảo cụm này chiếm toàn bộ chiều ngang */
 	}
-	.tieude {
+	.tieude, h1 {
 		font-size: 2em;
 		font-weight: bold;
 		text-align: center;
 		margin: 20px 0; // Cách trên dưới 20, trái phải 0.
 	}
-	.muc {
+	.muc, h2 {
 		font-size: 1.5em;
 		font-weight: bold;
 		margin: 15px 0;
@@ -228,7 +228,7 @@ body {
 		text-indent: 2em; /* Thụt đầu dòng cho dòng đầu tiên */
 		margin: 15px 0;
 	}
-	.gv {
+	.gv, p {
 		font-size: 1.5em;
 		text-align: left;
 		margin: 15px 0;
@@ -263,4 +263,60 @@ body {
 	.desktop-only {
 		display: block; /* Hiển thị nội dung này trên máy tính */
 	}
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+    min-width: 200px;
+}
+
+.footer-section h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    background-color: #222;
+    padding: 10px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: left;
+    }
 }
