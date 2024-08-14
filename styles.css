@@ -145,6 +145,12 @@ body {
 		font-weight: bold;
 	}
 
+	.muc2 {
+		font-size: 1.1em;
+		font-weight: bold;
+		text-indent: 2em; /* Thụt đầu dòng cho dòng đầu tiên */
+	}
+
 	.gv {
 		font-size: 1.1em;
 		text-align: left;
@@ -212,6 +218,11 @@ body {
 	.muc {
 		font-size: 1.5em;
 		font-weight: bold;
+	}
+	.muc2 {
+		font-size: 1.5em;
+		font-weight: bold;
+		text-indent: 2em; /* Thụt đầu dòng cho dòng đầu tiên */
 	}
 	.gv {
 		font-size: 1.5em;
