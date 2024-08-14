@@ -61,7 +61,7 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-.submenu, .list, .submenu2 {
+.subhocsinh, .list {
 	display: none;
 	position: absolute;
 	background-color: #f2f1ef;
@@ -72,11 +72,11 @@ body {
 	z-index: 10;
 }
 
-.submenu li, .submenu2 li {
+.subhocsinh li {
 	margin-bottom: 5px;
 }
 
-.submenu li a, .submenu2 li a {
+.subhocsinh li a {
 	color: #ffffff; /* Chữ trắng */
 	text-decoration: none;
 }
@@ -107,7 +107,7 @@ body {
 .dropdown-content:hover {
 	display: block;
 }
-.gioithieu:hover .submenu {
+.gioithieu:hover .subhocsinh {
 	display: block; /* Hiển thị danh sách con khi hover */
 }
 
