@@ -5,7 +5,7 @@ body {
 	padding: 0;
 	font-family: Arial, sans-serif;
 	background-color: #ffffff; /* Nền trắng cho toàn trang */
-	overflow-x: hidden; /* Khóa cuộn ngang */
+	overflow-x: hidden; /* Khóa cuộn ngang */ 
 }
 
 /* Phần đầu trang với ảnh */
