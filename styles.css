@@ -5,7 +5,7 @@ body {
 	padding: 0;
 	font-family: Arial, sans-serif;
 	background-color: #ffffff; /* Nền trắng cho toàn trang */
-	overflow-x: hidden; /* Khóa cuộn ngang */ 
+	overflow-x: hidden; /* Khóa cuộn ngang */
 }
 
 /* Phần đầu trang với ảnh */
@@ -23,7 +23,7 @@ body {
 }
 
 /* Danh mục */
-.menu {
+.menu, .munu2 {
 	margin-top: 5px;
 	display: flex;
 	justify-content: space-around; /* Phân phối đều khoảng cách */
@@ -32,7 +32,7 @@ body {
 	position: relative;
 }
 
-.menu a {
+.menu a, .munu2 a {
 	color: #ffffff; /* Chữ trắng */
 	text-decoration: none; /* Không gạch chân */
 	text-align: center;
@@ -112,14 +112,14 @@ footer {
 }
 										/* Quy định cho thiết bị di động */
 @media (max-width: 768px) {
-	.menu {
+	.menu, .menu2 {
 		font-size: 0.8em; /* Giảm kích thước chữ trên di động */
 		flex-direction: row; /* Hiển thị theo hàng ngang */
 		padding: 2px 0; /* Giảm khoảng cách trên và dưới */
 		justify-content: space-around; /* Căn chỉnh đều trên di động */
 	}
 
-	.menu a {
+	.menu a, .menu2 a {
 		font-size: 0.8em; /* Giảm kích thước chữ trên di động */
 		padding: 2px 0; /* Giảm khoảng cách trên và dưới cho chữ */
 		white-space: nowrap; /* Đảm bảo không bị xuống dòng */
@@ -144,18 +144,7 @@ footer {
 		text-indent: 2em; /* Thụt đầu dòng cho dòng đầu tiên */
 		margin: 15px 0;
 	}
-	.muc3 {
-		font-size: 1.1em;
-		font-weight: bold;
-		margin: 15px 0;
-		color: red;
-	}
-	.muc4 {
-		font-size: 1.1em;
-		font-style: italic;
-		font-weight: bold;
-		margin: 15px 0;
-	}
+
 	.gv {
 		font-size: 1.1em;
 		text-align: left;
@@ -193,7 +182,7 @@ footer {
 		position: absolute;
 	}
 
-	.gioithieu, .hocsinh {
+	.gioithieu {
 		position: relative; /* Để đảm bảo dropdown xuất hiện ngay bên dưới */
 	}
 
@@ -215,18 +204,18 @@ footer {
 		margin: 0 auto; /* Căn giữa phần nội dung */
 		position: relative;
 	}
-	.menu {
+	.menu, menu2 {
 		flex-wrap: wrap; /* Cho phép các mục menu xuống dòng nếu cần */
 		justify-content: space-between; /* Căn đều các mục menu */
 		padding: 1px 0; /* Giảm khoảng cách trên và dưới */
 		font-size: 1.5em;
 	}
-	.menu a {
+	.menu a, menu2 a {
 		padding: 5px 5px; /* Tăng khoảng cách trên và dưới cho chữ */
 		white-space: nowrap; /* Đảm bảo không bị xuống dòng */
 		min-height: 5px; /* Đảm bảo các mục có chiều cao tối thiểu để căn giữa */
 	}
-	.menu span {
+	.menu span, .menu2 span {
 		display: block; /* Đảm bảo các dòng trong span được căn giữa */
 	}
 	.menu .hocsinh, .menu .cchc, .menu2 .phhs, .menu2 .congkhai {
@@ -245,31 +234,24 @@ footer {
 		font-weight: bold;
 		margin: 15px 0;
 	}
-	
 	.muc2 {
 		font-size: 1.5em;
 		font-style: italic;
 		text-indent: 2em; /* Thụt đầu dòng cho dòng đầu tiên */
 		margin: 15px 0;
 	}
-	.muc3 {
-		font-size: 1.5em;
-		font-weight: bold;
-		margin: 15px 0;
-		color: red;
-	}
-	.muc4 {
-		font-size: 1.5em;
-		font-style: italic;
-		font-weight: bold;
-		margin: 15px 0;
-	}
-	.gv {
+	.gv, p {
 		font-size: 1.5em;
 		text-align: left;
 		margin: 15px 0;
 	}
-		
+	p {
+		font-size: 1.5em;
+		text-align: left;
+		margin: 0px 0;
+		color: white;
+	}
+	
 	.doanvan {
 		font-size: 1.5em;
 		text-align: justify; /* Căn đều hai bên */
@@ -294,7 +276,7 @@ footer {
 		top: 88%; /* Căn chỉnh khoảng cách từ trên xuống */
 		position: absolute;
 	}
-	.gioithieu, .hocsinh {
+	.gioithieu {
 		position: relative; /* Để đảm bảo dropdown xuất hiện ngay bên dưới */
 	}
 	.desktop-only {
