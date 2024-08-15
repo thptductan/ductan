@@ -335,7 +335,72 @@
 		setInterval(updateDateTime, 1000);
 		updateDateTime();
 		// HẾT Thứ ngày giờ
+
+		document.addEventListener('DOMContentLoaded', function() {
+		    const menuItems = document.querySelectorAll('.menu-item');
+		    const dsMenu = document.getElementById('ds-menu');
+		    const dsContainer = document.getElementById('ds-container');
+		    const mainContent = document.getElementById('main-content');
 		
+		    let activeMenuItem = null;
+		
+		    // Xử lý khi nhấn vào các mục trong menu chính
+		    menuItems.forEach(item => {
+		        item.addEventListener('click', function() {
+		            const file = this.getAttribute('data-file');
+		
+		            // Tải nội dung từ file tương ứng và hiển thị trong main-content
+		            fetch(file)
+		                .then(response => response.text())
+		                .then(data => {
+		                    mainContent.innerHTML = data;
+		
+		                    // Nếu là "Bảng vàng Học sinh Đức Tân", thêm sự kiện click để ẩn/hiện DS
+		                    if (file === 'zHocSinh.html') {
+		                        const headers = document.querySelectorAll('.toggle-header');
+		                        headers.forEach(header => {
+		                            header.addEventListener('click', function() {
+		                                const targetId = this.getAttribute('data-target');
+		                                const targetContent = document.getElementById(targetId);
+		                                
+		                                if (targetContent.style.display === 'block') {
+		                                    targetContent.style.display = 'none';
+		                                } else {
+		                                    targetContent.style.display = 'block';
+		                                }
+		                            });
+		                        });
+		                    }
+		                });
+		        });
+		    });
+		
+		    // Hiển thị danh sách con khi đưa chuột vào mục "Học sinh"
+		    document.querySelectorAll('.menu-item')[0].addEventListener('mouseover', function() {
+		        dsContainer.style.display = 'block';
+		    });
+		
+		    // Ẩn danh sách con khi chuột rời khỏi hoặc nhấn vào mục trong danh sách con
+		    dsContainer.addEventListener('mouseleave', function() {
+		        dsContainer.style.display = 'none';
+		    });
+		
+		    // Xử lý khi nhấn vào mục trong danh sách con
+		    dsMenu.addEventListener('click', function(event) {
+		        const target = event.target;
+		        if (target.classList.contains('ds-item')) {
+		            const file = target.textContent.replace(/ /g, '') + '.html';
+		
+		            fetch(file)
+		                .then(response => response.text())
+		                .then(data => {
+		                    mainContent.innerHTML = data;
+		                });
+		
+		            dsContainer.style.display = 'none';
+		        }
+		    });
+		});
 	</script>
 </body>
 </html>
