@@ -43,11 +43,13 @@
 				<span>Học sinh và</span>
 				<span>Cựu học sinh</span>
 			</a>
-			<ul class="subhocsinh">
-				<li><a href="zHocSinh.html#bv">Bảng vàng Học sinh Đức Tân</a></li>
-				<li><a href="zHocSinh.html#hs">Học sinh</a></li>
-				<li><a href="zHocSinh.html#cb">Hoạt động của Cựu học sinh</a></li>
-			</ul>
+			<div class="dropdown-content">
+				<ul class="list">
+					<li><a href="zHocSinh.html#HocSinh1">Bảng vàng Học sinh Đức Tân</a></li>
+					<li><a href="zHocSinh2.html#HocSinh2">Học sinh</a></li>
+					<li><a href="zHoatDong.html#HoatDong1">Hoạt động của Cựu học sinh</a></li>
+				</ul>
+			</div>
 			<a href="#" class="lienhe">
 				<span>Liên</span>
 				<span>hệ</span>
@@ -234,6 +236,9 @@
 		document.querySelector('.gioithieu').addEventListener('click', function(event) {
 		    document.querySelector('.dropdown-content').style.display = 'block';
 		});
+		document.querySelector('.hocsinh').addEventListener('click', function(event) {
+		    document.querySelector('.dropdown-content').style.display = 'block';
+		});
 		
 		document.querySelector('.gioithieu').addEventListener('touchstart', function(event) {
 		    document.querySelector('.dropdown-content').style.display = 'block';
@@ -276,8 +281,11 @@
 		document.addEventListener('click', function(event) {
 		    const dropdown = document.querySelector('.dropdown-content');
 		    const gioithieu = document.querySelector('.gioithieu');
-		
 		    if (!dropdown.contains(event.target) && !gioithieu.contains(event.target)) {
+		        dropdown.style.display = 'none';
+		    }
+		    const hocsinh = document.querySelector('.hocsinh');
+		    if (!dropdown.contains(event.target) && !hocsinh.contains(event.target)) {
 		        dropdown.style.display = 'none';
 		    }
 		});
@@ -288,6 +296,23 @@
 		    
 		    // Sử dụng fetch để lấy nội dung từ zGioiThieu.html
 		    fetch('zGioiThieu.html')
+		        .then(response => response.text())
+		        .then(html => {
+		            const parser = new DOMParser();
+		            const doc = parser.parseFromString(html, 'text/html');
+		            const sectionContent = doc.querySelector(`#${section}`);
+		            
+		            if (sectionContent) {
+		                contentDiv.innerHTML = sectionContent.innerHTML;
+		            } else {
+		                contentDiv.innerHTML = '<gv>Không tìm thấy nội dung.</gv>';
+		            }
+		        })
+		        .catch(error => {
+		            console.error('Có lỗi xảy ra:', error);
+		            contentDiv.innerHTML = '<gv>Không thể tải nội dung.</gv>';
+		        });
+		    fetch('zHocSinh.html')
 		        .then(response => response.text())
 		        .then(html => {
 		            const parser = new DOMParser();
