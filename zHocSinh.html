@@ -1,142 +1,86 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh sách học sinh</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Liên kết tới file CSS -->
-</head>
-<body>
-    <h1>Danh sách học sinh</h1>
-    
-    <!-- Cấp Quốc gia, Khu vực -->
-    <h2 class="toggle-header" data-target="cap-quoc-gia">Cấp Quốc gia, Khu vực</h2>
-    <div class="toggle-content" id="cap-quoc-gia">
-        <ul>
-            <li>Phan Văn Đức - 10a1, 11a1, 12a1 - Giải Ba môn Toán cấp Quốc gia các năm học ???</li>
-            <li>Nguyễn Thị Thanh Thảo - 11a6 - Huy chương Vàng Taekwondo HKPĐ Toàn Quốc năm 2024</li>
-        </ul>
-    </div>
-    
-    <!-- Cấp tỉnh -->
-    <h2 class="toggle-header" data-target="cap-tinh">Cấp tỉnh</h2>
-    <div class="toggle-content" id="cap-tinh">
-        <ul>
-            <li><a href="#" class="toggle-year" data-target="2023-2024">Năm học 2023-2024</a></li>
-            <li><a href="#" class="toggle-year" data-target="2022-2023">Năm học 2022-2023</a></li>
-            <li><a href="#" class="toggle-year" data-target="2021-2022">Năm học 2021-2022</a></li>
-            <li><a href="#" class="toggle-year" data-target="2020-2021">Năm học 2020-2021</a></li>
-            <li><a href="#" class="toggle-year" data-target="2019-2020">Năm học 2019-2020</a></li>
-            <li><a href="#" class="toggle-year" data-target="2018-2019">Năm học 2018-2019</a></li>
-            <li><a href="#" class="toggle-year" data-target="2017-2018">Năm học 2017-2018</a></li>
-        </ul>
-        
-        <!-- Các năm học -->
-        <div class="year-content" id="2023-2024">
-            <ul>
-                <li>Trần Thị Hà Giang - 12a1 - Giải Ba môn Ngữ văn</li>
-                <li>Trần Thế Bình - 12a1 - Giải Ba môn Tin học</li>
-                <li>Đoàn Ngọc Hân - 11a4 - Giải Ba môn Lịch sử</li>
-                <li>Võ Đan Phương - 11a4 - Giải Ba môn Lịch sử</li>
-                <li>Phan Nguyễn Gia Hân - 11a4 - Giải Ba môn Lịch sử</li>
-                <li>Phan Khánh Nam - 11a4 - Giải Ba môn Lịch sử</li>
-                <li>Phạm Trương Hà My - 11a4 - Giải Ba môn Địa lí</li>
-                <li>Phạm Văn Thành - 11a4 - Giải Ba môn Địa lí</li>
-                <li>Trần Thị Kim Hằng - 11a4 - Giải Ba môn Địa lí</li>
-                <li>Lê Hải Minh - 12a4 - Giải Ba môn Địa lí</li>
-                <li>Nguyễn Thị Ánh Tuyết - 12a4 - Giải Ba môn Địa lí</li>
-                <li>Phan Trúc Quỳnh - 10a5 - Giải Ba môn Địa lí</li>
-            </ul>
-        </div>
-        
-        <div class="year-content" id="2022-2023">
-            <ul>
-                <li>Trần Minh Hiếu - 12a1 - Giải Ba môn Toán</li>
-                <li>Nguyễn Thị Ánh Nhi - 12a1 - Giải Ba môn Ngữ văn</li>
-                <li>Lê Thị Tường Ly - 12a6 - Giải Ba môn Ngữ văn</li>
-                <li>Lê Thị Diễm Trang - 10a4 - Giải Ba môn Địa lí</li>
-            </ul>
-        </div>
-        
-        <div class="year-content" id="2021-2022">
-            <ul>
-                <li>Vũ Đức Thiện Bảo - 12a4 - Giải Ba môn Ngữ văn</li>
-                <li>Lê Thị Tường Ly - 11a2 - Giải Ba môn Ngữ văn</li>
-                <li>Nguyễn Thị Ánh Nhi - 11a1 - Giải Ba môn Ngữ văn</li>
-                <li>Lê Thy Phụng - 12a4 - Giải Ba môn Ngữ văn</li>
-                <li>Trịnh Vũ - 12a4 - Giải Ba môn Ngữ văn</li>
-                <li>Lê Minh Trí - 12a1 - Giải Ba môn Sinh học</li>
-                <li>Nguyễn Võ Ngọc Hậu - 12a4 - Giải Ba môn Lịch sử</li>
-                <li>Đinh Thị Xuân Phú - 12a4 - Giải Ba môn Lịch sử</li>
-                <li>Trương Phương Nhi - 12a4 - Giải Ba môn Địa lí</li>
-                <li>Nguyễn Thị Kim Uyên - 12a1 - Giải Ba môn Địa lí</li>
-                <li>Phan Thanh Khánh - 12a1 - Giải Ba môn Toán</li>
-                <li>Trần Tuệ Tánh - 12a1 - Giải Ba môn Tin học</li>
-            </ul>
-        </div>
-        
-        <div class="year-content" id="2020-2021">
-            <ul>
-                <li>Hồ Nhật Phi - 12a1 - Giải Ba môn Ngữ văn</li>
-                <li>Lê Vân Khánh - 11a1 - Giải Ba môn Tiếng Anh</li>
-                <li>Trần Tuệ Tánh - 11a1 - Giải Ba môn Tin học</li>
-                <li>Nguyễn Thị Cẩm Ly - 11a2 - Giải Ba môn Địa lí</li>
-                <li>Võ Phan Thảo Nguyên - 11a2 - Giải Ba môn Địa lí</li>
-                <li>Trương Phương Nhi - 11a1 - Giải Ba môn Địa lí</li>
-                <li>Nguyễn Văn Phúc - 12a1 - Giải Ba môn Địa lí</li>
-                <li>Lê Thy Phụng - 11a4 - Giải Ba môn Địa lí</li>
-                <li>Nguyễn Thị Kim Uyên - 11a1 - Giải Ba môn Địa lí</li>
-            </ul>
-        </div>
-        
-        <div class="year-content" id="2019-2020">
-            <ul>
-                <li>Trần Tuệ Tánh - 10a1 - Giải Nhì môn Tin học</li>
-                <li>Phạm Thị Thúy Uyên - 12a6 - Giải ba môn Ngữ văn</li>
-                <li>Nguyễn Ngọc Thủy Tiên - 11a1 - Giải ba môn Ngữ văn</li>
-                <li>Võ Nữ Thu Minh - 11a1 - Giải ba môn Địa lí</li>
-            </ul>
-        </div>
-        
-        <div class="year-content" id="2018-2019">
-            <ul>
-                <li>Võ Thị Thu Hiệp - 10A1 - Giải Ba môn Địa lí</li>
-                <li>Nguyễn Hoàng Minh Thư - 11A2 - Giải Ba môn Lịch sử</li>
-                <li>Lê Minh Tường Vy - 11A2 - Giải Ba môn Địa lí</li>
-                <li>Trần Phan Nhật Kha - 12A1 - Giải Ba môn Tin học</li>
-                <li>Ngô Thị Phương Thảo - 12A1 - Giải Ba môn Vật lí</li>
-                <li>Lê Long Ẩn - 12A1 - Giải Ba môn Hóa học</li>
-                <li>Trần Thị Mỹ Nhung - 12A2 - Giải Ba môn Ngữ văn</li>
-            </ul>
-        </div>
-        
-        <div class="year-content" id="2017-2018">
-            <ul>
-                <li>Nguyễn Hoàng Anh Tú - 12A2 - Giải Ba môn Ngữ văn</li>
-                <li>Đặng Thị Tiểu My - 11A1 - Giải Ba môn Địa lí</li>
-                <li>Nguyễn Thị Cẩm Tiên - 11A1 - Giải Ba môn Địa lí</li>
-                <li>Nguyễn Thị Thùy Trang - 11A6 - Giải Ba môn Địa lí</li>
-                <li>Cao Quốc Thiên Thảo - 11A1 - Giải Ba môn Tiếng Anh</li>
-                <li>Ngô Thị Phương Thảo - 11A1 - Giải Ba môn Vật lí</li>
-                <li>Nguyễn Quốc Trung - 12A1 - Giải Ba môn Vật lí</li>
-                <li>Trần Phan Nhật Kha - 11A1 - Giải Ba môn Tin học</li>
-                <li>Nguyễn Thị Thanh Ngọc - 10A2 - Huy chương Vàng môn Cờ vua</li>
-                <li>Nguyễn Thị Mai Hương - 12A1 - Huy chương Vàng môn Võ thuật</li>
-                <li>Nguyễn Công Minh - 12A4 - Huy chương Vàng môn Bơi lội</li>
-                <li>Đặng Thị Tiểu My - 11A1 - Huy chương Bạc môn Bơi lội</li>
-                <li>Võ Thành Đạt - 11A3 - Huy chương Bạc môn Bơi lội</li>
-                <li>Trần Thị Tuyết Nhi - 11A4 - Huy chương Bạc môn Bơi lội</li>
-                <li>Phạm Thị Hoài Thương - 10A5 - Huy chương Đồng môn Bơi lội</li>
-                <li>Võ Thành Đạt - 11A3 - Huy chương Đồng môn Bơi lội</li>
-                <li>Nguyễn Công Minh - 12A4 - Huy chương Đồng môn Bơi lội</li>
-                <li>Nguyễn Thị Y Nguyên - 11A1 - Huy chương Bạc môn Điền kinh</li>
-                <li>Phạm Hoài Khẩn - 11A3 - Huy chương Đồng môn Điền kinh</li>
-                <li>Lê Văn Phúc - 10A3 - Huy chương Đồng môn Võ thuật</li>
-                <li>Nguyễn Thị Mỹ Hạnh - 12A7 - Huy chương Đồng môn Võ thuật</li>
-            </ul>
-        </div>
-    </div>
+<!-- Bài viết 1 -->
+<div id="HocSinh1">
+<div class="tieude">BẢNG VÀNG HỌC SINH</div>
+<div class="tieude">TRƯỜNG THPT ĐỨC TÂN</div>
+<div class="muc3">Cấp Quốc gia, Khu vực:</div>
+<div class="gv">Phan Văn Đức - 10a1, 11a1, 12a1 - Giải Ba HSG HSG môn Toán cấp Quốc gia các năm học ??? </div>
+<div class="gv">Nguyễn Thị Thanh Thảo - 11a6 - Huy chương Vàng Taekwondo HKPĐ Toàn Quốc năm 2024</div>
+<div class="muc3">Giải cấp tỉnh:</div>
+<div class="muc2">Năm học 2023-2024: </div>
+<div class="gv">1. Trần Thị Hà Giang - 12a1 - Giải Ba HSG môn Ngữ văn</div>
+<div class="gv">2. Trần Thế Bình - 12a1 - Giải Ba HSG môn Tin học</div>
+<div class="gv">3. Đoàn Ngọc Hân - 11a4 - Giải Ba HSG môn Lịch sử</div>
+<div class="gv">4. Võ Đan Phương - 11a4 - Giải Ba HSG môn Lịch sử</div>
+<div class="gv">5. Phan Nguyễn Gia Hân - 11a4 - Giải Ba HSG môn Lịch sử</div>
+<div class="gv">6. Phan Khánh Nam - 11a4 - Giải Ba HSG môn Lịch sử</div>
+<div class="gv">7. Phạm Trương Hà My - 11a4 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">8. Phạm Văn Thành - 11a4 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">9. Trần Thị Kim Hằng - 11a4 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">10. Lê Hải Minh - 12a4 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">11. Nguyễn Thị Ánh Tuyết - 12a4 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">12. Phan Trúc Quỳnh - 10a5 - Giải Ba HSG môn Địa lí</div>
+<div class="muc3">Năm học 2022-2023: </div>
+<div class="gv">1. Trần Minh Hiếu - 12a1 - Giải Ba HSG môn Toán</div>
+<div class="gv">2. Nguyễn Thị Ánh Nhi - 12a1 - Giải Ba HSG môn Ngữ văn</div>
+<div class="gv">3. Lê Thị Tường Ly - 12a6 - Giải Ba HSG môn Ngữ văn</div>
+<div class="gv">4. Lê Thị Diễm Trang - 10a4 - Giải Ba HSG môn Địa lí</div>
+<div class="muc3">Năm học 2021-2022: </div>
+<div class="gv">1. Vũ Đức Thiện Bảo - 12a4 - Giải Ba HSG môn Ngữ văn</div>
+<div class="gv">2. Lê Thị Tường Ly - 11a2 - Giải Ba HSG môn Ngữ văn</div>
+<div class="gv">3. Nguyễn Thị Ánh Nhi - 11a1 - Giải Ba HSG môn Ngữ văn</div>
+<div class="gv">4. Lê Thy Phụng - 12a4 - Giải Ba HSG môn Ngữ văn</div>
+<div class="gv">5. Trịnh Vũ - 12a4 - Giải Ba HSG môn Ngữ văn</div>
+<div class="gv">6. Lê Minh Trí - 12a1 - Giải Ba HSG môn Sinh học</div>
+<div class="gv">7. Nguyễn Võ Ngọc Hậu - 12a4 - Giải Ba HSG môn Lịch sử</div>
+<div class="gv">8. Đinh Thị Xuân Phú - 12a4 - Giải Ba HSG môn Lịch sử</div>
+<div class="gv">9. Trương Phương Nhi - 12a4 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">10. Nguyễn Thị Kim Uyên - 12a1 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">11. Phan Thanh Khánh - 12a1 - Giải Ba HSG môn Toán</div>
+<div class="gv">12. Trần Tuệ Tánh - 12a1 - Giải Ba HSG môn Tin học</div>
+<div class="muc2">Năm học 2020-2021: </div>
+<div class="gv">1. Hồ Nhật Phi - 12a1 - Giải Ba HSG môn Ngữ văn</div>
+<div class="gv">2. Lê Vân Khánh - 11a1 - Giải Ba HSG môn Tiếng Anh</div>
+<div class="gv">3. Trần Tuệ Tánh - 11a1 - Giải Ba HSG môn Tin học</div>
+<div class="gv">4. Nguyễn Thị Cẩm Ly - 11a2 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">5. Võ Phan Thảo Nguyên - 11a2 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">6. Trương Phương Nhi - 11a1 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">7. Nguyễn Văn Phúc - 12a1 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">8. Lê Thy Phụng - 11a4 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">9. Nguyễn Thị Kim Uyên - 11a1 - Giải Ba HSG môn Địa lí</div>
+<div class="muc2">Năm học 2019-2020: </div>
+<div class="gv">1. Trần Tuệ Tánh - 10a1 - Giải Nhì HSG môn Tin học</div>
+<div class="gv">2. Phạm Thị Thúy Uyên - 12a6 - Giải ba HSG môn Ngữ văn</div>
+<div class="gv">3. Nguyễn Ngọc Thủy Tiên - 11a1 - Giải ba HSG môn Ngữ văn</div>
+<div class="gv">4. Võ Nữ Thu Minh - 11a1 - Giải ba HSG môn Địa lí</div>
+<div class="muc2">Năm học 2018-2019: </div>
+<div class="gv">1. Võ Thị Thu Hiệp - 10A1 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">2. Nguyễn Hoàng Minh Thư - 11A2 - Giải Ba HSG môn Lịch sử</div>
+<div class="gv">3. Lê Minh Tường Vy - 11A2 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">4. Trần Phan Nhật Kha - 12A1 - Giải Ba HSG môn Tin học</div>
+<div class="gv">5. Ngô Thị Phương Thảo - 12A1 - Giải Ba HSG môn Vật lí</div>
+<div class="gv">6. Lê Long Ẩn - 12A1 - Giải Ba HSG môn Hóa học</div>
+<div class="gv">7. Trần Thị Mỹ Nhung - 12A2 - Giải Ba HSG môn Ngữ văn</div>
+<div class="muc2">Năm học 2017-2018: </div>
+<div class="gv">1. Nguyễn Hoàng Anh Tú - 12A2 - Giải Ba HSG môn Ngữ văn</div>
+<div class="gv">2. Đặng Thị Tiểu My - 11A1 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">3. Nguyễn Thị Cẩm Tiên - 11A1 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">4. Nguyễn Thị Thùy Trang - 11A6 - Giải Ba HSG môn Địa lí</div>
+<div class="gv">5. Cao Quốc Thiên Thảo - 11A1 - Giải Ba HSG môn Tiếng Anh</div>
+<div class="gv">6. Ngô Thị Phương Thảo - 11A1 - Giải Ba HSG môn Vật lí</div>
+<div class="gv">7. Nguyễn Quốc Trung - 12A1 - Giải Ba HSG môn Vật lí</div>
+<div class="gv">8. Trần Phan Nhật Kha - 11A1 - Giải Ba HSG môn Tin học</div>
+<div class="gv">9. Nguyễn Thị Thanh Ngọc - 10A2 - Huy chương Vàng HSG môn Cờ vua</div>
+<div class="gv">10. Nguyễn Thị Mai Hương - 12A1 - Huy chương Vàng HSG môn Võ thuật</div>
+<div class="gv">11. Nguyễn Công Minh - 12A4 - Huy chương Vàng HSG môn Bơi lội</div>
+<div class="gv">12. Đặng Thị Tiểu My - 11A1 - Huy chương Bạc HSG môn Bơi lội</div>
+<div class="gv">13. Võ Thành Đạt - 11A3 - Huy chương Bạc HSG môn Bơi lội</div>
+<div class="gv">14. Trần Thị Tuyết Nhi - 11A4 - Huy chương Bạc HSG môn Bơi lội</div>
+<div class="gv">15. Phạm Thị Hoài Thương - 10A5 - Huy chương Đồng HSG môn Bơi lội</div>
+<div class="gv">16. Võ Thành Đạt - 11A3 - Huy chương Đồng HSG môn Bơi lội</div>
+<div class="gv">17. Nguyễn Công Minh - 12A4 - Huy chương Đồng HSG môn Bơi lội</div>
+<div class="gv">18. Nguyễn Thị Y Nguyên - 11A1 - Huy chương Bạc HSG môn Điền kinh</div>
+<div class="gv">19. Phạm Hoài Khẩn - 11A3 - Huy chương Đồng HSG môn Điền kinh</div>
+<div class="gv">20. Lê Văn Phúc - 10A3 - Huy chương Đồng HSG môn Võ thuật</div>
+<div class="gv">21. Nguyễn Thị Mỹ Hạnh - 12A7 - Huy chương Đồng HSG môn Võ thuật</div>
 
-    <script src="script.js"></script> <!-- Liên kết tới file JavaScript -->
-</body>
-</html>
+</div>
